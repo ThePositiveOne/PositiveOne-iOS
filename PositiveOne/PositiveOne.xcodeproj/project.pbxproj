@@ -7,25 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA3977592A2C5B170040741F /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3977582A2C5B170040741F /* Extension+Color.swift */; };
-		FA6BDB9E2A2B8FF500FE7169 /* PositiveOneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BDB9D2A2B8FF500FE7169 /* PositiveOneApp.swift */; };
-		FA6BDBA02A2B8FF500FE7169 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BDB9F2A2B8FF500FE7169 /* ContentView.swift */; };
-		FA6BDBA22A2B8FF700FE7169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6BDBA12A2B8FF700FE7169 /* Assets.xcassets */; };
-		FA6BDBA52A2B8FF700FE7169 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6BDBA42A2B8FF700FE7169 /* Preview Assets.xcassets */; };
+		FA3977D82A2CA2250040741F /* PositiveOneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3977D72A2CA2250040741F /* PositiveOneApp.swift */; };
+		FA3977DA2A2CA2250040741F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3977D92A2CA2250040741F /* ContentView.swift */; };
+		FA3977DC2A2CA2270040741F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3977DB2A2CA2270040741F /* Assets.xcassets */; };
+		FA3977DF2A2CA2270040741F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3977DE2A2CA2270040741F /* Preview Assets.xcassets */; };
+		FA3977E92A2CA2E60040741F /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3977E82A2CA2E60040741F /* Extension+Color.swift */; };
+		FA3977F52A2CA3060040741F /* gangwon.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977EA2A2CA3050040741F /* gangwon.otf */; };
+		FA3977F62A2CA3060040741F /* PretendardSemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977EB2A2CA3050040741F /* PretendardSemiBold.otf */; };
+		FA3977F72A2CA3060040741F /* PretendardLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977EC2A2CA3050040741F /* PretendardLight.otf */; };
+		FA3977F82A2CA3060040741F /* PretendardExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977ED2A2CA3050040741F /* PretendardExtraBold.otf */; };
+		FA3977F92A2CA3060040741F /* PretendardExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977EE2A2CA3050040741F /* PretendardExtraLight.otf */; };
+		FA3977FA2A2CA3060040741F /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3977EF2A2CA3050040741F /* CustomFont.swift */; };
+		FA3977FB2A2CA3060040741F /* PretendardMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F02A2CA3050040741F /* PretendardMedium.otf */; };
+		FA3977FC2A2CA3060040741F /* PretendardBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F12A2CA3050040741F /* PretendardBold.otf */; };
+		FA3977FD2A2CA3060040741F /* PretendardThin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F22A2CA3050040741F /* PretendardThin.otf */; };
+		FA3977FE2A2CA3060040741F /* PretendardBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F32A2CA3050040741F /* PretendardBlack.otf */; };
+		FA3977FF2A2CA3060040741F /* PretendardRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F42A2CA3050040741F /* PretendardRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA3977582A2C5B170040741F /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
-		FA6BDB9A2A2B8FF500FE7169 /* PositiveOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PositiveOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA6BDB9D2A2B8FF500FE7169 /* PositiveOneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveOneApp.swift; sourceTree = "<group>"; };
-		FA6BDB9F2A2B8FF500FE7169 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FA6BDBA12A2B8FF700FE7169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA6BDBA42A2B8FF700FE7169 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FA6BDBA62A2B8FF700FE7169 /* PositiveOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PositiveOne.entitlements; sourceTree = "<group>"; };
+		FA3977D42A2CA2250040741F /* PositiveOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PositiveOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3977D72A2CA2250040741F /* PositiveOneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveOneApp.swift; sourceTree = "<group>"; };
+		FA3977D92A2CA2250040741F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA3977DB2A2CA2270040741F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA3977DE2A2CA2270040741F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA3977E82A2CA2E60040741F /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		FA3977EA2A2CA3050040741F /* gangwon.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gangwon.otf; sourceTree = "<group>"; };
+		FA3977EB2A2CA3050040741F /* PretendardSemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardSemiBold.otf; sourceTree = "<group>"; };
+		FA3977EC2A2CA3050040741F /* PretendardLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardLight.otf; sourceTree = "<group>"; };
+		FA3977ED2A2CA3050040741F /* PretendardExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardExtraBold.otf; sourceTree = "<group>"; };
+		FA3977EE2A2CA3050040741F /* PretendardExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardExtraLight.otf; sourceTree = "<group>"; };
+		FA3977EF2A2CA3050040741F /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		FA3977F02A2CA3050040741F /* PretendardMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardMedium.otf; sourceTree = "<group>"; };
+		FA3977F12A2CA3050040741F /* PretendardBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardBold.otf; sourceTree = "<group>"; };
+		FA3977F22A2CA3050040741F /* PretendardThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardThin.otf; sourceTree = "<group>"; };
+		FA3977F32A2CA3050040741F /* PretendardBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardBlack.otf; sourceTree = "<group>"; };
+		FA3977F42A2CA3050040741F /* PretendardRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardRegular.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FA6BDB972A2B8FF500FE7169 /* Frameworks */ = {
+		FA3977D12A2CA2250040741F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,85 +56,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA3977542A2C581D0040741F /* Resources */ = {
+		FA3977CB2A2CA2250040741F = {
 			isa = PBXGroup;
 			children = (
-				FA3977572A2C5B040040741F /* Extensions */,
-				FA6BDBA12A2B8FF700FE7169 /* Assets.xcassets */,
-				FA3977552A2C584A0040741F /* Fonts */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		FA3977552A2C584A0040741F /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		FA3977562A2C58650040741F /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		FA3977572A2C5B040040741F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				FA3977582A2C5B170040741F /* Extension+Color.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		FA6BDB912A2B8FF500FE7169 = {
-			isa = PBXGroup;
-			children = (
-				FA6BDB9C2A2B8FF500FE7169 /* PositiveOne */,
-				FA6BDB9B2A2B8FF500FE7169 /* Products */,
+				FA3977D62A2CA2250040741F /* PositiveOne */,
+				FA3977D52A2CA2250040741F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FA6BDB9B2A2B8FF500FE7169 /* Products */ = {
+		FA3977D52A2CA2250040741F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA6BDB9A2A2B8FF500FE7169 /* PositiveOne.app */,
+				FA3977D42A2CA2250040741F /* PositiveOne.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA6BDB9C2A2B8FF500FE7169 /* PositiveOne */ = {
+		FA3977D62A2CA2250040741F /* PositiveOne */ = {
 			isa = PBXGroup;
 			children = (
-				FA6BDBA32A2B8FF700FE7169 /* Preview Content */,
-				FA6BDBA62A2B8FF700FE7169 /* PositiveOne.entitlements */,
-				FA6BDB9D2A2B8FF500FE7169 /* PositiveOneApp.swift */,
-				FA6BDB9F2A2B8FF500FE7169 /* ContentView.swift */,
-				FA3977562A2C58650040741F /* Login */,
-				FA3977542A2C581D0040741F /* Resources */,
+				FA3977E52A2CA2C80040741F /* Resources */,
+				FA3977D72A2CA2250040741F /* PositiveOneApp.swift */,
+				FA3977D92A2CA2250040741F /* ContentView.swift */,
+				FA3977DB2A2CA2270040741F /* Assets.xcassets */,
+				FA3977DD2A2CA2270040741F /* Preview Content */,
 			);
 			path = PositiveOne;
 			sourceTree = "<group>";
 		};
-		FA6BDBA32A2B8FF700FE7169 /* Preview Content */ = {
+		FA3977DD2A2CA2270040741F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				FA6BDBA42A2B8FF700FE7169 /* Preview Assets.xcassets */,
+				FA3977DE2A2CA2270040741F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA3977E52A2CA2C80040741F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA3977E72A2CA2D40040741F /* Extensions */,
+				FA3977E62A2CA2CE0040741F /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA3977E62A2CA2CE0040741F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA3977EF2A2CA3050040741F /* CustomFont.swift */,
+				FA3977EA2A2CA3050040741F /* gangwon.otf */,
+				FA3977F32A2CA3050040741F /* PretendardBlack.otf */,
+				FA3977F12A2CA3050040741F /* PretendardBold.otf */,
+				FA3977ED2A2CA3050040741F /* PretendardExtraBold.otf */,
+				FA3977EE2A2CA3050040741F /* PretendardExtraLight.otf */,
+				FA3977EC2A2CA3050040741F /* PretendardLight.otf */,
+				FA3977F02A2CA3050040741F /* PretendardMedium.otf */,
+				FA3977F42A2CA3050040741F /* PretendardRegular.otf */,
+				FA3977EB2A2CA3050040741F /* PretendardSemiBold.otf */,
+				FA3977F22A2CA3050040741F /* PretendardThin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FA3977E72A2CA2D40040741F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA3977E82A2CA2E60040741F /* Extension+Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA6BDB992A2B8FF500FE7169 /* PositiveOne */ = {
+		FA3977D32A2CA2250040741F /* PositiveOne */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA6BDBA92A2B8FF700FE7169 /* Build configuration list for PBXNativeTarget "PositiveOne" */;
+			buildConfigurationList = FA3977E22A2CA2270040741F /* Build configuration list for PBXNativeTarget "PositiveOne" */;
 			buildPhases = (
-				FA6BDB962A2B8FF500FE7169 /* Sources */,
-				FA6BDB972A2B8FF500FE7169 /* Frameworks */,
-				FA6BDB982A2B8FF500FE7169 /* Resources */,
+				FA3977D02A2CA2250040741F /* Sources */,
+				FA3977D12A2CA2250040741F /* Frameworks */,
+				FA3977D22A2CA2250040741F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -121,25 +144,25 @@
 			);
 			name = PositiveOne;
 			productName = PositiveOne;
-			productReference = FA6BDB9A2A2B8FF500FE7169 /* PositiveOne.app */;
+			productReference = FA3977D42A2CA2250040741F /* PositiveOne.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FA6BDB922A2B8FF500FE7169 /* Project object */ = {
+		FA3977CC2A2CA2250040741F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					FA6BDB992A2B8FF500FE7169 = {
+					FA3977D32A2CA2250040741F = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = FA6BDB952A2B8FF500FE7169 /* Build configuration list for PBXProject "PositiveOne" */;
+			buildConfigurationList = FA3977CF2A2CA2250040741F /* Build configuration list for PBXProject "PositiveOne" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -147,43 +170,54 @@
 				en,
 				Base,
 			);
-			mainGroup = FA6BDB912A2B8FF500FE7169;
-			productRefGroup = FA6BDB9B2A2B8FF500FE7169 /* Products */;
+			mainGroup = FA3977CB2A2CA2250040741F;
+			productRefGroup = FA3977D52A2CA2250040741F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA6BDB992A2B8FF500FE7169 /* PositiveOne */,
+				FA3977D32A2CA2250040741F /* PositiveOne */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FA6BDB982A2B8FF500FE7169 /* Resources */ = {
+		FA3977D22A2CA2250040741F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA6BDBA52A2B8FF700FE7169 /* Preview Assets.xcassets in Resources */,
-				FA6BDBA22A2B8FF700FE7169 /* Assets.xcassets in Resources */,
+				FA3977FE2A2CA3060040741F /* PretendardBlack.otf in Resources */,
+				FA3977F52A2CA3060040741F /* gangwon.otf in Resources */,
+				FA3977FD2A2CA3060040741F /* PretendardThin.otf in Resources */,
+				FA3977F62A2CA3060040741F /* PretendardSemiBold.otf in Resources */,
+				FA3977F92A2CA3060040741F /* PretendardExtraLight.otf in Resources */,
+				FA3977F72A2CA3060040741F /* PretendardLight.otf in Resources */,
+				FA3977DF2A2CA2270040741F /* Preview Assets.xcassets in Resources */,
+				FA3977FF2A2CA3060040741F /* PretendardRegular.otf in Resources */,
+				FA3977FB2A2CA3060040741F /* PretendardMedium.otf in Resources */,
+				FA3977FC2A2CA3060040741F /* PretendardBold.otf in Resources */,
+				FA3977F82A2CA3060040741F /* PretendardExtraBold.otf in Resources */,
+				FA3977DC2A2CA2270040741F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FA6BDB962A2B8FF500FE7169 /* Sources */ = {
+		FA3977D02A2CA2250040741F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA6BDBA02A2B8FF500FE7169 /* ContentView.swift in Sources */,
-				FA3977592A2C5B170040741F /* Extension+Color.swift in Sources */,
-				FA6BDB9E2A2B8FF500FE7169 /* PositiveOneApp.swift in Sources */,
+				FA3977DA2A2CA2250040741F /* ContentView.swift in Sources */,
+				FA3977FA2A2CA3060040741F /* CustomFont.swift in Sources */,
+				FA3977E92A2CA2E60040741F /* Extension+Color.swift in Sources */,
+				FA3977D82A2CA2250040741F /* PositiveOneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		FA6BDBA72A2B8FF700FE7169 /* Debug */ = {
+		FA3977E02A2CA2270040741F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -233,17 +267,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		FA6BDBA82A2B8FF700FE7169 /* Release */ = {
+		FA3977E12A2CA2270040741F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -287,87 +321,96 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		FA6BDBAA2A2B8FF700FE7169 /* Debug */ = {
+		FA3977E32A2CA2270040741F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PositiveOne/PositiveOne.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PositiveOne/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = PositiveOne/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = LimYoungSun.PositiveOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		FA6BDBAB2A2B8FF700FE7169 /* Release */ = {
+		FA3977E42A2CA2270040741F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PositiveOne/PositiveOne.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PositiveOne/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = PositiveOne/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = LimYoungSun.PositiveOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA6BDB952A2B8FF500FE7169 /* Build configuration list for PBXProject "PositiveOne" */ = {
+		FA3977CF2A2CA2250040741F /* Build configuration list for PBXProject "PositiveOne" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA6BDBA72A2B8FF700FE7169 /* Debug */,
-				FA6BDBA82A2B8FF700FE7169 /* Release */,
+				FA3977E02A2CA2270040741F /* Debug */,
+				FA3977E12A2CA2270040741F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA6BDBA92A2B8FF700FE7169 /* Build configuration list for PBXNativeTarget "PositiveOne" */ = {
+		FA3977E22A2CA2270040741F /* Build configuration list for PBXNativeTarget "PositiveOne" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA6BDBAA2A2B8FF700FE7169 /* Debug */,
-				FA6BDBAB2A2B8FF700FE7169 /* Release */,
+				FA3977E32A2CA2270040741F /* Debug */,
+				FA3977E42A2CA2270040741F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FA6BDB922A2B8FF500FE7169 /* Project object */;
+	rootObject = FA3977CC2A2CA2250040741F /* Project object */;
 }

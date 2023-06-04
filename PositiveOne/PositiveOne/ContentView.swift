@@ -13,7 +13,9 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("긍정하나")
+                //.font(CustomFont.PretendardBlack(size: 50).font)
+                .font(.custom("gangwon", size: 30))
         }
         .padding()
     }
