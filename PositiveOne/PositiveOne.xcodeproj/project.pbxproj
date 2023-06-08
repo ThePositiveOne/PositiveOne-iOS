@@ -23,6 +23,8 @@
 		FA3977FD2A2CA3060040741F /* PretendardThin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F22A2CA3050040741F /* PretendardThin.otf */; };
 		FA3977FE2A2CA3060040741F /* PretendardBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F32A2CA3050040741F /* PretendardBlack.otf */; };
 		FA3977FF2A2CA3060040741F /* PretendardRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F42A2CA3050040741F /* PretendardRegular.otf */; };
+		FA7F5B492A2CAF930045528D /* LoginCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F5B482A2CAF930045528D /* LoginCharacterView.swift */; };
+		FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F5B4A2A2CB3600045528D /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		FA3977F22A2CA3050040741F /* PretendardThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardThin.otf; sourceTree = "<group>"; };
 		FA3977F32A2CA3050040741F /* PretendardBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardBlack.otf; sourceTree = "<group>"; };
 		FA3977F42A2CA3050040741F /* PretendardRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardRegular.otf; sourceTree = "<group>"; };
+		FA7F5B482A2CAF930045528D /* LoginCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCharacterView.swift; sourceTree = "<group>"; };
+		FA7F5B4A2A2CB3600045528D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		FA3977D62A2CA2250040741F /* PositiveOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA7F5B462A2CAF6D0045528D /* Login */,
 				FA3977E52A2CA2C80040741F /* Resources */,
 				FA3977D72A2CA2250040741F /* PositiveOneApp.swift */,
 				FA3977D92A2CA2250040741F /* ContentView.swift */,
@@ -125,6 +130,23 @@
 				FA3977E82A2CA2E60040741F /* Extension+Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA7F5B462A2CAF6D0045528D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F5B472A2CAF730045528D /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FA7F5B472A2CAF730045528D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F5B482A2CAF930045528D /* LoginCharacterView.swift */,
+				FA7F5B4A2A2CB3600045528D /* LoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,10 +229,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */,
 				FA3977DA2A2CA2250040741F /* ContentView.swift in Sources */,
 				FA3977FA2A2CA3060040741F /* CustomFont.swift in Sources */,
 				FA3977E92A2CA2E60040741F /* Extension+Color.swift in Sources */,
 				FA3977D82A2CA2250040741F /* PositiveOneApp.swift in Sources */,
+				FA7F5B492A2CAF930045528D /* LoginCharacterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,16 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>./Resources/Fonts/gangwon.otf</string>
+		<string>gangwon.otf</string>
+		<string>PretendardBlack.otf</string>
+		<string>PretendardBold.otf</string>
+		<string>PretendardExtraBold.otf</string>
+		<string>PretendardExtraLight.otf</string>
+		<string>PretendardLight.otf</string>
+		<string>PretendardMedium.otf</string>
+		<string>PretendardRegular.otf</string>
+		<string>PretendardSemiBold.otf</string>
+		<string>PretendardThin.otf</string>
 	</array>
 </dict>
 </plist>
