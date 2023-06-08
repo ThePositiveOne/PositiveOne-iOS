@@ -15,7 +15,7 @@ struct TabbarView: View {
     
     var body: some View {
         TabView {
-            Text("캘린더")
+            CalendarView()
                 .tabItem {
                     Image("calendarSelected")
                         .renderingMode(.template)

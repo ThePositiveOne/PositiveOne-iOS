@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "pleasureOne.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
