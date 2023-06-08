@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-// UIScreen.main.bounds.height / 2 * 0.75
 struct LoginView: View {
+    @State var isPresented = false
+    
     var body: some View {
         VStack() {
        
@@ -34,13 +35,18 @@ struct LoginView: View {
             .foregroundColor(.white)
             .font(CustomFont.PretendardMedium(size: 19).font)
            
-            
-            Button("둘러보기") {
-                
+            Button {
+                isPresented.toggle()
+            } label: {
+                Text("둘러보기")
+                .foregroundColor(.Custom.Black70)
+                .font(CustomFont.PretendardMedium(size: 18).font)
+                .padding(.top, 16)
             }
-            .foregroundColor(.Custom.Black70)
-            .font(CustomFont.PretendardMedium(size: 18).font)
-            .padding(.top, 16)
+            .fullScreenCover(isPresented: $isPresented) {
+                TabbarView()
+            }
+        
             Spacer()
         }
     
