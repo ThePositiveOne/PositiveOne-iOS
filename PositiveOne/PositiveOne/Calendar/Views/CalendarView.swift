@@ -37,6 +37,7 @@ struct CalendarView: View {
                 .frame(width: width-40, height: width-10)
                 .background(Color.Custom.YellowShadow50)
                 .cornerRadius(4)
+                .padding(.top, 8)
                 Spacer()
             }
         }

@@ -22,13 +22,13 @@ struct TabbarView: View {
                     Text("캘린더")
                 }
             
-            Text("피드")
+            FeedView()
                 .tabItem {
                     Image("feedUnSelected")
                        .renderingMode(.template)
                     Text("피드")
-                        .font(Font.system(size: 18, weight: .bold))
                 }
+            
         }
         .accentColor(.Custom.PositiveYellow)
     }

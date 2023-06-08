@@ -28,6 +28,7 @@
 		FA77D7012A31B60200D4AF13 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D7002A31B60200D4AF13 /* CalendarCell.swift */; };
 		FA77D7032A31BC3000D4AF13 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D7022A31BC3000D4AF13 /* CalendarView.swift */; };
 		FA77D7052A31D47300D4AF13 /* MonthTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D7042A31D47300D4AF13 /* MonthTopView.swift */; };
+		FA77D7092A31DB5A00D4AF13 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D7082A31DB5A00D4AF13 /* FeedView.swift */; };
 		FA7F5B492A2CAF930045528D /* LoginCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F5B482A2CAF930045528D /* LoginCharacterView.swift */; };
 		FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F5B4A2A2CB3600045528D /* LoginView.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		FA77D7002A31B60200D4AF13 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		FA77D7022A31BC3000D4AF13 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		FA77D7042A31D47300D4AF13 /* MonthTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTopView.swift; sourceTree = "<group>"; };
+		FA77D7082A31DB5A00D4AF13 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		FA7F5B482A2CAF930045528D /* LoginCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCharacterView.swift; sourceTree = "<group>"; };
 		FA7F5B4A2A2CB3600045528D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 		FA3977D62A2CA2250040741F /* PositiveOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA77D7062A31DB3F00D4AF13 /* Feed */,
 				FA77D6F82A31A97900D4AF13 /* Calendar */,
 				FA77D6F52A31770800D4AF13 /* Tab */,
 				FA7F5B462A2CAF6D0045528D /* Login */,
@@ -167,6 +170,22 @@
 				FA77D7002A31B60200D4AF13 /* CalendarCell.swift */,
 				FA77D7022A31BC3000D4AF13 /* CalendarView.swift */,
 				FA77D7042A31D47300D4AF13 /* MonthTopView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA77D7062A31DB3F00D4AF13 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				FA77D7072A31DB4300D4AF13 /* Views */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		FA77D7072A31DB4300D4AF13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA77D7082A31DB5A00D4AF13 /* FeedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +291,7 @@
 				FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */,
 				FA3977DA2A2CA2250040741F /* ContentView.swift in Sources */,
 				FA3977FA2A2CA3060040741F /* CustomFont.swift in Sources */,
+				FA77D7092A31DB5A00D4AF13 /* FeedView.swift in Sources */,
 				FA3977E92A2CA2E60040741F /* Extension+Color.swift in Sources */,
 				FA77D7012A31B60200D4AF13 /* CalendarCell.swift in Sources */,
 				FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */,
