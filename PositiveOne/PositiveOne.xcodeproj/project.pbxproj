@@ -24,6 +24,7 @@
 		FA3977FE2A2CA3060040741F /* PretendardBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F32A2CA3050040741F /* PretendardBlack.otf */; };
 		FA3977FF2A2CA3060040741F /* PretendardRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F42A2CA3050040741F /* PretendardRegular.otf */; };
 		FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */; };
+		FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */; };
 		FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D6F62A31772300D4AF13 /* TabbarView.swift */; };
 		FA77D6FF2A31B07A00D4AF13 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D6FE2A31B07A00D4AF13 /* CalendarManager.swift */; };
 		FA77D7012A31B60200D4AF13 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D7002A31B60200D4AF13 /* CalendarCell.swift */; };
@@ -54,6 +55,7 @@
 		FA3977F42A2CA3050040741F /* PretendardRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardRegular.otf; sourceTree = "<group>"; };
 		FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PositiveOne.entitlements; sourceTree = "<group>"; };
 		FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveOneAPI.swift; sourceTree = "<group>"; };
 		FA77D6F62A31772300D4AF13 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		FA77D6FE2A31B07A00D4AF13 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		FA77D7002A31B60200D4AF13 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		FA3977D62A2CA2250040741F /* PositiveOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA73FC342A3365A6007A3DCF /* Network */,
 				FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */,
 				FA77D7062A31DB3F00D4AF13 /* Feed */,
 				FA77D6F82A31A97900D4AF13 /* Calendar */,
@@ -157,6 +160,14 @@
 				FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FA73FC342A3365A6007A3DCF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FA77D6F52A31770800D4AF13 /* Tab */ = {
@@ -264,6 +275,9 @@
 				Base,
 			);
 			mainGroup = FA3977CB2A2CA2250040741F;
+			packageReferences = (
+				FA73FC332A33656D007A3DCF /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = FA3977D52A2CA2250040741F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -310,6 +324,7 @@
 				FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */,
 				FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */,
 				FA77D6FF2A31B07A00D4AF13 /* CalendarManager.swift in Sources */,
+				FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */,
 				FA3977D82A2CA2250040741F /* PositiveOneApp.swift in Sources */,
 				FA77D7052A31D47300D4AF13 /* MonthTopView.swift in Sources */,
 				FA7F5B492A2CAF930045528D /* LoginCharacterView.swift in Sources */,
@@ -521,6 +536,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA73FC332A33656D007A3DCF /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = FA3977CC2A2CA2250040741F /* Project object */;
 }
