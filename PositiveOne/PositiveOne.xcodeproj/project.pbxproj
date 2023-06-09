@@ -51,6 +51,7 @@
 		FA3977F22A2CA3050040741F /* PretendardThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardThin.otf; sourceTree = "<group>"; };
 		FA3977F32A2CA3050040741F /* PretendardBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardBlack.otf; sourceTree = "<group>"; };
 		FA3977F42A2CA3050040741F /* PretendardRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardRegular.otf; sourceTree = "<group>"; };
+		FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PositiveOne.entitlements; sourceTree = "<group>"; };
 		FA77D6F62A31772300D4AF13 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		FA77D6FE2A31B07A00D4AF13 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		FA77D7002A31B60200D4AF13 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 		FA3977D62A2CA2250040741F /* PositiveOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */,
 				FA77D7062A31DB3F00D4AF13 /* Feed */,
 				FA77D6F82A31A97900D4AF13 /* Calendar */,
 				FA77D6F52A31770800D4AF13 /* Tab */,
@@ -147,6 +149,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FA6282642A32E7F000DC7BCB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		FA77D6F52A31770800D4AF13 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +202,7 @@
 		FA7F5B462A2CAF6D0045528D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				FA6282642A32E7F000DC7BCB /* ViewModels */,
 				FA7F5B472A2CAF730045528D /* Views */,
 			);
 			path = Login;
@@ -424,9 +434,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PositiveOne/PositiveOne.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PositiveOne/Preview Content\"";
+				DEVELOPMENT_TEAM = 9738W25PF4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PositiveOne/Info.plist;
@@ -453,9 +465,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PositiveOne/PositiveOne.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PositiveOne/Preview Content\"";
+				DEVELOPMENT_TEAM = 9738W25PF4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PositiveOne/Info.plist;
