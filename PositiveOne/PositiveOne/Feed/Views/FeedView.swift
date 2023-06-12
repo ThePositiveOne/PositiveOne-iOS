@@ -14,26 +14,31 @@ struct FeedView: View {
     }
     
     var body: some View {
-        NavigationView {
-            NavigationLink("") {
-              LoginView()
-            }
-            .navigationBarTitle("긍정하나", displayMode: .inline)
-            .toolbar {
-                ToolbarItem {
-                    Image(systemName: "gearshape")
-                        .foregroundColor(Color.Custom.Black70)
+        ZStack {
+            NavigationView {
+             
+                List {
+                    Text("!")
+                    Text("2")
                 }
-            }
-            List {
-                Text("a")
-                Text("a")
-                Text("a")
+                
+                
+                .navigationBarTitle("긍정하나", displayMode: .inline)
+                .toolbar {
+                    ToolbarItem {
+                        Image(systemName: "gearshape")
+                            .foregroundColor(Color.Custom.Black70)
+                    }
+                }
+               
+                
             }
             
         }
-        .background(Color.yellow)
+        
+        
     }
+    
 }
 
 struct FeedView_Previews: PreviewProvider {

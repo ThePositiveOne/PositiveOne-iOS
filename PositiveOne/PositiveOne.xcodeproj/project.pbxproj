@@ -37,6 +37,7 @@
 		FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B592A3702AB00940764 /* Encodable+Extension.swift */; };
 		FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */; };
 		FAD29B5F2A370B6F00940764 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FAD29B5E2A370B6F00940764 /* Moya */; };
+		FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B622A3741CB00940764 /* FeedRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		FA7F5B4A2A2CB3600045528D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FAD29B592A3702AB00940764 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginResponse.swift; sourceTree = "<group>"; };
+		FAD29B622A3741CB00940764 /* FeedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				FA77D7082A31DB5A00D4AF13 /* FeedView.swift */,
+				FAD29B622A3741CB00940764 /* FeedRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				FA3977E92A2CA2E60040741F /* Color+Extension.swift in Sources */,
 				FA77D7012A31B60200D4AF13 /* CalendarCell.swift in Sources */,
 				FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */,
+				FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */,
 				FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */,
 				FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */,
 				FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */,
