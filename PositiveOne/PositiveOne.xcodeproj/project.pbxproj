@@ -11,7 +11,7 @@
 		FA3977DA2A2CA2250040741F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3977D92A2CA2250040741F /* ContentView.swift */; };
 		FA3977DC2A2CA2270040741F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3977DB2A2CA2270040741F /* Assets.xcassets */; };
 		FA3977DF2A2CA2270040741F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3977DE2A2CA2270040741F /* Preview Assets.xcassets */; };
-		FA3977E92A2CA2E60040741F /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3977E82A2CA2E60040741F /* Extension+Color.swift */; };
+		FA3977E92A2CA2E60040741F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3977E82A2CA2E60040741F /* Color+Extension.swift */; };
 		FA3977F52A2CA3060040741F /* gangwon.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977EA2A2CA3050040741F /* gangwon.otf */; };
 		FA3977F62A2CA3060040741F /* PretendardSemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977EB2A2CA3050040741F /* PretendardSemiBold.otf */; };
 		FA3977F72A2CA3060040741F /* PretendardLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977EC2A2CA3050040741F /* PretendardLight.otf */; };
@@ -25,6 +25,7 @@
 		FA3977FF2A2CA3060040741F /* PretendardRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F42A2CA3050040741F /* PretendardRegular.otf */; };
 		FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */; };
 		FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */; };
+		FA73FC392A3374BD007A3DCF /* AppleLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73FC382A3374BD007A3DCF /* AppleLoginRequest.swift */; };
 		FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D6F62A31772300D4AF13 /* TabbarView.swift */; };
 		FA77D6FF2A31B07A00D4AF13 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D6FE2A31B07A00D4AF13 /* CalendarManager.swift */; };
 		FA77D7012A31B60200D4AF13 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D7002A31B60200D4AF13 /* CalendarCell.swift */; };
@@ -33,6 +34,9 @@
 		FA77D7092A31DB5A00D4AF13 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D7082A31DB5A00D4AF13 /* FeedView.swift */; };
 		FA7F5B492A2CAF930045528D /* LoginCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F5B482A2CAF930045528D /* LoginCharacterView.swift */; };
 		FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F5B4A2A2CB3600045528D /* LoginView.swift */; };
+		FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B592A3702AB00940764 /* Encodable+Extension.swift */; };
+		FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */; };
+		FAD29B5F2A370B6F00940764 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FAD29B5E2A370B6F00940764 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +45,7 @@
 		FA3977D92A2CA2250040741F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA3977DB2A2CA2270040741F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA3977DE2A2CA2270040741F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FA3977E82A2CA2E60040741F /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		FA3977E82A2CA2E60040741F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		FA3977EA2A2CA3050040741F /* gangwon.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gangwon.otf; sourceTree = "<group>"; };
 		FA3977EB2A2CA3050040741F /* PretendardSemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardSemiBold.otf; sourceTree = "<group>"; };
 		FA3977EC2A2CA3050040741F /* PretendardLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardLight.otf; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 		FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PositiveOne.entitlements; sourceTree = "<group>"; };
 		FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveOneAPI.swift; sourceTree = "<group>"; };
+		FA73FC382A3374BD007A3DCF /* AppleLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginRequest.swift; sourceTree = "<group>"; };
 		FA77D6F62A31772300D4AF13 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		FA77D6FE2A31B07A00D4AF13 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		FA77D7002A31B60200D4AF13 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
@@ -64,6 +69,8 @@
 		FA77D7082A31DB5A00D4AF13 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		FA7F5B482A2CAF930045528D /* LoginCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCharacterView.swift; sourceTree = "<group>"; };
 		FA7F5B4A2A2CB3600045528D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FAD29B592A3702AB00940764 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD29B5F2A370B6F00940764 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +157,8 @@
 		FA3977E72A2CA2D40040741F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FA3977E82A2CA2E60040741F /* Extension+Color.swift */,
+				FA3977E82A2CA2E60040741F /* Color+Extension.swift */,
+				FAD29B592A3702AB00940764 /* Encodable+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -165,9 +174,19 @@
 		FA73FC342A3365A6007A3DCF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FA73FC372A3374A3007A3DCF /* Login */,
 				FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		FA73FC372A3374A3007A3DCF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FA73FC382A3374BD007A3DCF /* AppleLoginRequest.swift */,
+				FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		FA77D6F52A31770800D4AF13 /* Tab */ = {
@@ -247,6 +266,9 @@
 			dependencies = (
 			);
 			name = PositiveOne;
+			packageProductDependencies = (
+				FAD29B5E2A370B6F00940764 /* Moya */,
+			);
 			productName = PositiveOne;
 			productReference = FA3977D42A2CA2250040741F /* PositiveOne.app */;
 			productType = "com.apple.product-type.application";
@@ -276,7 +298,7 @@
 			);
 			mainGroup = FA3977CB2A2CA2250040741F;
 			packageReferences = (
-				FA73FC332A33656D007A3DCF /* XCRemoteSwiftPackageReference "Moya" */,
+				FAD29B5D2A370B6F00940764 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = FA3977D52A2CA2250040741F /* Products */;
 			projectDirPath = "";
@@ -314,15 +336,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA73FC392A3374BD007A3DCF /* AppleLoginRequest.swift in Sources */,
 				FA77D7032A31BC3000D4AF13 /* CalendarView.swift in Sources */,
 				FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */,
 				FA3977DA2A2CA2250040741F /* ContentView.swift in Sources */,
 				FA3977FA2A2CA3060040741F /* CustomFont.swift in Sources */,
 				FA77D7092A31DB5A00D4AF13 /* FeedView.swift in Sources */,
-				FA3977E92A2CA2E60040741F /* Extension+Color.swift in Sources */,
+				FA3977E92A2CA2E60040741F /* Color+Extension.swift in Sources */,
 				FA77D7012A31B60200D4AF13 /* CalendarCell.swift in Sources */,
 				FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */,
+				FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */,
 				FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */,
+				FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */,
 				FA77D6FF2A31B07A00D4AF13 /* CalendarManager.swift in Sources */,
 				FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */,
 				FA3977D82A2CA2250040741F /* PositiveOneApp.swift in Sources */,
@@ -538,15 +563,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FA73FC332A33656D007A3DCF /* XCRemoteSwiftPackageReference "Moya" */ = {
+		FAD29B5D2A370B6F00940764 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAD29B5E2A370B6F00940764 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD29B5D2A370B6F00940764 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA3977CC2A2CA2250040741F /* Project object */;
 }

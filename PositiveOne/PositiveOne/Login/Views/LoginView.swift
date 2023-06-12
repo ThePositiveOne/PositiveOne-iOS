@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AuthenticationServices
+import Moya
 
 struct LoginView: View {
     @State var isPresented = false
@@ -66,8 +67,15 @@ struct AppleSigninButton: View {
                 print("apple login success")
                 switch authResult.credential {
                 case let appleIDCrednetial as ASAuthorizationAppleIDCredential:
-                    let identityToken = String(data: appleIDCrednetial.identityToken!, encoding: .utf8)
+                    let identityToken = String(data: appleIDCrednetial.identityToken!, encoding: .utf8) ?? ""
                     print(identityToken)
+                    
+                    async {
+                        let request = AppleLoginRequest(identityToken: identityToken)
+                        let response = try await requestAppleLogin(request)
+                        print("response \(response)")
+                    }
+                   
                 default:
                     break
                 }
@@ -76,6 +84,13 @@ struct AppleSigninButton: View {
                 print(error.localizedDescription)
             }
         }
+       
+   
+    }
+    
+    func requestAppleLogin(_ request: AppleLoginRequest) async throws -> AppleLoginResponse {
+        return try await PositiveOneAPI.request(target: .signInApple(paramters: request.asDictionary()), dataType: AppleLoginResponse.self)
+        
     }
 }
 
