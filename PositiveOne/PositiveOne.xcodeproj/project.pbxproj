@@ -38,6 +38,7 @@
 		FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */; };
 		FAD29B5F2A370B6F00940764 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FAD29B5E2A370B6F00940764 /* Moya */; };
 		FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B622A3741CB00940764 /* FeedRowView.swift */; };
+		FAD29B652A37570500940764 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B642A37570500940764 /* FeedResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		FAD29B592A3702AB00940764 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginResponse.swift; sourceTree = "<group>"; };
 		FAD29B622A3741CB00940764 /* FeedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRowView.swift; sourceTree = "<group>"; };
+		FAD29B642A37570500940764 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				FA77D7072A31DB4300D4AF13 /* Views */,
+				FAD29B642A37570500940764 /* FeedResponse.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */,
 				FA3977DA2A2CA2250040741F /* ContentView.swift in Sources */,
 				FA3977FA2A2CA3060040741F /* CustomFont.swift in Sources */,
+				FAD29B652A37570500940764 /* FeedResponse.swift in Sources */,
 				FA77D7092A31DB5A00D4AF13 /* FeedView.swift in Sources */,
 				FA3977E92A2CA2E60040741F /* Color+Extension.swift in Sources */,
 				FA77D7012A31B60200D4AF13 /* CalendarCell.swift in Sources */,
