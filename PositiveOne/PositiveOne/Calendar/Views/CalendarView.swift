@@ -16,32 +16,47 @@ struct CalendarView: View {
     var dayNum = 1
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 0) {
-                MonthTopView()
-                    .padding(.top, 24)
-                HStack(spacing: 0) {
-                    ForEach(weekNames, id: \.self) { weekday in
-                        Text(weekday)
-                            .font(CustomFont.PretendardBold(size: 14).font)
-                            .foregroundColor(.Custom.Black70)
-                    }
-                    .frame(width: (width-40-10)/7)
+        
+        VStack(spacing: 0) {
+            MonthTopView()
+                .padding(.top, 70)
+            HStack(spacing: 0) {
+                ForEach(weekNames, id: \.self) { weekday in
+                    Text(weekday)
+                        .font(CustomFont.PretendardBold(size: 14).font)
+                        .foregroundColor(.Custom.Black70)
                 }
-                .padding(.top, 35)
-                
-                ZStack {
-                    daysView
-                        .frame(width: width-40, height: width-10)
-                }
-                .frame(width: width-40, height: width-10)
-                .background(Color.Custom.YellowShadow50)
-                .cornerRadius(4)
-                .padding(.top, 8)
-                Spacer()
+                .frame(width: (width-40-10)/7)
             }
+            .padding(.top, 35)
+            
+            ZStack {
+                daysView
+                    .frame(width: width-40, height: width-10)
+            }
+            .frame(width: width-40, height: width-10)
+            .background(Color.Custom.YellowShadow50)
+            .cornerRadius(4)
+            .padding(.top, 8)
+            
+            HStack {
+                Spacer()
+                Button {
+                    print("writingButton")
+                } label: {
+                    Image("writing")
+                }
+                .frame(width: 44, height: 44)
+            }
+            .padding(.trailing, 20)
+            .padding(.top, 12)
+            
+
+            Spacer()
         }
-        .navigationTitle("haha")
+        
+        
+        
     }
     
     var daysView: some View {
