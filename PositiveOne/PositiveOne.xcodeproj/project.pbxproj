@@ -23,6 +23,7 @@
 		FA3977FD2A2CA3060040741F /* PretendardThin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F22A2CA3050040741F /* PretendardThin.otf */; };
 		FA3977FE2A2CA3060040741F /* PretendardBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F32A2CA3050040741F /* PretendardBlack.otf */; };
 		FA3977FF2A2CA3060040741F /* PretendardRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F42A2CA3050040741F /* PretendardRegular.otf */; };
+		FA418D4D2A38647B003A8D51 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA418D4C2A38647B003A8D51 /* SettingsView.swift */; };
 		FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */; };
 		FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */; };
 		FA73FC392A3374BD007A3DCF /* AppleLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73FC382A3374BD007A3DCF /* AppleLoginRequest.swift */; };
@@ -59,6 +60,7 @@
 		FA3977F22A2CA3050040741F /* PretendardThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardThin.otf; sourceTree = "<group>"; };
 		FA3977F32A2CA3050040741F /* PretendardBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardBlack.otf; sourceTree = "<group>"; };
 		FA3977F42A2CA3050040741F /* PretendardRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardRegular.otf; sourceTree = "<group>"; };
+		FA418D4C2A38647B003A8D51 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PositiveOne.entitlements; sourceTree = "<group>"; };
 		FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveOneAPI.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		FA3977D62A2CA2250040741F /* PositiveOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA418D4A2A386463003A8D51 /* Settings */,
 				FA73FC342A3365A6007A3DCF /* Network */,
 				FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */,
 				FA77D7062A31DB3F00D4AF13 /* Feed */,
@@ -165,6 +168,14 @@
 				FAD29B592A3702AB00940764 /* Encodable+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA418D4A2A386463003A8D51 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FA418D4C2A38647B003A8D51 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		FA6282642A32E7F000DC7BCB /* ViewModels */ = {
@@ -347,6 +358,7 @@
 				FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */,
 				FA3977DA2A2CA2250040741F /* ContentView.swift in Sources */,
 				FA3977FA2A2CA3060040741F /* CustomFont.swift in Sources */,
+				FA418D4D2A38647B003A8D51 /* SettingsView.swift in Sources */,
 				FAD29B652A37570500940764 /* FeedResponse.swift in Sources */,
 				FA77D7092A31DB5A00D4AF13 /* FeedView.swift in Sources */,
 				FA3977E92A2CA2E60040741F /* Color+Extension.swift in Sources */,

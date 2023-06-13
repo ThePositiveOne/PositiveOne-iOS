@@ -103,7 +103,7 @@ struct FeedView: View {
             .toolbar {
                 ToolbarItem {
                     NavigationLink(
-                        destination: Text("setting")
+                        destination: SettingsView()
                     ) {
                         Image(systemName: "gearshape")
                             .foregroundColor(Color.Custom.Black70)
@@ -114,6 +114,7 @@ struct FeedView: View {
         }
         
     }
+    
     
     
 }
