@@ -36,9 +36,9 @@
 		FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F5B4A2A2CB3600045528D /* LoginView.swift */; };
 		FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B592A3702AB00940764 /* Encodable+Extension.swift */; };
 		FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */; };
-		FAD29B5F2A370B6F00940764 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FAD29B5E2A370B6F00940764 /* Moya */; };
 		FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B622A3741CB00940764 /* FeedRowView.swift */; };
 		FAD29B652A37570500940764 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B642A37570500940764 /* FeedResponse.swift */; };
+		FAD29B682A375B0500940764 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FAD29B672A375B0500940764 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD29B5F2A370B6F00940764 /* Moya in Frameworks */,
+				FAD29B682A375B0500940764 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,8 +223,8 @@
 		FA77D7062A31DB3F00D4AF13 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				FA77D7072A31DB4300D4AF13 /* Views */,
 				FAD29B642A37570500940764 /* FeedResponse.swift */,
+				FA77D7072A31DB4300D4AF13 /* Views */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 			);
 			name = PositiveOne;
 			packageProductDependencies = (
-				FAD29B5E2A370B6F00940764 /* Moya */,
+				FAD29B672A375B0500940764 /* Moya */,
 			);
 			productName = PositiveOne;
 			productReference = FA3977D42A2CA2250040741F /* PositiveOne.app */;
@@ -304,7 +304,7 @@
 			);
 			mainGroup = FA3977CB2A2CA2250040741F;
 			packageReferences = (
-				FAD29B5D2A370B6F00940764 /* XCRemoteSwiftPackageReference "Moya" */,
+				FAD29B662A375B0500940764 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = FA3977D52A2CA2250040741F /* Products */;
 			projectDirPath = "";
@@ -500,7 +500,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,7 +533,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -571,7 +571,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FAD29B5D2A370B6F00940764 /* XCRemoteSwiftPackageReference "Moya" */ = {
+		FAD29B662A375B0500940764 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
@@ -582,9 +582,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FAD29B5E2A370B6F00940764 /* Moya */ = {
+		FAD29B672A375B0500940764 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FAD29B5D2A370B6F00940764 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = FAD29B662A375B0500940764 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */

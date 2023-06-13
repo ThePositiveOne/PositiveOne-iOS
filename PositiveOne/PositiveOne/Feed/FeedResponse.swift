@@ -12,7 +12,8 @@ struct FeedResponse: Decodable {
     let data: [FeedContent]
 }
 
-struct FeedContent: Decodable {
+struct FeedContent: Decodable, Identifiable {
+    var id = UUID()
     let text: String
     let date: String
     let likeCheck: Bool
