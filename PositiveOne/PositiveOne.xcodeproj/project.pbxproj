@@ -24,6 +24,7 @@
 		FA3977FE2A2CA3060040741F /* PretendardBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F32A2CA3050040741F /* PretendardBlack.otf */; };
 		FA3977FF2A2CA3060040741F /* PretendardRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F42A2CA3050040741F /* PretendardRegular.otf */; };
 		FA418D4D2A38647B003A8D51 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA418D4C2A38647B003A8D51 /* SettingsView.swift */; };
+		FA418D502A38B215003A8D51 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA418D4F2A38B215003A8D51 /* WritingView.swift */; };
 		FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */; };
 		FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */; };
 		FA73FC392A3374BD007A3DCF /* AppleLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73FC382A3374BD007A3DCF /* AppleLoginRequest.swift */; };
@@ -61,6 +62,7 @@
 		FA3977F32A2CA3050040741F /* PretendardBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardBlack.otf; sourceTree = "<group>"; };
 		FA3977F42A2CA3050040741F /* PretendardRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardRegular.otf; sourceTree = "<group>"; };
 		FA418D4C2A38647B003A8D51 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA418D4F2A38B215003A8D51 /* WritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
 		FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PositiveOne.entitlements; sourceTree = "<group>"; };
 		FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveOneAPI.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		FA3977D62A2CA2250040741F /* PositiveOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA418D4E2A38B208003A8D51 /* Writing */,
 				FA418D4A2A386463003A8D51 /* Settings */,
 				FA73FC342A3365A6007A3DCF /* Network */,
 				FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */,
@@ -176,6 +179,14 @@
 				FA418D4C2A38647B003A8D51 /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		FA418D4E2A38B208003A8D51 /* Writing */ = {
+			isa = PBXGroup;
+			children = (
+				FA418D4F2A38B215003A8D51 /* WritingView.swift */,
+			);
+			path = Writing;
 			sourceTree = "<group>";
 		};
 		FA6282642A32E7F000DC7BCB /* ViewModels */ = {
@@ -367,6 +378,7 @@
 				FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */,
 				FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */,
 				FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */,
+				FA418D502A38B215003A8D51 /* WritingView.swift in Sources */,
 				FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */,
 				FA77D6FF2A31B07A00D4AF13 /* CalendarManager.swift in Sources */,
 				FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */,
