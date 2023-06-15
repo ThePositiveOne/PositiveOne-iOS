@@ -49,6 +49,10 @@ struct WritingView: View {
             
             StampSelectView()
                 .padding(.top, 60)
+            
+            LockView()
+                .padding(.top, 60)
+            
             Spacer()
         }
     }
