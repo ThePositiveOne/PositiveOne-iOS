@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct WritingView: View {
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HStack(spacing: 0) {
                 Button {
                 
@@ -43,6 +44,8 @@ struct WritingView: View {
             .frame(width: UIScreen.main.bounds.width-40)
            
 
+            TextEditorView()
+                .padding(.top, 49)
             Spacer()
         }
     }
