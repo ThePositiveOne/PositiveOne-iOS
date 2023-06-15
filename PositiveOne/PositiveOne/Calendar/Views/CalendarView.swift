@@ -10,73 +10,16 @@ import SwiftUI
 struct CalendarView: View {
     
     @EnvironmentObject var calendarManager: CalendarManager
-    @State var isPresented = false
-    let weekNames: [String] = ["S", "M", "T", "W", "T", "F", "S"]
-    let width = UIScreen.main.bounds.width
-    let totalDays = CalendarManager().totalDaysInMonth()
-    var dayNum = 1
-    
+   
     var body: some View {
         
         VStack(spacing: 0) {
-            MonthTopView()
+            MonthTopView().environmentObject(calendarManager)
                 .padding(.top, 70)
                 .padding(.horizontal, 32)
             
-            HStack(spacing: 0) {
-                ForEach(weekNames, id: \.self) { weekday in
-                    Text(weekday)
-                        .font(CustomFont.PretendardBold(size: 14).font)
-                        .foregroundColor(.Custom.Black70)
-                }
-                .frame(width: (width-40-10)/7)
-            }
-            .padding(.top, 35)
-            
-            ZStack {
-                daysView
-                    .frame(width: width-40, height: width-10)
-            }
-            .frame(width: width-40, height: width-10)
-            .background(Color.Custom.YellowShadow50)
-            .cornerRadius(4)
-            .padding(.top, 8)
-            
-            HStack {
-                Spacer()
-                Button {
-                    isPresented.toggle()
-                } label: {
-                    Image("writing")
-                }
-                .frame(width: 44, height: 44)
-                .fullScreenCover(isPresented: $isPresented) {
-                    WritingView()
-                }
-            }
-            .padding(.trailing, 20)
-            .padding(.top, 12)
-            
-
-            Spacer()
+            CalendarGridView().environmentObject(calendarManager)
         }
-        
-        
-        
-    }
-    
-    var daysView: some View {
-        VStack(spacing: 6) {
-            ForEach(0..<6) { row in
-                HStack(spacing: (width-40)*0.034) {
-                    ForEach(0..<7) { column in
-                        CalendarCell(day: dayNum, isToday: false, isWritten: false, isContainMonth: true)
-                    }
-                }
-                .frame(width: width-40)
-            }
-        }
-        .frame(width: width-40, height: width-10)
     }
 }
 

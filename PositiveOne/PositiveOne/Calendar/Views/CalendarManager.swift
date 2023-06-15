@@ -13,12 +13,12 @@ final class CalendarManager: ObservableObject {
     let calendar = Calendar.current
     
     func fetchPreviousMonth() {
-        guard let previousMonth = getPreviousMonth(date) else { return }
+        guard let previousMonth = getPreviousMonth() else { return }
         date = previousMonth
     }
     
     func fetchNextMonth() {
-        guard let nextMonth = getNextMonth(date) else { return }
+        guard let nextMonth = getNextMonth() else { return }
         date = nextMonth
     }
     
@@ -71,7 +71,7 @@ final class CalendarManager: ObservableObject {
 extension CalendarManager {
     
     // 1개월을 증가시킵니다.
-    func getNextMonth(_ date: Date) -> Date? {
+    func getNextMonth() -> Date? {
         guard let changedMonth = Calendar.current.date(byAdding: .month, value: 1, to: date)
         else { return nil }
 
@@ -79,7 +79,7 @@ extension CalendarManager {
     }
 
     // 1개월을 차감합니다.
-    func getPreviousMonth(_ date: Date) -> Date? {
+    func getPreviousMonth() -> Date? {
         guard let changedMonth = Calendar.current.date(byAdding: .month, value: -1, to: date)
         else { return nil }
         
@@ -87,8 +87,10 @@ extension CalendarManager {
     }
 
     // 해당월의 일 수를 Int(Optional)형으로 반환합니다.
-    func totalDaysInMonth() -> Int? {
-        guard let range = calendar.range(of: .day, in: .month, for: date) else { return nil }
+    func totalDaysInMonth() -> Int {
+        guard let range = calendar.range(of: .day, in: .month, for: date) else {
+            return 0
+        }
         return range.count
     }
     
@@ -98,15 +100,15 @@ extension CalendarManager {
         return day
     }
     
-    func theFirstDayOfMonth(_ date: Date) -> Date? {
-        let components = calendar.dateComponents([.year, .month], from: date)
-        guard let date = calendar.date(from: components) else { return nil }
-        return date
-    }
-    
-    func weekDay(_ date: Date) -> Int? {
-        let components = calendar.dateComponents([.weekday], from: date)
-        guard let weekday = components.weekday else { return nil }
+    func indexOfFirstDayWeek() -> Int {
+        let YearMonthcomponents = calendar.dateComponents([.year, .month], from: date)
+        guard let theFirstDayOfMonth = calendar.date(from: YearMonthcomponents) else {
+            return 0
+        }
+        let weekDaycomponents = calendar.dateComponents([.weekday], from: theFirstDayOfMonth)
+        guard let weekday = weekDaycomponents.weekday else {
+            return 0
+        }
         return weekday - 1
     }
     
