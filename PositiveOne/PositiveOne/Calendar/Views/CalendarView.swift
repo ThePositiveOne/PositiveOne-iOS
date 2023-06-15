@@ -10,6 +10,7 @@ import SwiftUI
 struct CalendarView: View {
     
     @EnvironmentObject var calendarManager: CalendarManager
+    @State var isPresented = false
     let weekNames: [String] = ["S", "M", "T", "W", "T", "F", "S"]
     let width = UIScreen.main.bounds.width
     let totalDays = CalendarManager().totalDaysInMonth()
@@ -42,11 +43,14 @@ struct CalendarView: View {
             HStack {
                 Spacer()
                 Button {
-                    print("writingButton")
+                    isPresented.toggle()
                 } label: {
                     Image("writing")
                 }
                 .frame(width: 44, height: 44)
+                .fullScreenCover(isPresented: $isPresented) {
+                    WritingView()
+                }
             }
             .padding(.trailing, 20)
             .padding(.top, 12)

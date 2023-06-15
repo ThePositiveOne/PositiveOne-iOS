@@ -193,12 +193,20 @@
 		FA418D4E2A38B208003A8D51 /* Writing */ = {
 			isa = PBXGroup;
 			children = (
+				FA4C72282A3AD4D4009D9E4F /* Views */,
+			);
+			path = Writing;
+			sourceTree = "<group>";
+		};
+		FA4C72282A3AD4D4009D9E4F /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				FA418D4F2A38B215003A8D51 /* WritingView.swift */,
 				FA6485FA2A3A955C009FD5AA /* TextEditorView.swift */,
 				FA6485FC2A3AA840009FD5AA /* StampSelectView.swift */,
 				FA4C72262A3ACD53009D9E4F /* LockView.swift */,
 			);
-			path = Writing;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FA6282642A32E7F000DC7BCB /* ViewModels */ = {

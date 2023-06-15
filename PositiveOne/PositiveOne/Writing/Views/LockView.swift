@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LockView: View {
     
-    var isLocked: Bool = false
+    @State var isLocked: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -34,7 +34,9 @@ struct LockView: View {
             
             HStack(spacing: 6) {
                 Button {
-                    
+                    if isLocked {
+                        isLocked.toggle()
+                    }
                 } label: {
                     Text("공개")
                         .font(CustomFont.PretendardMedium(size: 14).font)
@@ -45,7 +47,9 @@ struct LockView: View {
                     
                 }
                 Button {
-                    
+                    if !isLocked {
+                        isLocked.toggle()
+                    }
                 } label: {
                     Text("비공개")
                         .font(CustomFont.PretendardMedium(size: 14).font)
