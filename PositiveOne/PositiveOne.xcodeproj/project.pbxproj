@@ -27,6 +27,8 @@
 		FA418D502A38B215003A8D51 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA418D4F2A38B215003A8D51 /* WritingView.swift */; };
 		FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */; };
 		FA6485FB2A3A955C009FD5AA /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6485FA2A3A955C009FD5AA /* TextEditorView.swift */; };
+		FA6485FD2A3AA840009FD5AA /* StampSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6485FC2A3AA840009FD5AA /* StampSelectView.swift */; };
+		FA6486002A3AA94F009FD5AA /* PositiveOneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6485FF2A3AA94F009FD5AA /* PositiveOneType.swift */; };
 		FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */; };
 		FA73FC392A3374BD007A3DCF /* AppleLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73FC382A3374BD007A3DCF /* AppleLoginRequest.swift */; };
 		FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77D6F62A31772300D4AF13 /* TabbarView.swift */; };
@@ -67,6 +69,8 @@
 		FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PositiveOne.entitlements; sourceTree = "<group>"; };
 		FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FA6485FA2A3A955C009FD5AA /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
+		FA6485FC2A3AA840009FD5AA /* StampSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampSelectView.swift; sourceTree = "<group>"; };
+		FA6485FF2A3AA94F009FD5AA /* PositiveOneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveOneType.swift; sourceTree = "<group>"; };
 		FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveOneAPI.swift; sourceTree = "<group>"; };
 		FA73FC382A3374BD007A3DCF /* AppleLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginRequest.swift; sourceTree = "<group>"; };
 		FA77D6F62A31772300D4AF13 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 		FA3977D62A2CA2250040741F /* PositiveOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA6485FE2A3AA929009FD5AA /* Model */,
 				FA418D4E2A38B208003A8D51 /* Writing */,
 				FA418D4A2A386463003A8D51 /* Settings */,
 				FA73FC342A3365A6007A3DCF /* Network */,
@@ -188,6 +193,7 @@
 			children = (
 				FA418D4F2A38B215003A8D51 /* WritingView.swift */,
 				FA6485FA2A3A955C009FD5AA /* TextEditorView.swift */,
+				FA6485FC2A3AA840009FD5AA /* StampSelectView.swift */,
 			);
 			path = Writing;
 			sourceTree = "<group>";
@@ -198,6 +204,14 @@
 				FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FA6485FE2A3AA929009FD5AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA6485FF2A3AA94F009FD5AA /* PositiveOneType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FA73FC342A3365A6007A3DCF /* Network */ = {
@@ -378,9 +392,11 @@
 				FA6485FB2A3A955C009FD5AA /* TextEditorView.swift in Sources */,
 				FA3977E92A2CA2E60040741F /* Color+Extension.swift in Sources */,
 				FA77D7012A31B60200D4AF13 /* CalendarCell.swift in Sources */,
+				FA6485FD2A3AA840009FD5AA /* StampSelectView.swift in Sources */,
 				FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */,
 				FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */,
 				FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */,
+				FA6486002A3AA94F009FD5AA /* PositiveOneType.swift in Sources */,
 				FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */,
 				FA418D502A38B215003A8D51 /* WritingView.swift in Sources */,
 				FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */,

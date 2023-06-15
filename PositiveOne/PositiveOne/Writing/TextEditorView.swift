@@ -16,7 +16,12 @@ struct TextEditorView: View {
                 Text("기록")
                     .font(CustomFont.PretendardBold(size: 20).font)
                     .foregroundColor(.Custom.TitleColor)
+                
+                Image("docs")
+                    .padding(.leading, 6)
+                   
                 Spacer()
+                
             }
             .padding(.leading, 20)
             

@@ -7,9 +7,22 @@
 
 import Foundation
 
-enum PositiveOneType {
-    case pleasureOne
-    case movedOne
-    case excitingOne
-    case thanksOne
+enum PositiveOneType: String {
+    case pleasureOne = "pleasureOne"
+    case movedOne = "movedOne"
+    case excitingOne = "excitingOne"
+    case thanksOne = "thanksOne"
+    
+    func koreanName() -> String {
+        switch self {
+        case .pleasureOne:
+            return "행복"
+        case .movedOne:
+            return "감동"
+        case .excitingOne:
+            return "즐거움"
+        case .thanksOne:
+            return "감사"
+        }
+    }
 }
