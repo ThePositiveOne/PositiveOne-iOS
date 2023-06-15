@@ -57,7 +57,10 @@ struct WritingView: View {
             
             Spacer()
         }
+        .onAppear (perform : UIApplication.shared.hideKeyboard)
+        .edgesIgnoringSafeArea(.bottom)
     }
+    
 }
 
 struct WritingView_Previews: PreviewProvider {

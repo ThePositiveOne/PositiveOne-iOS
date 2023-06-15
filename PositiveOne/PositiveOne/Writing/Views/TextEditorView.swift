@@ -33,24 +33,26 @@ struct TextEditorView: View {
             
             
             ZStack {
-                HStack(spacing: 0) {
-                    Spacer()
-                    TextEditor(text: $content)
-                        .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*0.2)
-                        .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.05),radius: 2, x: 2, y: 2)
-                        .foregroundColor(.Custom.Black100)
-                        .font(CustomFont.PretendardMedium(size: 14).font)
-                        .lineSpacing(20)
-                    
-                    Spacer()
-                }
                 let placeHolder = "오늘의 긍정 한마디 (30자 제한)"
                 if content.isEmpty {
                     Text(placeHolder)
-                        .foregroundColor(.Custom.Black40)
                         .font(CustomFont.PretendardMedium(size: 14).font)
+                        .foregroundColor(.Custom.TitleColor)
                         .padding(.top, -UIScreen.main.bounds.height*0.075)
                         .padding(.leading, -UIScreen.main.bounds.width*0.4)
+                }
+                
+                HStack(spacing: 0) {
+                    Spacer()
+                    TextEditor(text: $content)
+                        .font(CustomFont.PretendardMedium(size: 14).font)
+                        .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*0.2)
+                        .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.05),radius: 2, x: 2, y: 2)
+                        .foregroundColor(.Custom.Black100)
+                        .lineSpacing(10)
+                        .opacity(content.isEmpty ? 0.8 : 1)
+                    
+                    Spacer()
                 }
                 
                 Text("\(content.count)/50")

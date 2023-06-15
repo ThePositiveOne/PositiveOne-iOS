@@ -26,6 +26,8 @@
 		FA418D4D2A38647B003A8D51 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA418D4C2A38647B003A8D51 /* SettingsView.swift */; };
 		FA418D502A38B215003A8D51 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA418D4F2A38B215003A8D51 /* WritingView.swift */; };
 		FA4C72272A3ACD53009D9E4F /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72262A3ACD53009D9E4F /* LockView.swift */; };
+		FA4C722A2A3ADB83009D9E4F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */; };
+		FA4C722C2A3AE2E3009D9E4F /* BigStampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */; };
 		FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */; };
 		FA6485FB2A3A955C009FD5AA /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6485FA2A3A955C009FD5AA /* TextEditorView.swift */; };
 		FA6485FD2A3AA840009FD5AA /* StampSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6485FC2A3AA840009FD5AA /* StampSelectView.swift */; };
@@ -68,6 +70,8 @@
 		FA418D4C2A38647B003A8D51 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA418D4F2A38B215003A8D51 /* WritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
 		FA4C72262A3ACD53009D9E4F /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigStampView.swift; sourceTree = "<group>"; };
 		FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PositiveOne.entitlements; sourceTree = "<group>"; };
 		FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FA6485FA2A3A955C009FD5AA /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			children = (
 				FA3977E82A2CA2E60040741F /* Color+Extension.swift */,
 				FAD29B592A3702AB00940764 /* Encodable+Extension.swift */,
+				FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				FA6485FA2A3A955C009FD5AA /* TextEditorView.swift */,
 				FA6485FC2A3AA840009FD5AA /* StampSelectView.swift */,
 				FA4C72262A3ACD53009D9E4F /* LockView.swift */,
+				FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -404,6 +410,7 @@
 				FA6485FB2A3A955C009FD5AA /* TextEditorView.swift in Sources */,
 				FA3977E92A2CA2E60040741F /* Color+Extension.swift in Sources */,
 				FA77D7012A31B60200D4AF13 /* CalendarCell.swift in Sources */,
+				FA4C722A2A3ADB83009D9E4F /* UIApplication+Extension.swift in Sources */,
 				FA6485FD2A3AA840009FD5AA /* StampSelectView.swift in Sources */,
 				FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */,
 				FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */,
@@ -416,6 +423,7 @@
 				FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */,
 				FA3977D82A2CA2250040741F /* PositiveOneApp.swift in Sources */,
 				FA77D7052A31D47300D4AF13 /* MonthTopView.swift in Sources */,
+				FA4C722C2A3AE2E3009D9E4F /* BigStampView.swift in Sources */,
 				FA7F5B492A2CAF930045528D /* LoginCharacterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
