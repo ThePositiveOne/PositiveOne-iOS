@@ -62,7 +62,7 @@ struct FeedRowView: View {
             Spacer()
         }
         .frame(width: UIScreen.main.bounds.width-40, height: 166)
-        //.background(.gray)
+        .background(.gray)
         .padding(.leading, 15)
         .listRowSeparator(.hidden)
     }
