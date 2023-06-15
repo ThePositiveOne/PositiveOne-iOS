@@ -16,6 +16,7 @@ struct TabbarView: View {
     var body: some View {
         TabView {
             CalendarView()
+                .environmentObject(CalendarManager())
                 .tabItem {
                     Image("calendarSelected")
                         .renderingMode(.template)

@@ -21,6 +21,8 @@ struct CalendarView: View {
         VStack(spacing: 0) {
             MonthTopView()
                 .padding(.top, 70)
+                .padding(.horizontal, 32)
+            
             HStack(spacing: 0) {
                 ForEach(weekNames, id: \.self) { weekday in
                     Text(weekday)
@@ -82,6 +84,6 @@ struct CalendarView: View {
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        CalendarView().environmentObject(CalendarManager())
     }
 }
