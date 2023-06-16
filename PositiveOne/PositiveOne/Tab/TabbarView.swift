@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabbarView: View {
     
-    @State var selectedTab: Tab = .feed
+    @State var selectedTab: Tab = .calendar
     
     var body: some View {
         

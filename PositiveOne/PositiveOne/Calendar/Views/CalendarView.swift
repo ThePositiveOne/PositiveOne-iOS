@@ -14,43 +14,48 @@ struct CalendarView: View {
     
     var body: some View {
         
-        VStack(spacing: 0) {
-            HStack {
-                MonthTopView().environmentObject(calendarManager)
-                    .padding(.top, 10)
-                    .padding(.horizontal, 32)
-                
-                Button {
+        NavigationStack {
+            VStack(spacing: 0) {
+                ZStack() {
+                    MonthTopView().environmentObject(calendarManager)
+                        .padding(.top, 10)
+                        .padding(.horizontal, 32)
                     
-                } label: {
-                    Image("gear")
-                }
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image("gear")
+                    }
+                    .offset(y: 3)
+                    .padding(.leading, UIScreen.main.bounds.width*0.85)
 
+                }
+                .padding(.top, 6)
+               
+                
+                CalendarGridView().environmentObject(calendarManager)
+                    .padding(.top, 35)
+                
+    //            HStack {
+    //                Spacer()
+    //                Button {
+    //                    isPresented.toggle()
+    //                } label: {
+    //                    Image("writing")
+    //                }
+    //                .frame(width: 44, height: 44)
+    //                .fullScreenCover(isPresented: $isPresented) {
+    //                    WritingView()
+    //                }
+    //            }
+    //            .padding(.trailing, 20)
+    //            .padding(.top, 12)
+                
+                MyPositiveOneView()
+                    .padding(.top, 35)
+                
+                Spacer()
             }
-           
-            
-            CalendarGridView().environmentObject(calendarManager)
-                .padding(.top, 35)
-            
-//            HStack {
-//                Spacer()
-//                Button {
-//                    isPresented.toggle()
-//                } label: {
-//                    Image("writing")
-//                }
-//                .frame(width: 44, height: 44)
-//                .fullScreenCover(isPresented: $isPresented) {
-//                    WritingView()
-//                }
-//            }
-//            .padding(.trailing, 20)
-//            .padding(.top, 12)
-            
-            MyPositiveOneView()
-                .padding(.top, 35)
-            
-            Spacer()
         }
     }
 }

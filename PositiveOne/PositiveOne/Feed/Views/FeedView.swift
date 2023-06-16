@@ -105,7 +105,7 @@ struct FeedView: View {
                     NavigationLink(
                         destination: SettingsView()
                     ) {
-                        Image(systemName: "gearshape")
+                        Image("gear")
                             .foregroundColor(Color.Custom.Black70)
                     }
                     
