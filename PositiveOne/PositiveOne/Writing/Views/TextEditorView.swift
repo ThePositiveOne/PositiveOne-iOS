@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CryptoKit
 
 struct TextEditorView: View {
     @State var content: String = ""

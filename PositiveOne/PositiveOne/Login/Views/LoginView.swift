@@ -61,6 +61,7 @@ struct AppleSigninButton: View {
     var body: some View {
         SignInWithAppleButton { request in
             request.requestedScopes = [.fullName]
+            request.nonce = "aa"
         } onCompletion: { result in
             switch result {
             case .success(let authResult):

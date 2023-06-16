@@ -9,29 +9,23 @@ import SwiftUI
 
 struct TabbarView: View {
     
-    init() {
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.init(name: "Pretendard-SemiBold", size: 14)! ], for: .normal)
-    }
+    @State var selectedTab: Tab = .feed
     
     var body: some View {
-        TabView {
-            CalendarView()
-                .environmentObject(CalendarManager())
-                .tabItem {
-                    Image("calendarSelected")
-                        .renderingMode(.template)
-                    Text("캘린더")
-                }
-            
-            FeedView()
-                .tabItem {
-                    Image("feedUnSelected")
-                       .renderingMode(.template)
-                    Text("피드")
-                }
-            
+        
+        VStack(spacing: 0) {
+            switch selectedTab {
+            case .calendar:
+                CalendarView()
+                    .environmentObject(CalendarManager())
+            case .feed:
+                FeedView()
+            }
+            CustomTabView(selectedTab: $selectedTab)
+                .padding(.bottom, 15)
         }
-        .accentColor(.Custom.PositiveYellow)
+        .edgesIgnoringSafeArea(.bottom)
+
     }
 }
 

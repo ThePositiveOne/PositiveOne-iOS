@@ -31,7 +31,7 @@ struct CalendarGridView: View {
                 daysView
                     .frame(width: width-40, height: width-10)
             }
-            .frame(width: width-40, height: width-10)
+            .frame(width: width-40, height: width+10)
             .background(Color.Custom.YellowShadow50)
             .cornerRadius(4)
             .padding(.top, 8)
