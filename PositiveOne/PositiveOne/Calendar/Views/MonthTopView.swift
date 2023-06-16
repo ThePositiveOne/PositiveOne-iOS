@@ -20,13 +20,13 @@ struct MonthTopView: View {
     }
     
     var body: some View {
-        HStack(alignment: .center, spacing: 18) {
+        HStack(alignment: .center, spacing: 0) {
             Button {
                dateManager.fetchPreviousMonth()
             } label: {
-                Image(systemName: "chevron.left").foregroundColor(Color.Custom.Black70)
+                Image("left").foregroundColor(Color.Custom.Black70)
             }
-            
+            .padding(.trailing, 18)
            
             
             Text(currentYearAndMonth)
@@ -37,9 +37,9 @@ struct MonthTopView: View {
             Button {
                dateManager.fetchNextMonth()
             } label: {
-                Image(systemName: "chevron.right").foregroundColor(Color.Custom.Black70)
+                Image("right").foregroundColor(Color.Custom.Black70)
             }
-            
+            .padding(.leading, 18)
             
         }
     }
