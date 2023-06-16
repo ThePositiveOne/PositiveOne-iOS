@@ -10,7 +10,6 @@ import SwiftUI
 struct CalendarGridView: View {
     
     @EnvironmentObject var calendarManager: CalendarManager
-    @State var isPresented = false
     let weekNames: [String] = ["S", "M", "T", "W", "T", "F", "S"]
     let width = UIScreen.main.bounds.width
    
@@ -35,24 +34,6 @@ struct CalendarGridView: View {
             .background(Color.Custom.YellowShadow50)
             .cornerRadius(4)
             .padding(.top, 8)
-            
-            HStack {
-                Spacer()
-                Button {
-                    isPresented.toggle()
-                } label: {
-                    Image("writing")
-                }
-                .frame(width: 44, height: 44)
-                .fullScreenCover(isPresented: $isPresented) {
-                    WritingView()
-                }
-            }
-            .padding(.trailing, 20)
-            .padding(.top, 12)
-            
-
-            Spacer()
         }
         
     }

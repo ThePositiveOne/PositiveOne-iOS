@@ -10,7 +10,8 @@ import SwiftUI
 struct CalendarView: View {
     
     @EnvironmentObject var calendarManager: CalendarManager
-   
+    @State var isPresented = false
+    
     var body: some View {
         
         VStack(spacing: 0) {
@@ -19,6 +20,26 @@ struct CalendarView: View {
                 .padding(.horizontal, 32)
             
             CalendarGridView().environmentObject(calendarManager)
+            
+//            HStack {
+//                Spacer()
+//                Button {
+//                    isPresented.toggle()
+//                } label: {
+//                    Image("writing")
+//                }
+//                .frame(width: 44, height: 44)
+//                .fullScreenCover(isPresented: $isPresented) {
+//                    WritingView()
+//                }
+//            }
+//            .padding(.trailing, 20)
+//            .padding(.top, 12)
+            
+            MyPositiveOneView()
+                .padding(.top, 35)
+            
+            Spacer()
         }
     }
 }

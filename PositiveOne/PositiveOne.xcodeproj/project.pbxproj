@@ -26,6 +26,7 @@
 		FA418D4D2A38647B003A8D51 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA418D4C2A38647B003A8D51 /* SettingsView.swift */; };
 		FA418D502A38B215003A8D51 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA418D4F2A38B215003A8D51 /* WritingView.swift */; };
 		FA43BA562A3C1BC200F8D5E2 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43BA552A3C1BC200F8D5E2 /* CustomTabView.swift */; };
+		FA43BA582A3C327A00F8D5E2 /* MyPositiveOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43BA572A3C327A00F8D5E2 /* MyPositiveOneView.swift */; };
 		FA4C72272A3ACD53009D9E4F /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72262A3ACD53009D9E4F /* LockView.swift */; };
 		FA4C722A2A3ADB83009D9E4F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */; };
 		FA4C722C2A3AE2E3009D9E4F /* BigStampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */; };
@@ -72,6 +73,7 @@
 		FA418D4C2A38647B003A8D51 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA418D4F2A38B215003A8D51 /* WritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
 		FA43BA552A3C1BC200F8D5E2 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		FA43BA572A3C327A00F8D5E2 /* MyPositiveOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPositiveOneView.swift; sourceTree = "<group>"; };
 		FA4C72262A3ACD53009D9E4F /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigStampView.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				FA77D7042A31D47300D4AF13 /* MonthTopView.swift */,
 				FA4C722D2A3B05BA009D9E4F /* CalendarGridView.swift */,
 				FA77D7002A31B60200D4AF13 /* CalendarCell.swift */,
+				FA43BA572A3C327A00F8D5E2 /* MyPositiveOneView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				FA418D4D2A38647B003A8D51 /* SettingsView.swift in Sources */,
 				FAD29B652A37570500940764 /* FeedResponse.swift in Sources */,
 				FA77D7092A31DB5A00D4AF13 /* FeedView.swift in Sources */,
+				FA43BA582A3C327A00F8D5E2 /* MyPositiveOneView.swift in Sources */,
 				FA4C72272A3ACD53009D9E4F /* LockView.swift in Sources */,
 				FA6485FB2A3A955C009FD5AA /* TextEditorView.swift in Sources */,
 				FA3977E92A2CA2E60040741F /* Color+Extension.swift in Sources */,
