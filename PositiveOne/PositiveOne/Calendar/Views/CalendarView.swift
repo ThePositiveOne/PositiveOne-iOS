@@ -11,50 +11,54 @@ struct CalendarView: View {
     
     @EnvironmentObject var calendarManager: CalendarManager
     @State var isPresented = false
-    
+    let isToday = false
     var body: some View {
         
         NavigationStack {
             VStack(spacing: 0) {
-                ZStack() {
-                    MonthTopView().environmentObject(calendarManager)
-                        .padding(.top, 10)
-                        .padding(.horizontal, 32)
-                    
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        Image("gear")
-                    }
-                    .offset(y: 3)
-                    .padding(.leading, UIScreen.main.bounds.width*0.85)
-
-                }
-                .padding(.top, 6)
-               
                 
                 CalendarGridView().environmentObject(calendarManager)
-                    .padding(.top, 35)
+                    .padding(.top, 30)
                 
-    //            HStack {
-    //                Spacer()
-    //                Button {
-    //                    isPresented.toggle()
-    //                } label: {
-    //                    Image("writing")
-    //                }
-    //                .frame(width: 44, height: 44)
-    //                .fullScreenCover(isPresented: $isPresented) {
-    //                    WritingView()
-    //                }
-    //            }
-    //            .padding(.trailing, 20)
-    //            .padding(.top, 12)
-                
-                MyPositiveOneView()
-                    .padding(.top, 35)
-                
+                if isToday {
+                    HStack {
+                        Spacer()
+                        Button {
+                            isPresented.toggle()
+                        } label: {
+                            Image("writing")
+                        }
+                        .frame(width: 44, height: 44)
+                        .fullScreenCover(isPresented: $isPresented) {
+                            WritingView()
+                        }
+                    }
+                    .padding(.trailing, 20)
+                    .padding(.top, 12)
+                } else {
+                    MyPositiveOneView()
+                        .padding(.top, 35)
+                }
                 Spacer()
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                   MonthTopView()
+                }
+            }
+           
+            .toolbar {
+                ToolbarItem {
+                    NavigationLink(
+                        destination: SettingsView()
+                    ) {
+                        Image("gear")
+                            .foregroundColor(Color.Custom.Black70)
+                            .offset(x: -3)
+                    }
+                    
+                }
             }
         }
     }

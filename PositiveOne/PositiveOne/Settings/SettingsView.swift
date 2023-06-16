@@ -9,10 +9,6 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    init() {
-        
-    }
-    
     var body: some View {
         
         List {
@@ -27,13 +23,29 @@ struct SettingsView: View {
                 .font(CustomFont.PretendardMedium(size: 16).font)
         }
         .listStyle(PlainListStyle())
-        //.toolbar(.hidden, for: .tabBar)
-        .navigationTitle("설정")
         .scrollContentBackground(.hidden)
         .background(.white)
         .frame(width: UIScreen.main.bounds.width-40)
         .padding(.leading, -20)
         .padding(.top, 20)
+       
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                NavigationBackItem()
+            }
+        }
+        
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text("설정")
+                        .font(CustomFont.gangwon(size: 20).font)
+                        .foregroundColor(.Custom.TitleColor)
+                }
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
         
     }
     

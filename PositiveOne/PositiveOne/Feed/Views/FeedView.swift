@@ -37,23 +37,10 @@ struct FeedView: View {
                 """, date: "23.05.23", likeCheck: true, name: "나")
     ]
     
-    
-    init() {
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = UIColor(Color.Custom.YellowShadow50)
-        navBarAppearance.titleTextAttributes = [.font : UIFont(name: "GangwonEduPowerExtraBold", size: 20)!]
-        navBarAppearance.shadowColor = .clear
-        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        UINavigationBar.appearance().standardAppearance = navBarAppearance
-     
-      //  UITableView.appearance().backgroundColor = .yellow
-
-    }
-    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 0) {
+                
                 HStack {
                     Button {
                         print("최신순")
@@ -81,7 +68,7 @@ struct FeedView: View {
                 }
                 .padding(.top, 20)
                 .background(Color.Custom.YellowShadow50)
-
+                
                 List {
                     ForEach(feedContents) { content in
                         FeedRowView(feedContent: content)
@@ -99,7 +86,18 @@ struct FeedView: View {
                 .scrollIndicators(.hidden)
                 
             }
-            .navigationBarTitle("긍정하나", displayMode: .inline)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.Custom.PositiveYellow, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    VStack {
+                        Text("긍정하나")
+                            .font(CustomFont.gangwon(size: 20).font)
+                            .foregroundColor(.Custom.TitleColor)
+                    }
+                }
+            }
+           
             .toolbar {
                 ToolbarItem {
                     NavigationLink(
@@ -107,6 +105,7 @@ struct FeedView: View {
                     ) {
                         Image("gear")
                             .foregroundColor(Color.Custom.Black70)
+                            .offset(x: -3)
                     }
                     
                 }
