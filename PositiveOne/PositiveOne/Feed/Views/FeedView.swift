@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FeedView: View {
     
+    @Binding var isTabbarHidden: Bool
+    
     let feedContents: [FeedContent] = [
         FeedContent(text: """
                  오늘 친구들이랑 서울숲을 갔다.
@@ -101,7 +103,7 @@ struct FeedView: View {
             .toolbar {
                 ToolbarItem {
                     NavigationLink(
-                        destination: SettingsView()
+                        destination: SettingsView(isTabbarHidden: $isTabbarHidden)
                     ) {
                         Image("gear")
                             .foregroundColor(Color.Custom.Black70)
@@ -118,8 +120,8 @@ struct FeedView: View {
     
 }
 
-struct FeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedView()
-    }
-}
+//struct FeedView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeedView()
+//    }
+//}

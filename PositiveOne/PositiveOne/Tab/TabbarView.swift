@@ -10,19 +10,24 @@ import SwiftUI
 struct TabbarView: View {
     
     @State var selectedTab: Tab = .calendar
+    @State var isTabbarHidden: Bool = false
     
     var body: some View {
         
         VStack(spacing: 0) {
             switch selectedTab {
             case .calendar:
-                CalendarView()
+                CalendarView(isTabbarHidden: $isTabbarHidden)
                     .environmentObject(CalendarManager())
             case .feed:
-                FeedView()
+                FeedView(isTabbarHidden: $isTabbarHidden)
             }
-            CustomTabView(selectedTab: $selectedTab)
-                .padding(.bottom, 15)
+            
+            if !isTabbarHidden {
+                CustomTabView(selectedTab: $selectedTab)
+                    .padding(.bottom, 15)
+            }
+            
         }
         .edgesIgnoringSafeArea(.bottom)
 

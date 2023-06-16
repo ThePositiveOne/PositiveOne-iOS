@@ -11,6 +11,7 @@ struct CalendarView: View {
     
     @EnvironmentObject var calendarManager: CalendarManager
     @State var isPresented = false
+    @Binding var isTabbarHidden: Bool
     let isToday = false
     var body: some View {
         
@@ -51,7 +52,7 @@ struct CalendarView: View {
             .toolbar {
                 ToolbarItem {
                     NavigationLink(
-                        destination: SettingsView()
+                        destination: SettingsView(isTabbarHidden: $isTabbarHidden)
                     ) {
                         Image("gear")
                             .foregroundColor(Color.Custom.Black70)
@@ -66,8 +67,9 @@ struct CalendarView: View {
 
 
 
-struct CalendarView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarView().environmentObject(CalendarManager())
-    }
-}
+//struct CalendarView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        CalendarView().environmentObject(CalendarManager())
+//    }
+//}

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @Binding var isTabbarHidden: Bool
+    
     var body: some View {
         
         List {
@@ -47,13 +49,20 @@ struct SettingsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         
+        .onAppear {
+            isTabbarHidden = true
+        }
+        .onDisappear {
+            isTabbarHidden = false
+        }
+        
     }
     
     
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
+//struct SettingsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsView()
+//    }
+//}
