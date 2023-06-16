@@ -16,7 +16,7 @@ struct CalendarCell: View {
     
     var body: some View {
         if isContainMonth {
-            VStack {
+            VStack(spacing: 6) {
                 ZStack {
                     Circle()
                         .frame(width: 33, height: 33)
@@ -24,7 +24,9 @@ struct CalendarCell: View {
                     
                     if isWritten {
                         Image("pleasureOne")
+                            .resizable()
                             .frame(width: 37, height: 37)
+                            
                     }
                     
                 }
@@ -53,7 +55,7 @@ struct CalendarCell_Previews: PreviewProvider {
     static var previews: some View {
         CalendarCell(
             day: 5,
-            isToday: true,
+            isToday: false,
             isWritten: true,
             isContainMonth: true
         )
