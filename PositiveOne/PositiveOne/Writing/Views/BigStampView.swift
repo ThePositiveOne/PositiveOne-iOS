@@ -40,8 +40,6 @@ struct BigStampView: View, Identifiable {
         .background(
             RoundedRectangle(cornerRadius: 4)
                 .foregroundColor(.white)
-                .shadow(color: Color.Custom.Black40, radius: 1, x: 2, y: 2)
-                .opacity(0.15)
         )
     }
 }
