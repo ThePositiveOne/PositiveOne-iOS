@@ -20,19 +20,19 @@ struct MonthTopView: View {
     }
     
     var body: some View {
-        HStack(alignment: .center) {
+        HStack(alignment: .center, spacing: 18) {
             Button {
                dateManager.fetchPreviousMonth()
             } label: {
                 Image(systemName: "chevron.left").foregroundColor(Color.Custom.Black70)
             }
             
-            Spacer()
+           
             
             Text(currentYearAndMonth)
                 .font(CustomFont.gangwon(size: 20).font)
-                .padding(.horizontal, 20)
-            Spacer()
+               // .padding(.horizontal, 20)
+           
             
             Button {
                dateManager.fetchNextMonth()

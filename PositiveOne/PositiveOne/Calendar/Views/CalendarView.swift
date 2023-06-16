@@ -15,11 +15,22 @@ struct CalendarView: View {
     var body: some View {
         
         VStack(spacing: 0) {
-            MonthTopView().environmentObject(calendarManager)
-                .padding(.top, 70)
-                .padding(.horizontal, 32)
+            HStack {
+                MonthTopView().environmentObject(calendarManager)
+                    .padding(.top, 10)
+                    .padding(.horizontal, 32)
+                
+                Button {
+                    
+                } label: {
+                    Image("gear")
+                }
+
+            }
+           
             
             CalendarGridView().environmentObject(calendarManager)
+                .padding(.top, 35)
             
 //            HStack {
 //                Spacer()

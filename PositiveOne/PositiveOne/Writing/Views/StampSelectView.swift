@@ -40,7 +40,7 @@ struct StampSelectView: View {
             HStack(spacing: 15) {
                 ForEach(stampViews) { view in
                     view
-                        .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.05), radius: 1, x: 2, y: 2)
+                        .shadow(color: Color.black.opacity(0.05), radius: 9, x: 2, y: 2)
                 }
             }
             .frame(width: UIScreen.main.bounds.width-40)

@@ -50,12 +50,7 @@ struct MyPositiveOneView: View {
                  cornerRadius: 4
                )
                .foregroundColor(Color.white)
-               .shadow(
-                color: Color.Custom.Black10,
-                 radius: 2,
-                 x: 2,
-                 y: 2
-               )
+               .shadow(color: Color.black.opacity(0.05), radius: 9, x: 2, y: 2)
             )
             
         }

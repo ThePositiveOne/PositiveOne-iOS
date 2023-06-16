@@ -48,7 +48,7 @@ struct TextEditorView: View {
                     TextEditor(text: $content)
                         .font(CustomFont.PretendardMedium(size: 14).font)
                         .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*0.2)
-                        .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.05),radius: 2, x: 2, y: 2)
+                        .shadow(color: Color.black.opacity(0.05), radius: 9, x: 2, y: 2)
                         .foregroundColor(.Custom.Black100)
                         .lineSpacing(10)
                         .opacity(content.isEmpty ? 0.8 : 1)

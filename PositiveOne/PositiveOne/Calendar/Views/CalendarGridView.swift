@@ -24,7 +24,6 @@ struct CalendarGridView: View {
                 }
                 .frame(width: (width-40-10)/7)
             }
-            .padding(.top, 35)
             
             ZStack {
                 daysView
