@@ -59,9 +59,10 @@ struct stampViews: View {
                         selectedType = stampViews[i].type
                     }
                   
-                    .shadow(color: Color.black.opacity(selectedType == stampViews[i].type ? 0 : 0.05), radius: 7, x: 2, y: 2)
-                    
-                    
+                    .background(
+                        RoundedRectangle(cornerRadius: 5)
+                            .shadow(color: Color.black.opacity(selectedType == stampViews[i].type ? 0 : 0.05), radius: 7, x: 2, y: 2)
+                    )
                     .overlay(
                         RoundedRectangle(cornerRadius: 4)
                             .stroke(selectedType == stampViews[i].type ? Color.Custom.PositiveYellow : Color.clear)
