@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CalendarCell: View {
     
+    @EnvironmentObject var calendarManager: CalendarManager
     let day: Int
     var isToday: Bool
     var isWritten: Bool
@@ -32,13 +33,16 @@ struct CalendarCell: View {
                 }
                 
                 Text(String(day))
-                    .foregroundColor(isToday ? .white : Color.Custom.Black60)
+                    .foregroundColor(calendarManager.verifySelectedDay(day) ? .white : Color.Custom.Black60)
                     .font(CustomFont.PretendardRegular(size: 10).font)
                     .frame(width: 25, height: 13)
-                    .background(isToday ? Color.Custom.PositiveYellow : .clear)
+                    .background(calendarManager.verifySelectedDay(day) ? Color.Custom.PositiveYellow : .clear)
                     .cornerRadius(2)
             }
             .frame(width: 37, height: 56)
+            .onTapGesture {
+                calendarManager.updateSelectedDate(day)
+            }
 
         }
         
@@ -59,5 +63,6 @@ struct CalendarCell_Previews: PreviewProvider {
             isWritten: true,
             isContainMonth: true
         )
+        .environmentObject(CalendarManager())
     }
 }
