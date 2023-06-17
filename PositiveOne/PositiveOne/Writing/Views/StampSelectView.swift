@@ -58,7 +58,10 @@ struct stampViews: View {
                     .onTapGesture {
                         selectedType = stampViews[i].type
                     }
-                    .shadow(color: selectedType == stampViews[i].type ? Color.black.opacity(0) : Color.black.opacity(0.05), radius: 7, x: 2, y: 2)
+                  
+                    .shadow(color: Color.black.opacity(selectedType == stampViews[i].type ? 0 : 0.05), radius: 7, x: 2, y: 2)
+                    
+                    
                     .overlay(
                         RoundedRectangle(cornerRadius: 4)
                             .stroke(selectedType == stampViews[i].type ? Color.Custom.PositiveYellow : Color.clear)

@@ -10,6 +10,7 @@ import CryptoKit
 
 struct TextEditorView: View {
     @State var content: String = ""
+    @State var placeHolder: String = "오늘의 긍정 한마디 (50자 제한)"
     let maxTextNum = 50
     
     var body: some View {
@@ -21,7 +22,7 @@ struct TextEditorView: View {
                 
                 Image("docs")
                     .padding(.leading, 6)
-                   
+                
                 Spacer()
                 
             }
@@ -35,34 +36,49 @@ struct TextEditorView: View {
             
             
             ZStack {
-                let placeHolder = "오늘의 긍정 한마디 (\(maxTextNum)자 제한)"
-                if content.isEmpty {
-                    Text(placeHolder)
-                        .font(CustomFont.PretendardMedium(size: 14).font)
-                        .foregroundColor(.Custom.TitleColor)
-                        .padding(.top, -UIScreen.main.bounds.height*0.075)
-                        .padding(.leading, -UIScreen.main.bounds.width*0.4)
-                }
                 
                 HStack(spacing: 0) {
+                    
                     let limitContent = Binding(get: {
                         content
                     }, set: {
                         content = String($0.prefix(maxTextNum))
                     })
                     Spacer()
-                    TextEditor(text: limitContent)
-                        .font(CustomFont.PretendardMedium(size: 14).font)
-                        .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*0.2)
-                        .shadow(color: Color.black.opacity(content.isEmpty ? 0.05 : 0), radius: 7, x: 2, y: 2)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 4)
-                                .stroke(content.isEmpty ? Color.clear : Color.Custom.PositiveYellow)
-                        )
-                        .foregroundColor(.Custom.Black100)
-                        .lineSpacing(10)
-                        .opacity(content.isEmpty ? 0.8 : 1)
-                       
+                    ZStack {
+                        if content.isEmpty {
+                            TextEditor(text: $placeHolder)
+                                .font(CustomFont.PretendardMedium(size: 14).font)
+                                .foregroundColor(.Custom.Black60)
+                                .disabled(true)
+                                .padding(18)
+                        }
+                        
+                        TextEditor(text: limitContent)
+                            .font(CustomFont.PretendardMedium(size: 14).font)
+                            .lineSpacing(3)
+                            .lineLimit(nil)
+                            .foregroundColor(.Custom.TitleColor)
+                            .opacity(content.isEmpty ? 0.25 : 1)
+                            .padding(18)
+                            .onChange(of: content) { newValue in
+                                if newValue == placeHolder {
+                                    content = ""
+                                }
+                            }
+                        
+                    }
+                    .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*0.2)
+                    
+                    .background(
+                        RoundedRectangle(cornerRadius: 4)
+                            .foregroundColor(.white)
+                            .shadow(color: Color.black.opacity(content.isEmpty ? 0.05 : 0), radius: 6, x: 2, y: 2)
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(content.isEmpty ? Color.clear : Color.Custom.PositiveYellow)
+                    )
                     
                     Spacer()
                 }
@@ -70,12 +86,12 @@ struct TextEditorView: View {
                 Text("\(content.count)/\(maxTextNum)")
                     .font(CustomFont.PretendardMedium(size: 12).font)
                     .foregroundColor(.Custom.Black70)
-                    .offset(x: UIScreen.main.bounds.width*0.39, y: UIScreen.main.bounds.height*0.08)
+                    .offset(x: UIScreen.main.bounds.width*0.38, y: UIScreen.main.bounds.height*0.08)
                 
             }
             .padding(.top, 10)
             
-                
+            
         }
     }
 }
