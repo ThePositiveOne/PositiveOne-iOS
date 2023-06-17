@@ -12,7 +12,7 @@ struct CalendarView: View {
     @EnvironmentObject var calendarManager: CalendarManager
     @State var isPresented = false
     @Binding var isTabbarHidden: Bool
-    let isToday = false
+    let isToday = true
     var body: some View {
         
         NavigationStack {

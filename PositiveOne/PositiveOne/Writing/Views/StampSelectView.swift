@@ -9,12 +9,7 @@ import SwiftUI
 
 struct StampSelectView: View {
     
-    let stampViews = [
-        BigStampView(type: .pleasureOne),
-        BigStampView(type: .excitingOne),
-        BigStampView(type: .thanksOne),
-        BigStampView(type: .movedOne)
-    ]
+    @State var selectedStampType: PositiveOneType = .movedOne
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -37,19 +32,44 @@ struct StampSelectView: View {
                 .padding(.top, 4)
                 .padding(.leading, 20)
             
-            HStack(spacing: 15) {
-                ForEach(stampViews) { view in
-                    view
-                        .shadow(color: Color.black.opacity(0.05), radius: 9, x: 2, y: 2)
-                }
-            }
-            .frame(width: UIScreen.main.bounds.width-40)
+            stampViews()
             .padding(.leading, 20)
             .padding(.top, 10)
         }
         
     }
 }
+
+struct stampViews: View {
+    
+    var stampViews = [
+        BigStampView(type: .pleasureOne),
+        BigStampView(type: .excitingOne),
+        BigStampView(type: .thanksOne),
+        BigStampView(type: .movedOne)
+    ]
+    
+    @State var selectedType: PositiveOneType?
+    
+    var body: some View {
+        HStack(spacing: 15) {
+            ForEach(0..<4) { i in
+                stampViews[i]
+                    .onTapGesture {
+                        selectedType = stampViews[i].type
+                    }
+                    .shadow(color: selectedType == stampViews[i].type ? Color.black.opacity(0) : Color.black.opacity(0.05), radius: 7, x: 2, y: 2)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(selectedType == stampViews[i].type ? Color.Custom.PositiveYellow : Color.clear)
+                    )
+                    
+            }
+        }
+        .frame(width: UIScreen.main.bounds.width-40)
+    }
+}
+
 
 struct StampSelectView_Previews: PreviewProvider {
     static var previews: some View {
