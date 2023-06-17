@@ -10,6 +10,7 @@ import CryptoKit
 
 struct TextEditorView: View {
     @State var content: String = ""
+    let maxTextNum = 50
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -34,7 +35,7 @@ struct TextEditorView: View {
             
             
             ZStack {
-                let placeHolder = "오늘의 긍정 한마디 (30자 제한)"
+                let placeHolder = "오늘의 긍정 한마디 (\(maxTextNum)자 제한)"
                 if content.isEmpty {
                     Text(placeHolder)
                         .font(CustomFont.PretendardMedium(size: 14).font)
@@ -44,19 +45,25 @@ struct TextEditorView: View {
                 }
                 
                 HStack(spacing: 0) {
+                    let limitContent = Binding(get: {
+                        content
+                    }, set: {
+                        content = String($0.prefix(maxTextNum))
+                    })
                     Spacer()
-                    TextEditor(text: $content)
+                    TextEditor(text: limitContent)
                         .font(CustomFont.PretendardMedium(size: 14).font)
                         .frame(width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height*0.2)
                         .shadow(color: Color.black.opacity(0.05), radius: 9, x: 2, y: 2)
                         .foregroundColor(.Custom.Black100)
                         .lineSpacing(10)
                         .opacity(content.isEmpty ? 0.8 : 1)
+                       
                     
                     Spacer()
                 }
                 
-                Text("\(content.count)/50")
+                Text("\(content.count)/\(maxTextNum)")
                     .font(CustomFont.PretendardMedium(size: 12).font)
                     .foregroundColor(.Custom.Black70)
                     .offset(x: UIScreen.main.bounds.width*0.39, y: UIScreen.main.bounds.height*0.08)
