@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct PositiveOneResponse: Decodable {
+    let success: Bool
+    let errorMessage: String?
+}

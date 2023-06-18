@@ -41,7 +41,7 @@ struct CalendarView: View {
                             }
                             .frame(width: 44, height: 44)
                             .fullScreenCover(isPresented: $isPresented) {
-                                WritingView()
+                                WritingView(viewModel: WritingViewModel())
                             }
 //                            .fullScreenCover(isPresented: $isPresented) {
 //                                SingleButtonPopupView(

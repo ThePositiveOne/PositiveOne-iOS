@@ -24,6 +24,8 @@
 		FA3977FE2A2CA3060040741F /* PretendardBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F32A2CA3050040741F /* PretendardBlack.otf */; };
 		FA3977FF2A2CA3060040741F /* PretendardRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3977F42A2CA3050040741F /* PretendardRegular.otf */; };
 		FA40B9772A3F13B30044FEFB /* CalendarRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40B9762A3F13B30044FEFB /* CalendarRequest.swift */; };
+		FA40B97A2A3F1D040044FEFB /* WritingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40B9792A3F1D040044FEFB /* WritingViewModel.swift */; };
+		FA40B97C2A3F1E250044FEFB /* PositiveOneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40B97B2A3F1E250044FEFB /* PositiveOneResponse.swift */; };
 		FA418D4D2A38647B003A8D51 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA418D4C2A38647B003A8D51 /* SettingsView.swift */; };
 		FA418D502A38B215003A8D51 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA418D4F2A38B215003A8D51 /* WritingView.swift */; };
 		FA43BA562A3C1BC200F8D5E2 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43BA552A3C1BC200F8D5E2 /* CustomTabView.swift */; };
@@ -79,6 +81,8 @@
 		FA3977F32A2CA3050040741F /* PretendardBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardBlack.otf; sourceTree = "<group>"; };
 		FA3977F42A2CA3050040741F /* PretendardRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardRegular.otf; sourceTree = "<group>"; };
 		FA40B9762A3F13B30044FEFB /* CalendarRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRequest.swift; sourceTree = "<group>"; };
+		FA40B9792A3F1D040044FEFB /* WritingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewModel.swift; sourceTree = "<group>"; };
+		FA40B97B2A3F1E250044FEFB /* PositiveOneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveOneResponse.swift; sourceTree = "<group>"; };
 		FA418D4C2A38647B003A8D51 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA418D4F2A38B215003A8D51 /* WritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
 		FA43BA552A3C1BC200F8D5E2 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
@@ -211,6 +215,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FA40B9782A3F1CF20044FEFB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA40B9792A3F1D040044FEFB /* WritingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FA418D4A2A386463003A8D51 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +234,7 @@
 		FA418D4E2A38B208003A8D51 /* Writing */ = {
 			isa = PBXGroup;
 			children = (
+				FA40B9782A3F1CF20044FEFB /* ViewModel */,
 				FA4C72282A3AD4D4009D9E4F /* Views */,
 			);
 			path = Writing;
@@ -297,6 +310,7 @@
 				FA57DE182A3EFEDC005EBEF8 /* Calendar */,
 				FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */,
 				FA73FC372A3374A3007A3DCF /* Login */,
+				FA40B97B2A3F1E250044FEFB /* PositiveOneResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -463,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA40B97C2A3F1E250044FEFB /* PositiveOneResponse.swift in Sources */,
 				FA73FC392A3374BD007A3DCF /* AppleLoginRequest.swift in Sources */,
 				FA77D7032A31BC3000D4AF13 /* CalendarView.swift in Sources */,
 				FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */,
@@ -480,6 +495,7 @@
 				FA43BA582A3C327A00F8D5E2 /* MyPositiveOneView.swift in Sources */,
 				FA4C72272A3ACD53009D9E4F /* LockView.swift in Sources */,
 				FA6485FB2A3A955C009FD5AA /* TextEditorView.swift in Sources */,
+				FA40B97A2A3F1D040044FEFB /* WritingViewModel.swift in Sources */,
 				FA3977E92A2CA2E60040741F /* Color+Extension.swift in Sources */,
 				FA40B9772A3F13B30044FEFB /* CalendarRequest.swift in Sources */,
 				FA77D7012A31B60200D4AF13 /* CalendarCell.swift in Sources */,

@@ -13,6 +13,7 @@ struct WritingView: View {
     @State var selectedType: PositiveOneType?
     @State var content: String = ""
     @State var isLocked: Bool = false
+    @ObservedObject var viewModel: WritingViewModel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -43,7 +44,8 @@ struct WritingView: View {
                             stamp: selectedType.rawValue,
                             lock: isLocked
                         )
-                        print(request)
+                        viewModel.postBoard(request: request)
+                        presentationMode.wrappedValue.dismiss()
                     }
                 } label: {
                     Text("작성")
@@ -80,6 +82,6 @@ struct WritingView: View {
 
 struct WritingView_Previews: PreviewProvider {
     static var previews: some View {
-        WritingView()
+        WritingView(viewModel: WritingViewModel())
     }
 }
