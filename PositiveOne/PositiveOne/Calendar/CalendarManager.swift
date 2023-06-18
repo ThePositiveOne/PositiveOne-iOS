@@ -118,4 +118,10 @@ extension CalendarManager {
         return "\(dateFormatter.string(from: date))"
     }
     
+    func isTodayOfSelectedDay() -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: Date()) == dateFormatter.string(from: selectedDate)
+    }
+    
 }
