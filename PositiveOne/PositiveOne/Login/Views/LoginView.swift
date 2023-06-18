@@ -63,7 +63,7 @@ struct AppleSigninButton: View {
     
     var body: some View {
         SignInWithAppleButton { request in
-            request.nonce = "aa"
+            request.requestedScopes = [.email]
         } onCompletion: { result in
             switch result {
             case .success(let authResult):
