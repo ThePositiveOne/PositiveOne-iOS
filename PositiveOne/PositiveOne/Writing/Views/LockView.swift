@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LockView: View {
     
-    @State var isLocked: Bool = false
+    @Binding var isLocked: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -70,6 +70,6 @@ struct LockView: View {
 
 struct LockView_Previews: PreviewProvider {
     static var previews: some View {
-        LockView()
+        LockView(isLocked: Binding.constant(false))
     }
 }

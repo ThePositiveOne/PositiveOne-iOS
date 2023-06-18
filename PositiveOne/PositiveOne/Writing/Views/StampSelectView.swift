@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StampSelectView: View {
     
-    @State var selectedStampType: PositiveOneType = .movedOne
+    @Binding var selectedType: PositiveOneType?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -32,7 +32,7 @@ struct StampSelectView: View {
                 .padding(.top, 4)
                 .padding(.leading, 20)
             
-            stampViews()
+            StampViews(selectedType: $selectedType)
             .padding(.leading, 20)
             .padding(.top, 10)
         }
@@ -40,7 +40,7 @@ struct StampSelectView: View {
     }
 }
 
-struct stampViews: View {
+struct StampViews: View {
     
     var stampViews = [
         BigStampView(type: .pleasureOne),
@@ -49,7 +49,7 @@ struct stampViews: View {
         BigStampView(type: .movedOne)
     ]
     
-    @State var selectedType: PositiveOneType?
+    @Binding var selectedType: PositiveOneType?
     
     var body: some View {
         HStack(spacing: 15) {
@@ -77,6 +77,6 @@ struct stampViews: View {
 
 struct StampSelectView_Previews: PreviewProvider {
     static var previews: some View {
-        StampSelectView()
+        StampSelectView(selectedType: Binding.constant(.excitingOne))
     }
 }

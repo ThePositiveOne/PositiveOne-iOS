@@ -40,21 +40,21 @@ struct CalendarView: View {
                                 Image("writing")
                             }
                             .frame(width: 44, height: 44)
-//                            .fullScreenCover(isPresented: $isPresented) {
-//                                WritingView()
-//                            }
                             .fullScreenCover(isPresented: $isPresented) {
-                                SingleButtonPopupView(
-                                    orangeText: "수정할 수 있는 시간",
-                                    blackText: "이 지났습니다.",
-                                    subText: """
-                                            작성완료일을 기준으로
-                                            당일까지만 수정 및 삭제를 할 수 있습니다.
-                                            """
-                                )
-                                .clearModalBackground()
-                              
+                                WritingView()
                             }
+//                            .fullScreenCover(isPresented: $isPresented) {
+//                                SingleButtonPopupView(
+//                                    orangeText: "수정할 수 있는 시간",
+//                                    blackText: "이 지났습니다.",
+//                                    subText: """
+//                                            작성완료일을 기준으로
+//                                            당일까지만 수정 및 삭제를 할 수 있습니다.
+//                                            """
+//                                )
+//                                .clearModalBackground()
+                              
+                           // }
                         }
                         .padding(.trailing, 20)
                         .padding(.top, 12)

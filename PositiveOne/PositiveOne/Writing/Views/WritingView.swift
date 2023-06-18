@@ -10,6 +10,9 @@ import SwiftUI
 struct WritingView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @State var selectedType: PositiveOneType?
+    @State var content: String = ""
+    @State var isLocked: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -31,14 +34,26 @@ struct WritingView: View {
                 Spacer()
                 
                 Button {
-                    
+                    if selectedType != nil && !content.isEmpty {
+                        guard let selectedType = selectedType else {
+                            return
+                        }
+                        let request = CalendarRequest(
+                            text: content,
+                            stamp: selectedType.rawValue,
+                            lock: isLocked
+                        )
+                        print(request)
+                    }
                 } label: {
                     Text("작성")
                         .font(CustomFont.PretendardMedium(size: 14).font)
                         .foregroundColor(.white)
                         .padding(.horizontal, 18)
                         .padding(.vertical, 8)
-                        .background(Color.Custom.Black30)
+                        .background(
+                            selectedType != nil && !content.isEmpty
+                            ? Color.Custom.PositiveYellow : Color.Custom.Black30)
                         .cornerRadius(4)
                 }
 
@@ -46,13 +61,13 @@ struct WritingView: View {
             .frame(width: UIScreen.main.bounds.width-40)
            
 
-            TextEditorView()
+            TextEditorView(content: $content)
                 .padding(.top, 49)
             
-            StampSelectView()
+            StampSelectView(selectedType: $selectedType)
                 .padding(.top, 60)
             
-            LockView()
+            LockView(isLocked: $isLocked)
                 .padding(.top, 60)
             
             Spacer()

@@ -9,7 +9,7 @@ import SwiftUI
 import CryptoKit
 
 struct TextEditorView: View {
-    @State var content: String = ""
+    @Binding var content: String
     @State var placeHolder: String = "오늘의 긍정 한마디 (50자 제한)"
     let maxTextNum = 50
     
@@ -98,6 +98,6 @@ struct TextEditorView: View {
 
 struct TextEditorView_Previews: PreviewProvider {
     static var previews: some View {
-        TextEditorView()
+        TextEditorView(content: Binding.constant(""))
     }
 }

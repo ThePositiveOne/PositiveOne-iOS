@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct CalendarRequest: Encodable {
+    let text: String
+    let stamp: String
+    let lock: Bool
+}
