@@ -16,6 +16,11 @@ class LoginViewModel: ObservableObject {
         Task {
             let response = try await requestAppleLogin(request)
             print("response \(response)")
+            guard let jwt = response.data?.token else {
+                return
+            }
+            UserDefaults.standard.write(key: .userIdentifier, value: request.identityToken)
+            Keychain.saveToken(data: jwt)
         }
     }
     

@@ -52,9 +52,21 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
 }
 
 extension PositiveOneAPI {
+    
+    private static func getAuthPlugin() -> AccessTokenPlugin {
+        let tokenClosure: (TargetType) -> String = { _ in
+            guard let token = Keychain.loadToken() else {
+                print("No token")
+                return ""
+            }
+            return token
+        }
+        return AccessTokenPlugin(tokenClosure: tokenClosure)
+    }
+    
     static func request<T: Decodable>(target: PositiveOneAPI, dataType: T.Type) async throws -> T {
         return try await withCheckedThrowingContinuation { continuation in
-            let provider = MoyaProvider<PositiveOneAPI>()
+            let provider = MoyaProvider<PositiveOneAPI>(plugins: [getAuthPlugin(), MoyaCacheablePlugin()])
             provider.request(target) { result in
                 switch result {
                 case .success(let response):
@@ -72,33 +84,20 @@ extension PositiveOneAPI {
         }
     }
 }
-//
-//    static func request(target: PositiveOneAPI) async throws -> Response {
-//        return try await withCheckedThrowingContinuation { continuation in
-//            let provider = MoyaProvider<FitftyAPI>(plugins: [getAuthPlugin(), MoyaCacheablePlugin()])
-//            provider.request(target) { result in
-//                switch result {
-//                case .success(let response):
-//                    let url = response.request?.url?.absoluteString ?? "nil"
-//                    print("finishRequestAPI \(url)")
-//                    continuation.resume(returning: response)
-//                case .failure(let error):
-//                    continuation.resume(throwing: error)
-//                }
-//            }
-//        }
-//    }
-//
-//    private static func getAuthPlugin() -> AccessTokenPlugin {
-//        let tokenClosure: (TargetType) -> String = { _ in
-//            guard let identifier = UserDefaults.standard.read(key: .userIdentifier) as? String,
-//                  let account = UserDefaults.standard.read(key: .userAccount) as? String,
-//                  let token = Keychain.loadData(serviceIdentifier: identifier, forKey: account) else {
-//                Logger.debug(error: SocialLoginError.noToken, message: "No Token")
-//                return ""
-//            }
-//            return token
-//        }
-//        return AccessTokenPlugin(tokenClosure: tokenClosure)
-//    }
-//}
+
+
+protocol MoyaCacheable {
+    typealias MoyaCacheablePolicy = URLRequest.CachePolicy
+    var cachePolicy: MoyaCacheablePolicy { get }
+}
+
+final class MoyaCacheablePlugin: PluginType {
+    func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+        if let moyaCachableProtocol = target as? MoyaCacheable {
+            var cachableRequest = request
+            cachableRequest.cachePolicy = moyaCachableProtocol.cachePolicy
+            return cachableRequest
+        }
+        return request
+    }
+}
