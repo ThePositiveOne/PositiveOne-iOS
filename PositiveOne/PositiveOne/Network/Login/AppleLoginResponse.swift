@@ -8,6 +8,11 @@
 import Foundation
 
 struct AppleLoginResponse: Decodable {
-    let responseCode: Int
     let success: Bool
+    let errorMessage: String?
+    let data: TokenData?
+}
+
+struct TokenData: Decodable {
+    let token: String
 }

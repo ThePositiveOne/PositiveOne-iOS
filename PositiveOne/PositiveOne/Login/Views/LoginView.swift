@@ -11,7 +11,7 @@ import Moya
 
 struct LoginView: View {
     @State var isPresented = false
-    
+   
     var body: some View {
         VStack() {
        
@@ -37,7 +37,7 @@ struct LoginView: View {
 //            .foregroundColor(.white)
 //            .font(CustomFont.PretendardMedium(size: 19).font)
 //
-            AppleSigninButton()
+            AppleSigninButton(viewModel: LoginViewModel())
                 .frame(width: 266, height: 44)
             
             Button {
@@ -58,9 +58,11 @@ struct LoginView: View {
 }
 
 struct AppleSigninButton: View {
+    
+    @ObservedObject var viewModel: LoginViewModel
+    
     var body: some View {
         SignInWithAppleButton { request in
-            request.requestedScopes = [.fullName]
             request.nonce = "aa"
         } onCompletion: { result in
             switch result {
@@ -70,12 +72,7 @@ struct AppleSigninButton: View {
                 case let appleIDCrednetial as ASAuthorizationAppleIDCredential:
                     let identityToken = String(data: appleIDCrednetial.identityToken!, encoding: .utf8) ?? ""
                     print(identityToken)
-                    
-                    async {
-                        let request = AppleLoginRequest(identityToken: identityToken)
-                        let response = try await requestAppleLogin(request)
-                        print("response \(response)")
-                    }
+                    viewModel.postAppleLogin(AppleLoginRequest(identityToken: identityToken))
                    
                 default:
                     break
@@ -89,10 +86,6 @@ struct AppleSigninButton: View {
    
     }
     
-    func requestAppleLogin(_ request: AppleLoginRequest) async throws -> AppleLoginResponse {
-        return try await PositiveOneAPI.request(target: .signInApple(paramters: request.asDictionary()), dataType: AppleLoginResponse.self)
-        
-    }
 }
 
 struct LoginView_Previews: PreviewProvider {
