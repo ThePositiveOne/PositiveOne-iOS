@@ -16,32 +16,49 @@ struct CalendarView: View {
     var body: some View {
         
         NavigationStack {
-            VStack(spacing: 0) {
-                
-                CalendarGridView().environmentObject(calendarManager)
-                    .padding(.top, 30)
-                
-                if isToday {
-                    HStack {
-                        Spacer()
-                        Button {
-                            isPresented.toggle()
-                        } label: {
-                            Image("writing")
+            ZStack {
+                VStack(spacing: 0) {
+                    
+                    CalendarGridView().environmentObject(calendarManager)
+                        .padding(.top, 30)
+                    
+                    if isToday {
+                        HStack {
+                            Spacer()
+                            Button {
+                                isPresented.toggle()
+                            } label: {
+                                Image("writing")
+                            }
+                            .frame(width: 44, height: 44)
+//                            .fullScreenCover(isPresented: $isPresented) {
+//                                WritingView()
+//                            }
+                            .fullScreenCover(isPresented: $isPresented) {
+                                SingleButtonPopupView(
+                                    orangeText: "수정할 수 있는 시간",
+                                    blackText: "이 지났습니다.",
+                                    subText: """
+                                            작성완료일을 기준으로
+                                            당일까지만 수정 및 삭제를 할 수 있습니다.
+                                            """
+                                )
+                                .clearModalBackground()
+                              
+                            }
                         }
-                        .frame(width: 44, height: 44)
-                        .fullScreenCover(isPresented: $isPresented) {
-                            WritingView()
-                        }
+                        .padding(.trailing, 20)
+                        .padding(.top, 12)
+                    } else {
+                        MyPositiveOneView()
+                            .padding(.top, 35)
                     }
-                    .padding(.trailing, 20)
-                    .padding(.top, 12)
-                } else {
-                    MyPositiveOneView()
-                        .padding(.top, 35)
+                    Spacer()
                 }
-                Spacer()
+                
+     
             }
+            
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {

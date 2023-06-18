@@ -29,6 +29,7 @@
 		FA43BA582A3C327A00F8D5E2 /* MyPositiveOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43BA572A3C327A00F8D5E2 /* MyPositiveOneView.swift */; };
 		FA43BA5A2A3C711A00F8D5E2 /* NavigationBackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43BA592A3C711900F8D5E2 /* NavigationBackItem.swift */; };
 		FA43BA5D2A3DE73000F8D5E2 /* SingleButtonPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43BA5C2A3DE73000F8D5E2 /* SingleButtonPopupView.swift */; };
+		FA43BA5F2A3EBA4900F8D5E2 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43BA5E2A3EBA4900F8D5E2 /* View+Extension.swift */; };
 		FA4C72272A3ACD53009D9E4F /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72262A3ACD53009D9E4F /* LockView.swift */; };
 		FA4C722A2A3ADB83009D9E4F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */; };
 		FA4C722C2A3AE2E3009D9E4F /* BigStampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */; };
@@ -78,6 +79,7 @@
 		FA43BA572A3C327A00F8D5E2 /* MyPositiveOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPositiveOneView.swift; sourceTree = "<group>"; };
 		FA43BA592A3C711900F8D5E2 /* NavigationBackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackItem.swift; sourceTree = "<group>"; };
 		FA43BA5C2A3DE73000F8D5E2 /* SingleButtonPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonPopupView.swift; sourceTree = "<group>"; };
+		FA43BA5E2A3EBA4900F8D5E2 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		FA4C72262A3ACD53009D9E4F /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigStampView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				FA3977E82A2CA2E60040741F /* Color+Extension.swift */,
 				FAD29B592A3702AB00940764 /* Encodable+Extension.swift */,
 				FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */,
+				FA43BA5E2A3EBA4900F8D5E2 /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				FA43BA5A2A3C711A00F8D5E2 /* NavigationBackItem.swift in Sources */,
 				FA3977DA2A2CA2250040741F /* ContentView.swift in Sources */,
 				FA3977FA2A2CA3060040741F /* CustomFont.swift in Sources */,
+				FA43BA5F2A3EBA4900F8D5E2 /* View+Extension.swift in Sources */,
 				FA418D4D2A38647B003A8D51 /* SettingsView.swift in Sources */,
 				FAD29B652A37570500940764 /* FeedResponse.swift in Sources */,
 				FA77D7092A31DB5A00D4AF13 /* FeedView.swift in Sources */,
