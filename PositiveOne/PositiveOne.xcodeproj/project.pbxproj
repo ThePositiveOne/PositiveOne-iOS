@@ -146,7 +146,6 @@
 			children = (
 				FA43BA602A3EF08700F8D5E2 /* Common */,
 				FA43BA5B2A3DE6D200F8D5E2 /* PopUp */,
-				FA6485FE2A3AA929009FD5AA /* Model */,
 				FA418D4E2A38B208003A8D51 /* Writing */,
 				FA418D4A2A386463003A8D51 /* Settings */,
 				FA73FC342A3365A6007A3DCF /* Network */,
@@ -237,6 +236,7 @@
 		FA43BA602A3EF08700F8D5E2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FA6485FE2A3AA929009FD5AA /* Model */,
 				FA43BA612A3EF09600F8D5E2 /* KeyChain.swift */,
 				FA43BA632A3EF2BD00F8D5E2 /* LocalKey.swift */,
 			);
