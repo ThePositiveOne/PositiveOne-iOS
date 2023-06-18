@@ -11,9 +11,9 @@ struct CalendarCell: View {
     
     @EnvironmentObject var calendarManager: CalendarManager
     let day: Int
-    var isToday: Bool
-    var isWritten: Bool
-    var isContainMonth: Bool
+    let positiveOneType: PositiveOneType?
+    let isContainMonth: Bool
+    let boardId: Int?
     
     var body: some View {
         if isContainMonth {
@@ -23,11 +23,10 @@ struct CalendarCell: View {
                         .frame(width: 33, height: 33)
                         .foregroundColor(.Custom.YellowShadow)
                     
-                    if isWritten {
-                        Image("pleasureOne")
+                    if let positiveOneType {
+                        Image(positiveOneType.rawValue)
                             .resizable()
                             .frame(width: 37, height: 37)
-                            
                     }
                     
                 }
@@ -59,9 +58,9 @@ struct CalendarCell_Previews: PreviewProvider {
     static var previews: some View {
         CalendarCell(
             day: 5,
-            isToday: false,
-            isWritten: true,
-            isContainMonth: true
+            positiveOneType: .excitingOne ,
+            isContainMonth: true,
+            boardId: nil
         )
         .environmentObject(CalendarManager())
     }

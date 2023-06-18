@@ -12,6 +12,7 @@ struct CalendarGridView: View {
     @EnvironmentObject var calendarManager: CalendarManager
     let weekNames: [String] = ["S", "M", "T", "W", "T", "F", "S"]
     let width = UIScreen.main.bounds.width
+    var calendarDict: [Int: (boardId: Int, type: PositiveOneType)]
     
     var body: some View {
         
@@ -42,15 +43,36 @@ struct CalendarGridView: View {
             let isFiveLine  =
             (calendarManager.totalDaysInMonth() + calendarManager.indexOfFirstDayWeek()) <= 35
             ? true : false
+           
             ForEach(0..<6) { row in
                 if (isFiveLine && row != 5) || !isFiveLine {
                     HStack(spacing: (width-40)*0.034) {
                         ForEach(0..<7) { column in
                             let dayNum = dayNums[(row*7)+column]
                             if dayNum > 0 && dayNum <= currentMonthTotalDays {
-                                CalendarCell(day: dayNum, isToday: false, isWritten: false, isContainMonth: true)
+                                if let data = calendarDict[dayNum] {
+                                    CalendarCell(
+                                        day: dayNum,
+                                        positiveOneType: data.type,
+                                        isContainMonth: true,
+                                        boardId: data.boardId
+                                    )
+                                } else {
+                                    CalendarCell(
+                                        day: dayNum,
+                                        positiveOneType: nil,
+                                        isContainMonth: true,
+                                        boardId: nil
+                                    )
+                                }
+                            
                             } else {
-                                CalendarCell(day: dayNum, isToday: false, isWritten: false, isContainMonth: false)
+                                CalendarCell(
+                                    day: dayNum,
+                                    positiveOneType: nil,
+                                    isContainMonth: false,
+                                    boardId: nil
+                                )
                             }
                         }
                     }
@@ -65,6 +87,6 @@ struct CalendarGridView: View {
 
 struct CalendarGridView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarGridView().environmentObject(CalendarManager())
+        CalendarGridView(calendarDict: [:]).environmentObject(CalendarManager())
     }
 }

@@ -13,7 +13,7 @@ struct CalendarListResponse: Decodable {
     let data: [CalendarListData]?
 }
 
-struct CalendarListData: Decodable {
+struct CalendarListData: Decodable, Hashable {
     let boardId: Int
     let stamp: String
     let date: String

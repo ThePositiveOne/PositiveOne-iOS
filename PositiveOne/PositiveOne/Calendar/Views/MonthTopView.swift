@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct MonthTopView: View {
-    @EnvironmentObject var dateManager: CalendarManager
+    
+    @EnvironmentObject var calendarManager: CalendarManager
+    @ObservedObject var viewModel: CalendarViewModel
     
     var currentYearAndMonth: String {
-        let components = Calendar.current.dateComponents([.year, .month], from: dateManager.date)
+        let components = Calendar.current.dateComponents([.year, .month], from: calendarManager.date)
         let year = components.year ?? 2023
         let month = components.month ?? 0
-        
-      
         return "\(year).\(getMonthToEnglishName(month))"
     }
     
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
             Button {
-               dateManager.fetchPreviousMonth()
+                calendarManager.fetchPreviousMonth()
+                viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
             } label: {
                 Image("left").foregroundColor(Color.Custom.Black70)
             }
@@ -35,7 +36,8 @@ struct MonthTopView: View {
            
             
             Button {
-               dateManager.fetchNextMonth()
+                calendarManager.fetchNextMonth()
+                viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
             } label: {
                 Image("right").foregroundColor(Color.Custom.Black70)
             }
@@ -81,6 +83,6 @@ extension MonthTopView {
 
 struct MonthTopView_Previews: PreviewProvider {
     static var previews: some View {
-        MonthTopView().environmentObject(CalendarManager())
+        MonthTopView(viewModel: CalendarViewModel()).environmentObject(CalendarManager())
     }
 }

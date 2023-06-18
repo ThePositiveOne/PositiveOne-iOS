@@ -13,6 +13,7 @@ struct CalendarView: View {
     @State var isPresented = false
     @Binding var isTabbarHidden: Bool
     @ObservedObject var viewModel: CalendarViewModel
+  
     let isToday = true
     
     init(calendarManager: CalendarManager = CalendarManager(), isPresented: Bool = false, isTabbarHidden: Bool, viewModel: CalendarViewModel) {
@@ -27,8 +28,7 @@ struct CalendarView: View {
         NavigationStack {
             ZStack {
                 VStack(spacing: 0) {
-                    
-                    CalendarGridView().environmentObject(calendarManager)
+                    CalendarGridView(calendarDict: viewModel.calendarDict).environmentObject(calendarManager)
                         .padding(.top, 30)
                     
                     if isToday {
@@ -71,7 +71,7 @@ struct CalendarView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                   MonthTopView()
+                    MonthTopView(viewModel: viewModel)
                 }
             }
            
