@@ -9,6 +9,7 @@ import Moya
 
 enum PositiveOneAPI {
     case signInApple(paramters: [String: Any])
+    case getCalendar(date: String)
 }
 
 extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
@@ -20,6 +21,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         switch self {
         case .signInApple:
             return "/login/apple"
+        case .getCalendar(let date):
+            return "/board/calendar/\(date)"
         }
     }
     
@@ -27,6 +30,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         switch self {
         case .signInApple:
             return .post
+        case.getCalendar:
+            return .get
         }
     }
     
@@ -34,6 +39,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         switch self {
         case .signInApple(let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        default:
+            return .requestPlain
         }
     }
     
@@ -45,6 +52,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         switch self {
         case .signInApple:
             return .none
+        default:
+            return .bearer
         }
     }
     
