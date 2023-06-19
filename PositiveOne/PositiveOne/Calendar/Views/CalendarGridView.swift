@@ -12,7 +12,7 @@ struct CalendarGridView: View {
     @EnvironmentObject var calendarManager: CalendarManager
     let weekNames: [String] = ["S", "M", "T", "W", "T", "F", "S"]
     let width = UIScreen.main.bounds.width
-    var calendarDict: [Int: (boardId: Int, type: PositiveOneType)]
+    @Binding var calendarDict: [Int: (boardId: Int, type: PositiveOneType)]
     
     var body: some View {
         
@@ -85,8 +85,8 @@ struct CalendarGridView: View {
     
 }
 
-struct CalendarGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarGridView(calendarDict: [:]).environmentObject(CalendarManager())
-    }
-}
+//struct CalendarGridView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CalendarGridView(calendarDict: [:]).environmentObject(CalendarManager())
+//    }
+//}

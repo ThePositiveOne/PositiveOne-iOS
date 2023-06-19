@@ -10,17 +10,13 @@ import SwiftUI
 
 class CalendarViewModel: ObservableObject {
     
-    // @Published var calendarList: [CalendarListData]?
-    var calendarDict: [Int: (boardId: Int, type: PositiveOneType)] = [:]
-    
+    @Published var calendarDict: [Int: (boardId: Int, type: PositiveOneType)] = [:]
+ 
     func getCalendar(date: String) {
         Task {
             let response = try await fetchCalendar(date: date)
             if response.success {
-                //calendarDict = [:]
                 self.getcalendarDict(response.data)
-                
-                
             }
         }
         
@@ -31,9 +27,11 @@ class CalendarViewModel: ObservableObject {
     }
     
     func getcalendarDict(_ calendarList: [CalendarListData]?) {
-        if let calendarList = calendarList {
-            calendarList.forEach { data in
-                calendarDict[Int(data.date) ?? Int.min] = (data.boardId, PositiveOneType(rawValue: data.stamp) ?? .excitingOne)
+        DispatchQueue.main.async { [weak self] in
+            if let calendarList = calendarList {
+                calendarList.forEach { data in
+                    self?.calendarDict[Int(data.date) ?? Int.min] = (data.boardId, PositiveOneType(rawValue: data.stamp) ?? .excitingOne)
+                }
             }
         }
     }

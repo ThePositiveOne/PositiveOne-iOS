@@ -23,6 +23,7 @@ struct MonthTopView: View {
         HStack(alignment: .center, spacing: 0) {
             Button {
                 calendarManager.fetchPreviousMonth()
+                viewModel.calendarDict = [:]
                 viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
             } label: {
                 Image("left").foregroundColor(Color.Custom.Black70)
@@ -37,6 +38,7 @@ struct MonthTopView: View {
             
             Button {
                 calendarManager.fetchNextMonth()
+                viewModel.calendarDict = [:]
                 viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
             } label: {
                 Image("right").foregroundColor(Color.Custom.Black70)

@@ -13,8 +13,6 @@ struct CalendarView: View {
     @State var isPresented = false
     @Binding var isTabbarHidden: Bool
     @ObservedObject var viewModel: CalendarViewModel
-  
-    let isToday = true
     
     init(calendarManager: CalendarManager = CalendarManager(), isPresented: Bool = false, isTabbarHidden: Bool, viewModel: CalendarViewModel) {
         self._isPresented = State(initialValue: isPresented)
@@ -28,7 +26,7 @@ struct CalendarView: View {
         NavigationStack {
             ZStack {
                 VStack(spacing: 0) {
-                    CalendarGridView(calendarDict: viewModel.calendarDict).environmentObject(calendarManager)
+                    CalendarGridView(calendarDict: $viewModel.calendarDict).environmentObject(calendarManager)
                         .padding(.top, 30)
                     
                     if calendarManager.isTodayOfSelectedDay() {
