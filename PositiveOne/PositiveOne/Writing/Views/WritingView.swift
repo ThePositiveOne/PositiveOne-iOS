@@ -13,6 +13,7 @@ struct WritingView: View {
     @State var selectedType: PositiveOneType?
     @State var content: String = ""
     @State var isLocked: Bool = false
+    let boardId: Int?
     @ObservedObject var viewModel: WritingViewModel
     
     var body: some View {
@@ -82,6 +83,6 @@ struct WritingView: View {
 
 struct WritingView_Previews: PreviewProvider {
     static var previews: some View {
-        WritingView(viewModel: WritingViewModel())
+        WritingView(boardId: nil, viewModel: WritingViewModel())
     }
 }
