@@ -13,6 +13,7 @@ enum PositiveOneAPI {
     case postBoard(parameters: [String: Any])
     case getBoard(boardId: Int)
     case putBoard(boardId: Int, parameters: [String: Any])
+    case deleteBoard(boardId: Int)
 }
 
 extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
@@ -29,7 +30,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         case .postBoard:
             return "/board"
         case .getBoard(let boardId),
-                .putBoard(let boardId, _):
+             .putBoard(let boardId, _),
+             .deleteBoard(let boardId):
             return "/board/\(boardId)"
         
         }
@@ -45,6 +47,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
             return .get
         case .putBoard:
             return .put
+        case .deleteBoard:
+            return .delete
         }
     }
     
