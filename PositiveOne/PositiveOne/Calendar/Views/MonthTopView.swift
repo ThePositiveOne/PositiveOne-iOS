@@ -22,6 +22,7 @@ struct MonthTopView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
             Button {
+                HapticManager.instance.impact(style: .rigid)
                 calendarManager.selectedDate = nil
                 calendarManager.fetchPreviousMonth()
                 viewModel.removeAllData()
@@ -38,6 +39,7 @@ struct MonthTopView: View {
            
             
             Button {
+                HapticManager.instance.impact(style: .rigid)
                 calendarManager.selectedDate = nil
                 calendarManager.fetchNextMonth()
                 viewModel.removeAllData()
