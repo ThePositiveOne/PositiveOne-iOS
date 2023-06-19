@@ -22,6 +22,7 @@ struct MonthTopView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
             Button {
+                calendarManager.selectedDate = nil
                 calendarManager.fetchPreviousMonth()
                 viewModel.calendarDict = [:]
                 viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
@@ -37,6 +38,7 @@ struct MonthTopView: View {
            
             
             Button {
+                calendarManager.selectedDate = nil
                 calendarManager.fetchNextMonth()
                 viewModel.calendarDict = [:]
                 viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")

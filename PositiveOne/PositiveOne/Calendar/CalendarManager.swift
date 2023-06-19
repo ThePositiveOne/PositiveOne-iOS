@@ -9,7 +9,7 @@ import Foundation
 
 final class CalendarManager: ObservableObject {
     @Published var date: Date = Date()
-    @Published var selectedDate: Date = Date()
+    @Published var selectedDate: Date? = Date()
     let calendar = Calendar.current
     
     func fetchPreviousMonth() {
@@ -53,6 +53,10 @@ final class CalendarManager: ObservableObject {
     func verifySelectedDay(_ today: Int) -> Bool {
         let currentYear = Calendar.current.dateComponents([.year], from: date).year!
         let currentMonth = Calendar.current.dateComponents([.month], from: date).month!
+        
+        guard let selectedDate else {
+            return false
+        }
         let selectedYear = Calendar.current.dateComponents([.year], from: selectedDate).year!
         let selectedMonth = Calendar.current.dateComponents([.month], from: selectedDate).month!
         let selectedDay = Calendar.current.dateComponents([.day], from: selectedDate).day!
@@ -119,6 +123,9 @@ extension CalendarManager {
     }
     
     func isTodayOfSelectedDay() -> Bool {
+        guard let selectedDate else {
+            return false
+        }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: Date()) == dateFormatter.string(from: selectedDate)
