@@ -15,9 +15,20 @@ class WritingViewModel: ObservableObject {
             print(response)
         }
     }
+    
+    func putBoard(boardId: Int, request: CalendarRequest) {
+        Task {
+            let response = try await postBoard(request: request)
+            print(response)
+        }
+    }
    
     private func postBoard(request: CalendarRequest) async throws -> PositiveOneResponse {
         return try await PositiveOneAPI.request(target: .postBoard(parameters: request.asDictionary()), dataType: PositiveOneResponse.self)
+    }
+    
+    private func putBoard(boardId: Int, request: CalendarRequest) async throws -> PositiveOneResponse {
+        return try await PositiveOneAPI.request(target: .putBoard(boardId: boardId, parameters: request.asDictionary()), dataType: PositiveOneResponse.self)
     }
     
 }

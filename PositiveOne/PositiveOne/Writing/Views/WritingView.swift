@@ -45,7 +45,12 @@ struct WritingView: View {
                             stamp: selectedType.rawValue,
                             lock: isLocked
                         )
-                        viewModel.postBoard(request: request)
+                        guard let boardId else {
+                            viewModel.postBoard(request: request)
+                            presentationMode.wrappedValue.dismiss()
+                            return
+                        }
+                        viewModel.putBoard(boardId: boardId, request: request)
                         presentationMode.wrappedValue.dismiss()
                     }
                 } label: {
