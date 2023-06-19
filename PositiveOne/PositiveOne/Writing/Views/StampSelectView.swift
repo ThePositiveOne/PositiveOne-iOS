@@ -56,6 +56,7 @@ struct StampViews: View {
             ForEach(0..<4) { i in
                 stampViews[i]
                     .onTapGesture {
+                        HapticManager.instance.impact(style: .light)
                         selectedType = stampViews[i].type
                     }
                   
