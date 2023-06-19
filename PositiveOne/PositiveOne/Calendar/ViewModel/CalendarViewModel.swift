@@ -11,6 +11,7 @@ import SwiftUI
 class CalendarViewModel: ObservableObject {
     
     @Published var calendarDict: [Int: (boardId: Int, type: PositiveOneType)] = [:]
+    @Published var boardData: BoardData?
  
     func getCalendar(date: String) {
         Task {
@@ -22,8 +23,23 @@ class CalendarViewModel: ObservableObject {
         
     }
     
-    func fetchCalendar(date: String) async throws -> CalendarListResponse {
+    func getBoard(boardId: Int) {
+        Task {
+            let response = try await getBoard(boardId: boardId)
+            if response.success {
+                DispatchQueue.main.async { [weak self] in
+                    self?.boardData = response.data
+                }
+            }
+        }
+    }
+    
+    private func fetchCalendar(date: String) async throws -> CalendarListResponse {
         return try await PositiveOneAPI.request(target: .getCalendar(date: date), dataType: CalendarListResponse.self)
+    }
+    
+    private func getBoard(boardId: Int) async throws -> BoardResponse {
+        return try await PositiveOneAPI.request(target: .getBoard(boardId: boardId), dataType: BoardResponse.self)
     }
     
     func getcalendarDict(_ calendarList: [CalendarListData]?) {
@@ -36,5 +52,9 @@ class CalendarViewModel: ObservableObject {
         }
     }
     
+    func removeAllData() {
+        calendarDict = [:]
+        boardData = nil
+    }
     
 }

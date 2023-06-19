@@ -10,6 +10,7 @@ import SwiftUI
 struct CalendarGridView: View {
     
     @EnvironmentObject var calendarManager: CalendarManager
+    @ObservedObject var viewModel: CalendarViewModel
     let weekNames: [String] = ["S", "M", "T", "W", "T", "F", "S"]
     let width = UIScreen.main.bounds.width
     @Binding var calendarDict: [Int: (boardId: Int, type: PositiveOneType)]
@@ -52,6 +53,7 @@ struct CalendarGridView: View {
                             if dayNum > 0 && dayNum <= currentMonthTotalDays {
                                 if let data = calendarDict[dayNum] {
                                     CalendarCell(
+                                        viewModel: viewModel,
                                         day: dayNum,
                                         positiveOneType: data.type,
                                         isContainMonth: true,
@@ -59,6 +61,7 @@ struct CalendarGridView: View {
                                     )
                                 } else {
                                     CalendarCell(
+                                        viewModel: viewModel,
                                         day: dayNum,
                                         positiveOneType: nil,
                                         isContainMonth: true,
@@ -68,6 +71,7 @@ struct CalendarGridView: View {
                             
                             } else {
                                 CalendarCell(
+                                    viewModel: viewModel,
                                     day: dayNum,
                                     positiveOneType: nil,
                                     isContainMonth: false,

@@ -10,6 +10,7 @@ import SwiftUI
 struct MyPositiveOneView: View {
     
     @State var isPresented = false
+    @Binding var boardData: BoardData
     
     var body: some View {
         VStack(spacing: 0) {
@@ -42,16 +43,12 @@ struct MyPositiveOneView: View {
             .padding(.bottom, 15)
             
             HStack(spacing: 24) {
-                BigStampView(type: .movedOne)
+                BigStampView(type: PositiveOneType(rawValue: boardData.stamp) ?? .movedOne)
                     .frame(height: 90)
                     .padding(.vertical, 2)
                     .padding(.leading, 24)
                 
-                Text("""
-                    운선님이랑 영선이랑 회의 했다.
-                    순조로운 시작인 것 같아 매우 즐겁다~
-                    가나다라 마바사 아자차카타파하
-                    """)
+                Text(boardData.text)
                 .font(CustomFont.PretendardMedium(size: 12).font)
                 .foregroundColor(.Custom.Black90)
                 .lineSpacing(4)
@@ -74,6 +71,6 @@ struct MyPositiveOneView: View {
 
 struct MyPositiveOneView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPositiveOneView()
+        MyPositiveOneView(boardData: Binding.constant(BoardData(boardId: 3, stamp: "excitingOne", text: "gg", date: "23.05.03")))
     }
 }

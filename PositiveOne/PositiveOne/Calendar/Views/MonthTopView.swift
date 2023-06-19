@@ -24,7 +24,7 @@ struct MonthTopView: View {
             Button {
                 calendarManager.selectedDate = nil
                 calendarManager.fetchPreviousMonth()
-                viewModel.calendarDict = [:]
+                viewModel.removeAllData()
                 viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
             } label: {
                 Image("left").foregroundColor(Color.Custom.Black70)
@@ -40,7 +40,7 @@ struct MonthTopView: View {
             Button {
                 calendarManager.selectedDate = nil
                 calendarManager.fetchNextMonth()
-                viewModel.calendarDict = [:]
+                viewModel.removeAllData()
                 viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
             } label: {
                 Image("right").foregroundColor(Color.Custom.Black70)

@@ -10,6 +10,8 @@ import SwiftUI
 struct CalendarCell: View {
     
     @EnvironmentObject var calendarManager: CalendarManager
+    @ObservedObject var viewModel: CalendarViewModel
+    
     let day: Int
     let positiveOneType: PositiveOneType?
     let isContainMonth: Bool
@@ -41,6 +43,11 @@ struct CalendarCell: View {
             .frame(width: 37, height: 56)
             .onTapGesture {
                 calendarManager.updateSelectedDate(day)
+                guard let boardId else {
+                    viewModel.boardData = nil
+                    return
+                }
+                viewModel.getBoard(boardId: boardId)
             }
 
         }
@@ -57,6 +64,7 @@ struct CalendarCell: View {
 struct CalendarCell_Previews: PreviewProvider {
     static var previews: some View {
         CalendarCell(
+            viewModel: CalendarViewModel(),
             day: 5,
             positiveOneType: .excitingOne ,
             isContainMonth: true,

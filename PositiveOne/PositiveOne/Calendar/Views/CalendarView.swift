@@ -26,10 +26,10 @@ struct CalendarView: View {
         NavigationStack {
             ZStack {
                 VStack(spacing: 0) {
-                    CalendarGridView(calendarDict: $viewModel.calendarDict).environmentObject(calendarManager)
+                    CalendarGridView(viewModel: viewModel, calendarDict: $viewModel.calendarDict).environmentObject(calendarManager)
                         .padding(.top, 30)
                     
-                    if calendarManager.isTodayOfSelectedDay() {
+                    if calendarManager.isTodayOfSelectedDay() && viewModel.boardData == nil {
                         HStack {
                             Spacer()
                             Button {
@@ -45,8 +45,11 @@ struct CalendarView: View {
                         .padding(.trailing, 20)
                         .padding(.top, 12)
                     } else {
-                        MyPositiveOneView()
-                            .padding(.top, 35)
+                        if let boardData = viewModel.boardData {
+                            MyPositiveOneView(boardData: Binding.constant(boardData))
+                                .padding(.top, 35)
+                        }
+                        
                     }
                     Spacer()
                 }
