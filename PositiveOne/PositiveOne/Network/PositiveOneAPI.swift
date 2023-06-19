@@ -12,6 +12,7 @@ enum PositiveOneAPI {
     case getCalendar(date: String)
     case postBoard(parameters: [String: Any])
     case getBoard(boardId: Int)
+    case putBoard(boardId: Int, parameters: [String: Any])
 }
 
 extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
@@ -27,7 +28,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
             return "/board/calendar/\(date)"
         case .postBoard:
             return "/board"
-        case .getBoard(let boardId):
+        case .getBoard(let boardId),
+                .putBoard(let boardId, _):
             return "/board/\(boardId)"
         
         }
@@ -41,13 +43,16 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         case .getCalendar,
              .getBoard:
             return .get
+        case .putBoard:
+            return .put
         }
     }
     
     var task: Moya.Task {
         switch self {
         case .signInApple(let parameters),
-                .postBoard(let parameters):
+                .postBoard(let parameters),
+                .putBoard(_, let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             return .requestPlain
