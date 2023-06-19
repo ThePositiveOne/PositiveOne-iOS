@@ -47,7 +47,7 @@ struct MyPositiveOneView: View {
                     
                     
                     Button {
-                        
+                        CalendarViewModel().deleteBoard(boardId: boardData.boardId)
                     } label: {
                         Image("trash")
                     }

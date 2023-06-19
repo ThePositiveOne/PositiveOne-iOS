@@ -34,12 +34,23 @@ class CalendarViewModel: ObservableObject {
         }
     }
     
+    func deleteBoard(boardId: Int) {
+        Task {
+            let response = try await deleteBoard(boardId: boardId)
+            print(response)
+        }
+    }
+    
     private func fetchCalendar(date: String) async throws -> CalendarListResponse {
         return try await PositiveOneAPI.request(target: .getCalendar(date: date), dataType: CalendarListResponse.self)
     }
     
     private func getBoard(boardId: Int) async throws -> BoardResponse {
         return try await PositiveOneAPI.request(target: .getBoard(boardId: boardId), dataType: BoardResponse.self)
+    }
+    
+    private func deleteBoard(boardId: Int) async throws -> PositiveOneResponse {
+        return try await PositiveOneAPI.request(target: .deleteBoard(boardId: boardId), dataType: PositiveOneResponse.self)
     }
     
     func getcalendarDict(_ calendarList: [CalendarListData]?) {
