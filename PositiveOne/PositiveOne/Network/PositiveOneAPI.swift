@@ -11,6 +11,7 @@ enum PositiveOneAPI {
     case signInApple(paramters: [String: Any])
     case getCalendar(date: String)
     case postBoard(parameters: [String: Any])
+    case getBoard(boardId: Int)
 }
 
 extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
@@ -26,6 +27,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
             return "/board/calendar/\(date)"
         case .postBoard:
             return "/board"
+        case .getBoard(let boardId):
+            return "/board/\(boardId)"
         
         }
     }
@@ -35,7 +38,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         case .signInApple,
              .postBoard:
             return .post
-        case.getCalendar:
+        case .getCalendar,
+             .getBoard:
             return .get
         }
     }
