@@ -55,6 +55,12 @@ struct FeedView: View {
                             .listRowBackground(Color.Custom.YellowShadow50)
                             .background(Color.white)
                             .cornerRadius(10)
+                            .onAppear {
+                                let contents = viewModel.feedContents
+                                if content == contents[contents.count-1] {
+                                    viewModel.getFeed(type: sortingType.rawValue)
+                                }
+                            }
                     }
                     
                 } header: {

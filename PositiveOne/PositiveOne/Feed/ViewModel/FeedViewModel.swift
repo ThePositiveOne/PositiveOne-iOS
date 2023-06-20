@@ -16,29 +16,34 @@ class FeedViewModel: ObservableObject {
             print("page = \(page)")
         }
     }
+    @Published var isLast = false
 
     init() {
-       getFeed(type: "new", page: 0)
+       getFeed(type: "new")
     }
     
-    func getFeed(type: String, page: Int) {
-        Task {
-            let response = try await getFeed(type: type, page: page)
-            print(response)
-            if let data = response.data,
-               let boardDTOs = data.boardDTOs {
-                DispatchQueue.main.async {
-                    for boardDTO in boardDTOs {
-                        self.feedContents.append(FeedContent(
-                            boardId: boardDTO.boardId,
-                            stamp: boardDTO.stamp,
-                            text: boardDTO.text,
-                            date: boardDTO.date,
-                            name: boardDTO.name,
-                            memberId: boardDTO.memberId,
-                            likeCnt: boardDTO.likeCnt,
-                            likeCheck: boardDTO.likeCheck
-                        ))
+    func getFeed(type: String) {
+        if !isLast {
+            Task {
+                let response = try await getFeed(type: type, page: page)
+                print(response)
+                if let data = response.data,
+                   let boardDTOs = data.boardDTOs {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.page = data.pageNumber + 1
+                        self?.isLast = data.last
+                        for boardDTO in boardDTOs {
+                            self?.feedContents.append(FeedContent(
+                                boardId: boardDTO.boardId,
+                                stamp: boardDTO.stamp,
+                                text: boardDTO.text,
+                                date: boardDTO.date,
+                                name: boardDTO.name,
+                                memberId: boardDTO.memberId,
+                                likeCnt: boardDTO.likeCnt,
+                                likeCheck: boardDTO.likeCheck
+                            ))
+                        }
                     }
                 }
             }
