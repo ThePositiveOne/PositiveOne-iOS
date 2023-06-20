@@ -75,7 +75,7 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
     
     var authorizationType: Moya.AuthorizationType? {
         switch self {
-        case .signInApple, .getFeed:
+        case .signInApple:
             return .none
         default:
             return .bearer

@@ -11,11 +11,7 @@ import Combine
 class FeedViewModel: ObservableObject {
     
     @Published var feedContents: [FeedContent] = []
-    @Published var page: Int = 0 {
-        didSet {
-            print("page = \(page)")
-        }
-    }
+    @Published var page: Int = 0 
     @Published var isLast = false
 
     init() {
@@ -48,6 +44,12 @@ class FeedViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func resetFeedContent() {
+        feedContents = []
+        page = 0
+        isLast = false
     }
    
     private func getFeed(type: String, page: Int) async throws -> FeedResponse {

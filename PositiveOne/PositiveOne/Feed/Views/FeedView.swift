@@ -109,6 +109,8 @@ struct FeedView: View {
         HStack {
             Button {
                 sortingType = .new
+                viewModel.resetFeedContent()
+                viewModel.getFeed(type: sortingType.rawValue)
             } label: {
                 Text("최신순")
                     .frame(width: 80, height: 30)
@@ -121,6 +123,8 @@ struct FeedView: View {
             
             Button {
                 sortingType = .popular
+                viewModel.resetFeedContent()
+                viewModel.getFeed(type: sortingType.rawValue)
             } label: {
                 Text("인기순")
                     .frame(width: 80, height: 30)
