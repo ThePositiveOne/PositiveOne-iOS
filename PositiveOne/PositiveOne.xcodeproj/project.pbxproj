@@ -62,6 +62,7 @@
 		FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B622A3741CB00940764 /* FeedRowView.swift */; };
 		FAD29B652A37570500940764 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B642A37570500940764 /* FeedResponse.swift */; };
 		FAD29B682A375B0500940764 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FAD29B672A375B0500940764 /* Moya */; };
+		FAF4C9732A41EB85004F6F1A /* SortingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4C9722A41EB85004F6F1A /* SortingType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +122,7 @@
 		FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginResponse.swift; sourceTree = "<group>"; };
 		FAD29B622A3741CB00940764 /* FeedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRowView.swift; sourceTree = "<group>"; };
 		FAD29B642A37570500940764 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		FAF4C9722A41EB85004F6F1A /* SortingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 		FA73FC342A3365A6007A3DCF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FAF4C9742A41EB99004F6F1A /* Feed */,
 				FA57DE182A3EFEDC005EBEF8 /* Calendar */,
 				FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */,
 				FA73FC372A3374A3007A3DCF /* Login */,
@@ -364,7 +367,7 @@
 		FA77D7062A31DB3F00D4AF13 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				FAD29B642A37570500940764 /* FeedResponse.swift */,
+				FAF4C9712A41EB6F004F6F1A /* Model */,
 				FA77D7072A31DB4300D4AF13 /* Views */,
 			);
 			path = Feed;
@@ -395,6 +398,22 @@
 				FA7F5B482A2CAF930045528D /* LoginCharacterView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FAF4C9712A41EB6F004F6F1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4C9722A41EB85004F6F1A /* SortingType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FAF4C9742A41EB99004F6F1A /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				FAD29B642A37570500940764 /* FeedResponse.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA40B97C2A3F1E250044FEFB /* PositiveOneResponse.swift in Sources */,
+				FAF4C9732A41EB85004F6F1A /* SortingType.swift in Sources */,
 				FA73FC392A3374BD007A3DCF /* AppleLoginRequest.swift in Sources */,
 				FA77D7032A31BC3000D4AF13 /* CalendarView.swift in Sources */,
 				FA7F5B4B2A2CB3600045528D /* LoginView.swift in Sources */,

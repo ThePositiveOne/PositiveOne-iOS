@@ -10,6 +10,7 @@ import SwiftUI
 struct FeedView: View {
     
     @Binding var isTabbarHidden: Bool
+    @State var sortingType: SortingType = .new
     
     let feedContents: [FeedContent] = [
         FeedContent(text: """
@@ -89,7 +90,7 @@ struct FeedView: View {
                     }
                     
                 }
-            }
+            } // toolbar
         }
         
     }
@@ -97,11 +98,11 @@ struct FeedView: View {
     var headerView: some View {
         HStack {
             Button {
-                print("최신순")
+                sortingType = .new
             } label: {
                 Text("최신순")
                     .frame(width: 80, height: 30)
-                    .background(Color.Custom.PositiveYellow)
+                    .background(sortingType == .new ? Color.Custom.PositiveYellow : Color.Custom.Black30)
                     .cornerRadius(16)
                     .font(CustomFont.PretendardMedium(size: 14).font)
                     .foregroundColor(.white)
@@ -109,11 +110,11 @@ struct FeedView: View {
             .padding(.leading, 20)
             
             Button {
-                print("인기순")
+                sortingType = .popular
             } label: {
                 Text("인기순")
                     .frame(width: 80, height: 30)
-                    .background(Color.Custom.Black30)
+                    .background(sortingType == .popular ? Color.Custom.PositiveYellow : Color.Custom.Black30)
                     .cornerRadius(16)
                     .font(CustomFont.PretendardMedium(size: 14).font)
                     .foregroundColor(.white)
