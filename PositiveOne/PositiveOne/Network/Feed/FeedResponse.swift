@@ -7,15 +7,30 @@
 
 import Foundation
 
-struct FeedResponse: Decodable {
-    let success: String
-    let data: [FeedContent]
+
+struct FeedResponse: Codable {
+    let success: Bool
+    let data: FeedData?
+    let errorMessage: String?
 }
 
-struct FeedContent: Decodable, Identifiable {
-    var id = UUID()
-    let text: String
-    let date: String
+struct FeedData: Codable {
+    let boardDTOs: [boardDTO]?
+    let totalPages, pageNumber, size, totalElements: Int
+    let last: Bool
+}
+
+struct boardDTO: Codable {
+    let boardId: Int
+    let stamp, text, date, name: String
+    let memberId, likeCnt: Int
     let likeCheck: Bool
-    let name: String
+}
+
+struct FeedContent: Identifiable, Equatable {
+    var id = UUID()
+    let boardId: Int
+    let stamp, text, date, name: String
+    let memberId, likeCnt: Int
+    let likeCheck: Bool
 }

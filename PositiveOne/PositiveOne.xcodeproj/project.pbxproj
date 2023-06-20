@@ -63,6 +63,7 @@
 		FAD29B652A37570500940764 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B642A37570500940764 /* FeedResponse.swift */; };
 		FAD29B682A375B0500940764 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FAD29B672A375B0500940764 /* Moya */; };
 		FAF4C9732A41EB85004F6F1A /* SortingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4C9722A41EB85004F6F1A /* SortingType.swift */; };
+		FAF4C9772A41F128004F6F1A /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4C9762A41F128004F6F1A /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		FAD29B622A3741CB00940764 /* FeedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRowView.swift; sourceTree = "<group>"; };
 		FAD29B642A37570500940764 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 		FAF4C9722A41EB85004F6F1A /* SortingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingType.swift; sourceTree = "<group>"; };
+		FAF4C9762A41F128004F6F1A /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,12 +158,12 @@
 		FA3977D62A2CA2250040741F /* PositiveOne */ = {
 			isa = PBXGroup;
 			children = (
+				FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */,
+				FA73FC342A3365A6007A3DCF /* Network */,
 				FA43BA602A3EF08700F8D5E2 /* Common */,
 				FA43BA5B2A3DE6D200F8D5E2 /* PopUp */,
 				FA418D4E2A38B208003A8D51 /* Writing */,
 				FA418D4A2A386463003A8D51 /* Settings */,
-				FA73FC342A3365A6007A3DCF /* Network */,
-				FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */,
 				FA77D7062A31DB3F00D4AF13 /* Feed */,
 				FA77D6F82A31A97900D4AF13 /* Calendar */,
 				FA77D6F52A31770800D4AF13 /* Tab */,
@@ -367,6 +369,7 @@
 		FA77D7062A31DB3F00D4AF13 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				FAF4C9752A41F119004F6F1A /* ViewModel */,
 				FAF4C9712A41EB6F004F6F1A /* Model */,
 				FA77D7072A31DB4300D4AF13 /* Views */,
 			);
@@ -414,6 +417,14 @@
 				FAD29B642A37570500940764 /* FeedResponse.swift */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		FAF4C9752A41F119004F6F1A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4C9762A41F128004F6F1A /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,6 +551,7 @@
 				FA418D502A38B215003A8D51 /* WritingView.swift in Sources */,
 				FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */,
 				FA77D6FF2A31B07A00D4AF13 /* CalendarManager.swift in Sources */,
+				FAF4C9772A41F128004F6F1A /* FeedViewModel.swift in Sources */,
 				FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */,
 				FA3977D82A2CA2250040741F /* PositiveOneApp.swift in Sources */,
 				FA77D7052A31D47300D4AF13 /* MonthTopView.swift in Sources */,

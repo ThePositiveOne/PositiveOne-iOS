@@ -39,6 +39,7 @@ struct FeedRowView: View {
             Text(feedContent.text)
             .font(CustomFont.PretendardMedium(size: 14).font)
             .foregroundColor(.Custom.Black70)
+            .frame(height: 57)
             .padding(.top, 10)
             .padding(.horizontal, 16)
             
@@ -48,22 +49,22 @@ struct FeedRowView: View {
                 Button(action: {
                     
                 }, label: {
-                    Image(systemName: "heart.fill")
+                    Image(systemName: feedContent.likeCheck ? "heart.fill" : "heart")
                         .resizable()
                         .foregroundColor(.white)
                         .scaledToFit()
                         .frame(width: 12, height: 11)
-                        .offset(CGSize(width: 2, height: 0))
+                        .offset(CGSize(width: 1, height: 0))
                         
                         
-                    Text("15")
+                    Text(String(feedContent.likeCnt))
                         .foregroundColor(.white)
                         .font(CustomFont.PretendardRegular(size: 14).font)
                         
                     
                 })
                 .frame(width: 60, height: 26)
-                .background(feedContent.likeCheck ?Color.Custom.PositiveYellow : Color.Custom.Black30)
+                .background(feedContent.likeCheck ? Color.Custom.PositiveYellow : Color.Custom.Black30)
                 .cornerRadius(3)
                 .padding(.top, 2)
                 .padding(.trailing, 16)
@@ -81,10 +82,7 @@ struct FeedRowView: View {
 
 struct FeedRowView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedRowView(feedContent: FeedContent(text: """
-                 오늘 친구들이랑 서울숲을 갔다.
-                 날씨가 너무 좋기도 했고,
-                 애들이랑 재미있게 놀아서 행복했다!!
-                """, date: "23.05.23", likeCheck: true, name: "따뜻한 긍정이"))
+        FeedRowView(feedContent: FeedContent(boardId: 3, stamp: "pleasureOne", text: "haha", date: "23.03.06", name: "gg", memberId: 2, likeCnt: 3, likeCheck: false))
+
     }
 }
