@@ -14,6 +14,7 @@ enum PositiveOneAPI {
     case getBoard(boardId: Int)
     case putBoard(boardId: Int, parameters: [String: Any])
     case deleteBoard(boardId: Int)
+    case getFeed(type: String, page: String)
 }
 
 extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
@@ -33,6 +34,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
              .putBoard(let boardId, _),
              .deleteBoard(let boardId):
             return "/board/\(boardId)"
+        case .getFeed(let type, _):
+            return "/board/all/\(type)"
         
         }
     }
@@ -43,7 +46,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
              .postBoard:
             return .post
         case .getCalendar,
-             .getBoard:
+             .getBoard,
+             .getFeed:
             return .get
         case .putBoard:
             return .put
@@ -58,6 +62,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
                 .postBoard(let parameters),
                 .putBoard(_, let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .getFeed(_, let page):
+            return .requestParameters(parameters: ["page": page], encoding: URLEncoding.queryString)
         default:
             return .requestPlain
         }
@@ -69,7 +75,7 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
     
     var authorizationType: Moya.AuthorizationType? {
         switch self {
-        case .signInApple:
+        case .signInApple, .getFeed:
             return .none
         default:
             return .bearer
@@ -102,7 +108,8 @@ extension PositiveOneAPI {
                         let data = try JSONDecoder().decode(T.self, from: response.data)
                         continuation.resume(returning: data)
                         print("finishRequestAPI \(response.request?.url?.absoluteString ?? "")")
-                    } catch {
+                    } catch(let error) {
+                        print(error)
                         continuation.resume(throwing: error)
                     }
                 case .failure(let error):
