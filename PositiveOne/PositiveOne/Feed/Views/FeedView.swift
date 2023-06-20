@@ -41,55 +41,33 @@ struct FeedView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                
-                HStack {
-                    Button {
-                        print("최신순")
-                    } label: {
-                        Text("최신순")
-                            .frame(width: 80, height: 30)
-                            .background(Color.Custom.PositiveYellow)
-                            .cornerRadius(16)
-                            .font(CustomFont.PretendardMedium(size: 14).font)
-                            .foregroundColor(.white)
-                    }
-                    .padding(.leading, 20)
-                    
-                    Button {
-                        print("인기순")
-                    } label: {
-                        Text("인기순")
-                            .frame(width: 80, height: 30)
-                            .background(Color.Custom.Black30)
-                            .cornerRadius(16)
-                            .font(CustomFont.PretendardMedium(size: 14).font)
-                            .foregroundColor(.white)
-                    }
-                    Spacer()
-                }
-                .padding(.top, 20)
-                .background(Color.Custom.YellowShadow50)
-                
-                List {
+            List {
+                Section {
                     ForEach(feedContents) { content in
                         FeedRowView(feedContent: content)
-                            .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
-                            .frame(width: UIScreen.main.bounds.width-40,height: 166)
+                            .listRowInsets(EdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 20))
                             .buttonStyle(PlainButtonStyle())
                             .listRowBackground(Color.Custom.YellowShadow50)
                             .background(Color.white)
                             .cornerRadius(10)
                     }
+                    
+                } header: {
+                    headerView
+                        .padding(.leading, -15)
+                        .padding(.top, 26)
                 }
-                .padding(.top, -35)
-                .scrollContentBackground(.hidden)
-                .background(Color.Custom.YellowShadow50)
-                .scrollIndicators(.hidden)
                 
-            }
+            } // List
+            .padding(.top, -35)
+            .scrollContentBackground(.hidden)
+            .background(Color.Custom.YellowShadow50)
+            .scrollIndicators(.hidden)
+            .listStyle(.grouped)
+            
+            
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.Custom.PositiveYellow, for: .navigationBar)
+            .toolbarBackground(Color.Custom.YellowShadow50, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     VStack {
@@ -99,7 +77,7 @@ struct FeedView: View {
                     }
                 }
             }
-           
+            
             .toolbar {
                 ToolbarItem {
                     NavigationLink(
@@ -116,12 +94,41 @@ struct FeedView: View {
         
     }
     
+    var headerView: some View {
+        HStack {
+            Button {
+                print("최신순")
+            } label: {
+                Text("최신순")
+                    .frame(width: 80, height: 30)
+                    .background(Color.Custom.PositiveYellow)
+                    .cornerRadius(16)
+                    .font(CustomFont.PretendardMedium(size: 14).font)
+                    .foregroundColor(.white)
+            }
+            .padding(.leading, 20)
+            
+            Button {
+                print("인기순")
+            } label: {
+                Text("인기순")
+                    .frame(width: 80, height: 30)
+                    .background(Color.Custom.Black30)
+                    .cornerRadius(16)
+                    .font(CustomFont.PretendardMedium(size: 14).font)
+                    .foregroundColor(.white)
+            }
+            Spacer()
+        }
+        .background(Color.Custom.YellowShadow50)
+    }
+    
     
     
 }
 
-//struct FeedView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FeedView()
-//    }
-//}
+struct FeedView_Previews: PreviewProvider {
+    static var previews: some View {
+        FeedView(isTabbarHidden: .constant(true))
+    }
+}

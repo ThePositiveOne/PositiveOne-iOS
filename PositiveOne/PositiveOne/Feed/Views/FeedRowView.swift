@@ -66,15 +66,15 @@ struct FeedRowView: View {
                 .background(feedContent.likeCheck ?Color.Custom.PositiveYellow : Color.Custom.Black30)
                 .cornerRadius(3)
                 .padding(.top, 2)
-                .padding(.leading, UIScreen.main.bounds.width-40-16-60-15)
+                .padding(.trailing, 16)
             }
-            .padding(.trailing, 16)
+            
             
             Spacer()
         }
-        .frame(width: UIScreen.main.bounds.width-40, height: 166)
-        //.background(.green)
+        .frame(height: 166)
         .listRowSeparator(.hidden)
+        //.background(.green)
     }
         
 }
