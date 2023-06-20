@@ -22,7 +22,6 @@ class FeedViewModel: ObservableObject {
         if !isLast {
             Task {
                 let response = try await getFeed(type: type, page: page)
-                print(response)
                 if let data = response.data,
                    let boardDTOs = data.boardDTOs {
                     DispatchQueue.main.async { [weak self] in

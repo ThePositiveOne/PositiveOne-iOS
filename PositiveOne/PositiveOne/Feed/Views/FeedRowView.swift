@@ -10,11 +10,12 @@ import SwiftUI
 struct FeedRowView: View {
     let feedContent: FeedContent
     var body: some View {
+        let isMine = feedContent.name == "내가 쓴 글"
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .bottom) {
                 Text(feedContent.name)
                     .font(CustomFont.PretendardBold(size: 16).font)
-                    .foregroundColor(.Custom.Black100)
+                    .foregroundColor(isMine ? .Custom.PositiveYellow : .Custom.Black100)
                     .padding(.top, 18)
                 
                 Spacer()
@@ -75,6 +76,10 @@ struct FeedRowView: View {
         }
         .frame(height: 166)
         .listRowSeparator(.hidden)
+        .background(
+            RoundedRectangle(cornerRadius: 4)
+                .stroke(isMine ? Color.Custom.PositiveYellow : .clear, lineWidth: 1.7)
+        )
         //.background(.green)
     }
         
@@ -82,7 +87,7 @@ struct FeedRowView: View {
 
 struct FeedRowView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedRowView(feedContent: FeedContent(boardId: 3, stamp: "pleasureOne", text: "haha", date: "23.03.06", name: "gg", memberId: 2, likeCnt: 3, likeCheck: false))
+        FeedRowView(feedContent: FeedContent(boardId: 3, stamp: "pleasureOne", text: "haha", date: "23.03.06", name: "내가 쓴 글", memberId: 2, likeCnt: 3, likeCheck: false))
 
     }
 }

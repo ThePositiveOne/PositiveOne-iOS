@@ -54,7 +54,7 @@ struct FeedView: View {
                             .buttonStyle(PlainButtonStyle())
                             .listRowBackground(Color.Custom.YellowShadow50)
                             .background(Color.white)
-                            .cornerRadius(10)
+                            .cornerRadius(4)
                             .onAppear {
                                 let contents = viewModel.feedContents
                                 if content == contents[contents.count-1] {
