@@ -15,6 +15,8 @@ enum PositiveOneAPI {
     case putBoard(boardId: Int, parameters: [String: Any])
     case deleteBoard(boardId: Int)
     case getFeed(type: String, page: String)
+    case deleteHeart(boardId: Int)
+    case postHeart(boardId: Int)
 }
 
 extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
@@ -36,6 +38,10 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
             return "/board/\(boardId)"
         case .getFeed(let type, _):
             return "/board/all/\(type)"
+            
+        case .deleteHeart(let bordId),
+             .postHeart(let bordId):
+            return "/board/heart/\(bordId)"
         
         }
     }
@@ -43,7 +49,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
     var method: Moya.Method {
         switch self {
         case .signInApple,
-             .postBoard:
+             .postBoard,
+             .postHeart:
             return .post
         case .getCalendar,
              .getBoard,
@@ -51,7 +58,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
             return .get
         case .putBoard:
             return .put
-        case .deleteBoard:
+        case .deleteBoard,
+             .deleteHeart:
             return .delete
         }
     }
