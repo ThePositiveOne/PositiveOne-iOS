@@ -13,6 +13,7 @@ struct WritingView: View {
     @State var selectedType: PositiveOneType?
     @State var content: String = ""
     @State var isLocked: Bool = false
+    @State var isWritingButtonDisabled = false
     let boardId: Int?
     @ObservedObject var viewModel: WritingViewModel
     
@@ -36,14 +37,15 @@ struct WritingView: View {
                 Spacer()
                 
                 Button {
-                    if selectedType != nil && !content.isEmpty {
+                    if selectedType != nil && !content.isEmpty && !isWritingButtonDisabled {
+                        isWritingButtonDisabled = true
                         guard let selectedType = selectedType else {
                             return
                         }
                         let request = CalendarRequest(
                             text: content,
                             stamp: selectedType.rawValue,
-                            lock: isLocked
+                            secret: isLocked
                         )
                         guard let boardId else {
                             viewModel.postBoard(request: request)
@@ -51,6 +53,7 @@ struct WritingView: View {
                             return
                         }
                         viewModel.putBoard(boardId: boardId, request: request)
+                        
                         presentationMode.wrappedValue.dismiss()
                     }
                 } label: {

@@ -16,4 +16,5 @@ struct BoardResponse: Codable {
 struct BoardData: Codable {
     let boardId: Int
     let stamp, text, date: String
+    let secret: Bool
 }

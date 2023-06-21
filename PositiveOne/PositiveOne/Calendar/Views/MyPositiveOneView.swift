@@ -84,6 +84,6 @@ struct MyPositiveOneView: View {
     
     struct MyPositiveOneView_Previews: PreviewProvider {
         static var previews: some View {
-            MyPositiveOneView(boardData: Binding.constant(BoardData(boardId: 3, stamp: "excitingOne", text: "gg", date: "23.05.03")))
+            MyPositiveOneView(boardData: Binding.constant(BoardData(boardId: 3, stamp: "excitingOne", text: "gg", date: "23.05.03", secret: true)))
         }
     }
