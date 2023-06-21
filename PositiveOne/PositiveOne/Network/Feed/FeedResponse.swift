@@ -31,6 +31,7 @@ struct FeedContent: Identifiable, Equatable {
     var id = UUID()
     let boardId: Int
     let stamp, text, date, name: String
-    let memberId, likeCnt: Int
-    let likeCheck: Bool
+    let memberId: Int
+    var likeCnt: Int
+    var likeCheck: Bool
 }

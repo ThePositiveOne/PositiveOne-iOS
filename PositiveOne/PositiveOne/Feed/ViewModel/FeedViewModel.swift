@@ -45,6 +45,20 @@ class FeedViewModel: ObservableObject {
         }
     }
     
+    func postHeart(boardId: Int) {
+        Task {
+            let response = try await postHeart(boardId: boardId)
+            print(response)
+        }
+    }
+    
+    func deleteHeart(boardId: Int) {
+        Task {
+            let response = try await postHeart(boardId: boardId)
+            print(response)
+        }
+    }
+    
     func resetFeedContent() {
         feedContents = []
         page = 0
@@ -53,6 +67,14 @@ class FeedViewModel: ObservableObject {
    
     private func getFeed(type: String, page: Int) async throws -> FeedResponse {
         return try await PositiveOneAPI.request(target: .getFeed(type: type, page: String(page)), dataType: FeedResponse.self)
+    }
+    
+    private func postHeart(boardId: Int) async throws  -> PositiveOneResponse {
+        return try await PositiveOneAPI.request(target: .postHeart(boardId: boardId), dataType: PositiveOneResponse.self)
+    }
+    
+    private func deleteHeart(boardId: Int) async throws -> PositiveOneResponse {
+        return try await PositiveOneAPI.request(target: .deleteHeart(boardId: boardId), dataType: PositiveOneResponse.self)
     }
    
     

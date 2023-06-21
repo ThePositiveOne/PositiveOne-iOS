@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct FeedRowView: View {
-    let feedContent: FeedContent
+    
+    @State var feedContent: FeedContent
+    @ObservedObject var viewModel = FeedViewModel()
+    
     var body: some View {
         let isMine = feedContent.name == "내가 쓴 글"
         VStack(alignment: .leading, spacing: 0) {
@@ -48,7 +51,16 @@ struct FeedRowView: View {
             HStack {
                 Spacer()
                 Button(action: {
+                    if feedContent.likeCheck {
+                        viewModel.deleteHeart(boardId: feedContent.boardId)
+                        feedContent.likeCnt -= 1
+                    } else {
+                        viewModel.postHeart(boardId: feedContent.boardId)
+                        feedContent.likeCnt += 1
+                    }
+                    feedContent.likeCheck.toggle()
                     
+                        
                 }, label: {
                     Image(systemName: feedContent.likeCheck ? "heart.fill" : "heart")
                         .resizable()
