@@ -13,33 +13,6 @@ struct FeedView: View {
     @State var sortingType: SortingType = .new
     @ObservedObject var viewModel = FeedViewModel()
     
-//    let feedContents: [FeedContent] = [
-//        FeedContent(text: """
-//                 오늘 친구들이랑 서울숲을 갔다.
-//                 날씨가 너무 좋기도 했고,
-//                 애들이랑 재미있게 놀아서 행복했다!!
-//                """, date: "23.05.23", likeCheck: true, name: "따뜻한 긍정이"),
-//        FeedContent(text: """
-//                 오늘 친구들이랑 서울숲을 갔다.
-//                 날씨가 너무 좋기도 했고,
-//                 애들이랑 재미있게 놀아서 행복했다!!
-//                """, date: "23.05.24", likeCheck: false, name: "건강한 긍정이"),
-//        FeedContent(text: """
-//                 오늘 친구들이랑 서울숲을 갔다.
-//                 날씨가 너무 좋기도 했고,
-//                 애들이랑 재미있게 놀아서 행복했다!!
-//                """, date: "23.05.23", likeCheck: true, name: "나"),
-//        FeedContent(text: """
-//                 오늘 친구들이랑 서울숲을 갔다.
-//                 날씨가 너무 좋기도 했고,
-//                 애들이랑 재미있게 놀아서 행복했다!!
-//                """, date: "23.05.23", likeCheck: true, name: "나"),
-//        FeedContent(text: """
-//                 오늘 친구들이랑 서울숲을 갔다.
-//                 날씨가 너무 좋기도 했고,
-//                 애들이랑 재미있게 놀아서 행복했다!!
-//                """, date: "23.05.23", likeCheck: true, name: "나")
-//    ]
     let feedContents: [FeedContent] = [
         FeedContent(boardId: 3, stamp: "excitingOne", text: "haha", date: "23.05.13", name: "dd", memberId: 2, likeCnt: 2, likeCheck: true)
     ]
@@ -49,7 +22,7 @@ struct FeedView: View {
             List {
                 Section {
                     ForEach(viewModel.feedContents) { content in
-                        FeedRowView(feedContent: content)
+                        FeedRowView(feedContent: content, viewModel: viewModel)
                             .listRowInsets(EdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 20))
                             .buttonStyle(PlainButtonStyle())
                             .listRowBackground(Color.Custom.YellowShadow50)
@@ -101,6 +74,9 @@ struct FeedView: View {
                     
                 }
             } // toolbar
+            .onAppear {
+                sortingType = .new
+            }
         }
         
     }
@@ -108,9 +84,11 @@ struct FeedView: View {
     var headerView: some View {
         HStack {
             Button {
-                sortingType = .new
-                viewModel.resetFeedContent()
-                viewModel.getFeed(type: sortingType.rawValue)
+                if sortingType == .popular {
+                    sortingType = .new
+                    viewModel.resetFeedContent()
+                    viewModel.getFeed(type: sortingType.rawValue)
+                }
             } label: {
                 Text("최신순")
                     .frame(width: 80, height: 30)
@@ -122,9 +100,11 @@ struct FeedView: View {
             .padding(.leading, 20)
             
             Button {
-                sortingType = .popular
-                viewModel.resetFeedContent()
-                viewModel.getFeed(type: sortingType.rawValue)
+                if sortingType == .new {
+                    sortingType = .popular
+                    viewModel.resetFeedContent()
+                    viewModel.getFeed(type: sortingType.rawValue)
+                }
             } label: {
                 Text("인기순")
                     .frame(width: 80, height: 30)

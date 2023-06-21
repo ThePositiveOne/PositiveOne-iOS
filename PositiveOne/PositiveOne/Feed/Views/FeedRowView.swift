@@ -10,7 +10,7 @@ import SwiftUI
 struct FeedRowView: View {
     
     @State var feedContent: FeedContent
-    @ObservedObject var viewModel = FeedViewModel()
+    @ObservedObject var viewModel: FeedViewModel
     
     var body: some View {
         let isMine = feedContent.name == "내가 쓴 글"
@@ -99,7 +99,7 @@ struct FeedRowView: View {
 
 struct FeedRowView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedRowView(feedContent: FeedContent(boardId: 3, stamp: "pleasureOne", text: "haha", date: "23.03.06", name: "내가 쓴 글", memberId: 2, likeCnt: 3, likeCheck: false))
+        FeedRowView(feedContent: FeedContent(boardId: 3, stamp: "pleasureOne", text: "haha", date: "23.03.06", name: "내가 쓴 글", memberId: 2, likeCnt: 3, likeCheck: false), viewModel: FeedViewModel())
 
     }
 }
