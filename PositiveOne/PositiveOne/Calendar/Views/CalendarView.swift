@@ -10,9 +10,11 @@ import SwiftUI
 struct CalendarView: View {
     
     @EnvironmentObject var calendarManager: CalendarManager
-    @State var isPresented = false
+    @State var isPresentedWritingView = false
+    @Binding var isPresentedLoginPopupView: Bool
     @Binding var isTabbarHidden: Bool
     @ObservedObject var viewModel = CalendarViewModel()
+    let isLogin: Bool = Keychain.loadToken() != nil
     
     var body: some View {
         
@@ -26,12 +28,12 @@ struct CalendarView: View {
                         HStack {
                             Spacer()
                             Button {
-                                isPresented.toggle()
+                                isLogin ? isPresentedWritingView.toggle() : isPresentedLoginPopupView.toggle()
                             } label: {
                                 Image("writing")
                             }
                             .frame(width: 44, height: 44)
-                            .fullScreenCover(isPresented: $isPresented) {
+                            .fullScreenCover(isPresented: $isPresentedWritingView) {
                                 WritingView(boardId: nil, viewModel: WritingViewModel())
                             }
                         }
@@ -46,9 +48,8 @@ struct CalendarView: View {
                     }
                     Spacer()
                 }
-                
      
-            }
+            } // ZStack
            
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -78,7 +79,7 @@ struct CalendarView: View {
 struct CalendarView_Previews: PreviewProvider {
 
     static var previews: some View {
-        CalendarView(isTabbarHidden: .constant(true), viewModel: CalendarViewModel())
+        CalendarView(isPresentedLoginPopupView: .constant(true), isTabbarHidden: .constant(true), viewModel: CalendarViewModel())
             .environmentObject(CalendarManager())
     }
 }

@@ -7,8 +7,13 @@
 
 import SwiftUI
 
+
+
 struct LoginPopupView: View {
+    
     @Environment(\.presentationMode) var presentationMode
+    @State var isPresentedLoginView = false
+    
     var body: some View {
         VStack {
             VStack(spacing: 0) {
@@ -43,7 +48,9 @@ struct LoginPopupView: View {
                     }
                     .padding(.bottom, 12)
                     Button {
-                        presentationMode.wrappedValue.dismiss()
+                       // presentationMode.wrappedValue.dismiss()
+                        isPresentedLoginView.toggle()
+                        
                     } label: {
                         Text("확인")
                             .foregroundColor(.white)
@@ -62,15 +69,11 @@ struct LoginPopupView: View {
                     .foregroundColor(.white)
                     .shadow(color: Color.black.opacity(0.05), radius: 3, x: 2, y: 2)
             )
+            .fullScreenCover(isPresented: $isPresentedLoginView) {
+                LoginView()
+            }
         }
-        .frame(
-              minWidth: 0,
-              maxWidth: .infinity,
-              minHeight: 0,
-              maxHeight: .infinity,
-              alignment: .center
-            )
-        .background(Color.black.opacity(0.8))
+       
         .onTapGesture {
             presentationMode.wrappedValue.dismiss()
         }
@@ -80,6 +83,6 @@ struct LoginPopupView: View {
 
 struct SingleButtonPopupView_Previews: PreviewProvider {
     static var previews: some View {
-       LoginPopupView()
+        LoginPopupView()
     }
 }

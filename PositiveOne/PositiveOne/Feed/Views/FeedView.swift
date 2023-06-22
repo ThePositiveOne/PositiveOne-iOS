@@ -12,17 +12,14 @@ struct FeedView: View {
     @Binding var isTabbarHidden: Bool
     @State var sortingType: SortingType = .new
     @ObservedObject var viewModel = FeedViewModel()
-    
-    let feedContents: [FeedContent] = [
-        FeedContent(boardId: 3, stamp: "excitingOne", text: "haha", date: "23.05.13", name: "dd", memberId: 2, likeCnt: 2, likeCheck: true)
-    ]
+    @Binding var isPresentedLoginPopupView: Bool
     
     var body: some View {
         NavigationStack {
             List {
                 Section {
                     ForEach(viewModel.feedContents) { content in
-                        FeedRowView(feedContent: content, viewModel: viewModel)
+                        FeedRowView(feedContent: content, viewModel: viewModel, isPresentedLoginPopupView: $isPresentedLoginPopupView)
                             .listRowInsets(EdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 20))
                             .buttonStyle(PlainButtonStyle())
                             .listRowBackground(Color.Custom.YellowShadow50)
@@ -124,6 +121,6 @@ struct FeedView: View {
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView(isTabbarHidden: .constant(true))
+        FeedView(isTabbarHidden: .constant(true), isPresentedLoginPopupView: .constant(false))
     }
 }

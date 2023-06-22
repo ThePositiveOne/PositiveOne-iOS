@@ -11,25 +11,46 @@ struct TabbarView: View {
     
     @State var selectedTab: Tab = .calendar
     @State var isTabbarHidden: Bool = false
+    @State var isPresentedLoginPopupView: Bool = false
     
     var body: some View {
         
-        VStack(spacing: 0) {
-            switch selectedTab {
-            case .calendar:
-                CalendarView(isTabbarHidden: $isTabbarHidden, viewModel: CalendarViewModel())
-                    .environmentObject(CalendarManager())
-            case .feed:
-                FeedView(isTabbarHidden: $isTabbarHidden)
+        ZStack {
+            VStack(spacing: 0) {
+                switch selectedTab {
+                case .calendar:
+                    CalendarView(isPresentedLoginPopupView: $isPresentedLoginPopupView, isTabbarHidden: $isTabbarHidden, viewModel: CalendarViewModel())
+                        .environmentObject(CalendarManager())
+                case .feed:
+                    FeedView(isTabbarHidden: $isTabbarHidden, isPresentedLoginPopupView: $isPresentedLoginPopupView)
+                }
+                
+                if !isTabbarHidden {
+                    CustomTabView(selectedTab: $selectedTab)
+                        .padding(.bottom, 15)
+                }
+                
             }
+            .edgesIgnoringSafeArea(.bottom)
             
-            if !isTabbarHidden {
-                CustomTabView(selectedTab: $selectedTab)
-                    .padding(.bottom, 15)
+            VStack {
+                
             }
+            .frame(
+                  minWidth: 0,
+                  maxWidth: .infinity,
+                  minHeight: 0,
+                  maxHeight: .infinity,
+                  alignment: .center
+                )
+            .background(Color.black.opacity(isPresentedLoginPopupView ? 0.5 : 0))
             
+            .fullScreenCover(isPresented: $isPresentedLoginPopupView) {
+                LoginPopupView()
+                    .clearModalBackground()
+            }
         }
-        .edgesIgnoringSafeArea(.bottom)
+        
 
     }
 }

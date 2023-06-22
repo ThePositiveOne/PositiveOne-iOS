@@ -11,6 +11,8 @@ struct FeedRowView: View {
     
     @State var feedContent: FeedContent
     @ObservedObject var viewModel: FeedViewModel
+    @Binding var isPresentedLoginPopupView: Bool
+    let isLogin: Bool = Keychain.loadToken() != nil
     
     var body: some View {
         let isMine = feedContent.name == "내가 쓴 글"
@@ -51,15 +53,19 @@ struct FeedRowView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    if feedContent.likeCheck {
-                        viewModel.deleteHeart(boardId: feedContent.boardId)
-                        feedContent.likeCnt -= 1
-                    } else {
-                        viewModel.postHeart(boardId: feedContent.boardId)
-                        feedContent.likeCnt += 1
+                    if isLogin {
+                        if feedContent.likeCheck {
+                            viewModel.deleteHeart(boardId: feedContent.boardId)
+                            feedContent.likeCnt -= 1
+                        } else {
+                            viewModel.postHeart(boardId: feedContent.boardId)
+                            feedContent.likeCnt += 1
+                        }
+                        feedContent.likeCheck.toggle()
                     }
-                    feedContent.likeCheck.toggle()
-                    
+                    else {
+                        isPresentedLoginPopupView.toggle()
+                    }
                         
                 }, label: {
                     Image(systemName: "heart.fill")
@@ -99,7 +105,7 @@ struct FeedRowView: View {
 
 struct FeedRowView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedRowView(feedContent: FeedContent(boardId: 3, stamp: "pleasureOne", text: "haha", date: "23.03.06", name: "내가 쓴 글", memberId: 2, likeCnt: 3, likeCheck: false), viewModel: FeedViewModel())
+        FeedRowView(feedContent: FeedContent(boardId: 3, stamp: "pleasureOne", text: "haha", date: "23.03.06", name: "내가 쓴 글", memberId: 2, likeCnt: 3, likeCheck: false), viewModel: FeedViewModel(), isPresentedLoginPopupView: .constant(false))
 
     }
 }
