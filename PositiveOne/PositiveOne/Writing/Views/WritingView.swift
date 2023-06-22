@@ -10,6 +10,7 @@ import SwiftUI
 struct WritingView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var calendarManager: CalendarManager
     @State var selectedType: PositiveOneType?
     @State var content: String = ""
     @State var isLocked: Bool = false
@@ -39,13 +40,15 @@ struct WritingView: View {
                 Button {
                     if selectedType != nil && !content.isEmpty && !isWritingButtonDisabled {
                         isWritingButtonDisabled = true
-                        guard let selectedType = selectedType else {
+                        guard let selectedType = selectedType,
+                              let date = calendarManager.selectedDayDDYYMM() else {
                             return
                         }
                         let request = CalendarRequest(
                             text: content,
                             stamp: selectedType.rawValue,
-                            secret: isLocked
+                            secret: isLocked,
+                            date: date
                         )
                         guard let boardId else {
                             viewModel.postBoard(request: request)

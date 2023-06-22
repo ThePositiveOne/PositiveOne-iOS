@@ -11,4 +11,5 @@ struct CalendarRequest: Encodable {
     let text: String
     let stamp: String
     let secret: Bool
+    let date: String
 }

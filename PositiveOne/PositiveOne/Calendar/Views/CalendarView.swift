@@ -34,7 +34,7 @@ struct CalendarView: View {
                             }
                             .frame(width: 44, height: 44)
                             .fullScreenCover(isPresented: $isPresentedWritingView) {
-                                WritingView(boardId: nil, viewModel: WritingViewModel())
+                                WritingView(boardId: nil, viewModel: WritingViewModel()).environmentObject(calendarManager)
                             }
                         }
                         .padding(.trailing, 20)
