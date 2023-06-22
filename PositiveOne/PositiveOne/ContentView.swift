@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    let isLogin: Bool = Keychain.loadToken() != nil
     var body: some View {
         VStack {
-            LoginView()
+            // 자동로그인
+            if isLogin {
+                TabbarView()
+            } else {
+                LoginView()
+            }
         }
-        .padding()
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

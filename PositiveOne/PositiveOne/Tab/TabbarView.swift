@@ -17,8 +17,6 @@ struct TabbarView: View {
         VStack(spacing: 0) {
             switch selectedTab {
             case .calendar:
-             //   CalendarView(isTabbarHidden: $isTabbarHidden)
-             //       .environmentObject(CalendarManager())
                 CalendarView(isTabbarHidden: isTabbarHidden, viewModel: CalendarViewModel())
                     .environmentObject(CalendarManager())
             case .feed:
