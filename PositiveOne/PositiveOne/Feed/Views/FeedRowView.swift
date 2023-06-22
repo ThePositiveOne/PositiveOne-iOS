@@ -62,7 +62,7 @@ struct FeedRowView: View {
                     
                         
                 }, label: {
-                    Image(systemName: feedContent.likeCheck ? "heart.fill" : "heart")
+                    Image(systemName: "heart.fill")
                         .resizable()
                         .foregroundColor(.white)
                         .scaledToFit()
