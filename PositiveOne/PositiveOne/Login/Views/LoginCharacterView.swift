@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginCharacterView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Image("LoginCharacters")
                 .frame(width: 133, height: 133)
                 .padding(.bottom, 25)
@@ -17,11 +17,11 @@ struct LoginCharacterView: View {
             Text("긍정하나")
                 .font(CustomFont.gangwon(size: 34).font)
                 .foregroundColor(.Custom.TitleColor)
-                .padding(.bottom, 0)
             
             Text("Positive one")
                 .font(CustomFont.PretendardMedium(size: 14).font)
                 .foregroundColor(.Custom.Black40)
+                .padding(.top, 3)
         }
     }
 }

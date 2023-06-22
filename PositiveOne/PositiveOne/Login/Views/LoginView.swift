@@ -14,14 +14,16 @@ struct LoginView: View {
     @ObservedObject var viewModel = LoginViewModel()
    
     var body: some View {
-        VStack() {
+        VStack(spacing: 0) {
        
+            Spacer()
             LoginCharacterView()
-            .padding(.bottom, 130)
-            .padding(.top, UIScreen.main.bounds.height*0.28)
+                .padding(.top, UIScreen.main.bounds.height*0.2)
+           
             
             AppleSigninButton(viewModel: viewModel)
                 .frame(width: 266, height: 44)
+                .padding(.top, UIScreen.main.bounds.height*0.15)
             
             Button {
                 isPresented.toggle()
