@@ -29,7 +29,7 @@ struct CustomTabView: View {
                         .foregroundColor(selectedTab == .calendar ? .Custom.PositiveYellow : .Custom.Black60)
                         .font(CustomFont.PretendardSemiBold(size: 14).font)
                 }
-                .offset(x: -5)
+                .offset(x: -10)
             }
             .padding(.horizontal, UIScreen.main.bounds.width/4 - 30)
             
@@ -45,11 +45,18 @@ struct CustomTabView: View {
                         .foregroundColor(selectedTab == .feed ? .Custom.PositiveYellow : .Custom.Black60)
                         .font(CustomFont.PretendardSemiBold(size: 14).font)
                 }
-                .offset(x: 5)
+                .offset(x: 10)
             }
             .padding(.horizontal, UIScreen.main.bounds.width/4 - 30)
         }
         .frame(width: UIScreen.main.bounds.width, height: 85)
+    }
+}
+
+
+struct CustomTabView_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomTabView(selectedTab: .constant(.calendar))
     }
 }
 

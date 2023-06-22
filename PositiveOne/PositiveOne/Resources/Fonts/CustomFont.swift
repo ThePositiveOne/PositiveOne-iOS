@@ -25,25 +25,25 @@ extension CustomFont {
     public var font: Font {
         switch self {
         case .PretendardBlack(size: let size):
-            return Font.custom("Pretendard-Black", size: size)
+            return Font.custom("Pretendard-Black", fixedSize: size)
         case .PretendardBold(size: let size):
-            return Font.custom("Pretendard-Bold", size: size)
+            return Font.custom("Pretendard-Bold", fixedSize: size)
         case .PretendardExtraBold(size: let size):
-            return Font.custom("Pretendard-ExtraBold", size: size)
+            return Font.custom("Pretendard-ExtraBold", fixedSize: size)
         case .PretendardExtraLight(size: let size):
-            return Font.custom("Pretendard-ExtraLight", size: size)
+            return Font.custom("Pretendard-ExtraLight", fixedSize: size)
         case .PretendardLight(size: let size):
-            return Font.custom("Pretendard-Light", size: size)
+            return Font.custom("Pretendard-Light", fixedSize: size)
         case .PretendardMedium(size: let size):
-            return Font.custom("Pretendard-Medium", size: size)
+            return Font.custom("Pretendard-Medium", fixedSize: size)
         case .PretendardRegular(size: let size):
-            return Font.custom("Pretendard-Regular", size: size)
+            return Font.custom("Pretendard-Regular", fixedSize: size)
         case .PretendardSemiBold(size: let size):
-            return Font.custom("Pretendard-SemiBold", size: size)
+            return Font.custom("Pretendard-SemiBold", fixedSize: size)
         case .PretendardThin(size: let size):
-            return Font.custom("Pretendard-Thin", size: size)
+            return Font.custom("Pretendard-Thin", fixedSize: size)
         case .gangwon(size: let size):
-            return Font.custom("GangwonEduPowerExtraBold", size: size)
+            return Font.custom("GangwonEduPowerExtraBold", fixedSize: size)
         }
     }
 }
