@@ -12,6 +12,12 @@ class CalendarViewModel: ObservableObject {
     
     @Published var calendarDict: [Int: (boardId: Int, type: PositiveOneType)] = [:]
     @Published var boardData: BoardData?
+    @EnvironmentObject var calendarManager: CalendarManager
+    
+    init(boardData: BoardData? = nil) {
+        self.boardData = boardData
+        getCalendar(date: CalendarManager().monthAndYear() ?? "")
+    }
  
     func getCalendar(date: String) {
         Task {

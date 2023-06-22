@@ -9,20 +9,21 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    let isLogin = Keychain.loadToken() != nil
+    let notloggedInSettingList = ["로그인", "이용약관", "개인정보 정책"]
+    let loggedInSettingList = ["로그아웃", "회원탈퇴", "이용약관", "개인정보 정책"]
     @Binding var isTabbarHidden: Bool
     
     var body: some View {
         
         List {
-            Text("로그인")
-                .foregroundColor(.Custom.Black70)
-                .font(CustomFont.PretendardMedium(size: 16).font)
-            Text("이용약관")
-                .foregroundColor(.Custom.Black70)
-                .font(CustomFont.PretendardMedium(size: 16).font)
-            Text("개인정보 정책")
-                .foregroundColor(.Custom.Black70)
-                .font(CustomFont.PretendardMedium(size: 16).font)
+            ForEach(isLogin ? loggedInSettingList : notloggedInSettingList, id: \.self) { item in
+                Text(item)
+                    .foregroundColor(.Custom.Black70)
+                    .font(CustomFont.PretendardMedium(size: 16).font)
+            }
+            
+            
         }
         .listStyle(PlainListStyle())
         .scrollContentBackground(.hidden)
@@ -30,7 +31,7 @@ struct SettingsView: View {
         .frame(width: UIScreen.main.bounds.width-40)
         .padding(.leading, -20)
         .padding(.top, 20)
-       
+        
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 NavigationBackItem()

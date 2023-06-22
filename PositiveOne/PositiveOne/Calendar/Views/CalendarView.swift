@@ -12,14 +12,7 @@ struct CalendarView: View {
     @EnvironmentObject var calendarManager: CalendarManager
     @State var isPresented = false
     @Binding var isTabbarHidden: Bool
-    @ObservedObject var viewModel: CalendarViewModel
-    
-    init(calendarManager: CalendarManager = CalendarManager(), isPresented: Bool = false, isTabbarHidden: Bool, viewModel: CalendarViewModel) {
-        self._isPresented = State(initialValue: isPresented)
-        self._isTabbarHidden = Binding.constant(isTabbarHidden)
-        self.viewModel = viewModel
-        viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
-    }
+    @ObservedObject var viewModel = CalendarViewModel()
     
     var body: some View {
         
@@ -56,7 +49,7 @@ struct CalendarView: View {
                 
      
             }
-            
+           
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -85,7 +78,7 @@ struct CalendarView: View {
 struct CalendarView_Previews: PreviewProvider {
 
     static var previews: some View {
-        CalendarView(isTabbarHidden: true, viewModel: CalendarViewModel())
+        CalendarView(isTabbarHidden: .constant(true), viewModel: CalendarViewModel())
             .environmentObject(CalendarManager())
     }
 }
