@@ -11,6 +11,7 @@ import SwiftUI
 
 class LoginViewModel: ObservableObject {
     @Published var loginResponse: AppleLoginResponse?
+    @Published var isLoginSuccess: Bool = false
     
     func postAppleLogin(_ request: AppleLoginRequest) {
         Task {
@@ -21,6 +22,9 @@ class LoginViewModel: ObservableObject {
             }
             UserDefaults.standard.write(key: .userIdentifier, value: request.identityToken)
             Keychain.saveToken(data: jwt)
+            DispatchQueue.main.async {
+                self.isLoginSuccess = true
+            }
         }
     }
     

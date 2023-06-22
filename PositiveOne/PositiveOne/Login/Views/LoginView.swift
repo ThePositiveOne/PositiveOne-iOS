@@ -11,6 +11,7 @@ import Moya
 
 struct LoginView: View {
     @State var isPresented = false
+    @ObservedObject var viewModel = LoginViewModel()
    
     var body: some View {
         VStack() {
@@ -19,25 +20,7 @@ struct LoginView: View {
             .padding(.bottom, 130)
             .padding(.top, UIScreen.main.bounds.height*0.28)
             
-//            Button(action: {
-//
-//            }, label: {
-//                Image(systemName: "apple.logo")
-//                    .frame(width: 13.52, height: 17)
-//                    .offset(x:20)
-//
-//                Text("Apple로 로그인")
-//                    .frame(width: 266, height: 44)
-//                    .font(CustomFont.PretendardMedium(size: 19).font)
-//                    .offset(x: -13.52)
-//
-//            })
-//            .background(.black)
-//            .cornerRadius(3)
-//            .foregroundColor(.white)
-//            .font(CustomFont.PretendardMedium(size: 19).font)
-//
-            AppleSigninButton(viewModel: LoginViewModel())
+            AppleSigninButton(viewModel: viewModel)
                 .frame(width: 266, height: 44)
             
             Button {
@@ -49,6 +32,9 @@ struct LoginView: View {
                 .padding(.top, 16)
             }
             .fullScreenCover(isPresented: $isPresented) {
+                TabbarView()
+            }
+            .fullScreenCover(isPresented: .constant(viewModel.isLoginSuccess)) {
                 TabbarView()
             }
         
