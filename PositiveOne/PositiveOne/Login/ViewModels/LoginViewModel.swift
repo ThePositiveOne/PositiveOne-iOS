@@ -20,6 +20,8 @@ class LoginViewModel: ObservableObject {
             guard let jwt = response.data?.token else {
                 return
             }
+            print("jwt")
+            print(jwt)
             UserDefaults.standard.write(key: .userIdentifier, value: request.identityToken)
             Keychain.saveToken(data: jwt)
             DispatchQueue.main.async {

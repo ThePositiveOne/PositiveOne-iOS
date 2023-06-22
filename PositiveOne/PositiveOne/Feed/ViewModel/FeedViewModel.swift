@@ -54,7 +54,7 @@ class FeedViewModel: ObservableObject {
     
     func deleteHeart(boardId: Int) {
         Task {
-            let response = try await postHeart(boardId: boardId)
+            let response = try await deleteHeart(boardId: boardId)
             print(response)
         }
     }
