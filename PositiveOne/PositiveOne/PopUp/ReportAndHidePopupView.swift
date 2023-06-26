@@ -42,7 +42,7 @@ struct ReportAndHidePopupView: View {
     }
 }
 
-struct ReportPopupView_Previews: PreviewProvider {
+struct ReportAndHidePopupView_Previews: PreviewProvider {
     static var previews: some View {
         ReportAndHidePopupView(boardId: 4)
     }
