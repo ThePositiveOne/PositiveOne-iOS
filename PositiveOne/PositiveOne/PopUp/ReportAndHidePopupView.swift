@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReportPopupView: View {
+struct ReportAndHidePopupView: View {
     
     let reportLists = ["계정 신고", "피드 신고", "계정 가리기", "피드 가리기"]
     let boardId: Int
@@ -44,6 +44,6 @@ struct ReportPopupView: View {
 
 struct ReportPopupView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportPopupView(boardId: 4)
+        ReportAndHidePopupView(boardId: 4)
     }
 }
