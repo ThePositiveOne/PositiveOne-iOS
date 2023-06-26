@@ -34,7 +34,9 @@ struct TabbarView: View {
             .edgesIgnoringSafeArea(.bottom)
             
             VStack {
-                
+//                if isPresentedLoginPopupView {
+//                    LoginPopupView()
+//                }
             }
             .frame(
                   minWidth: 0,
