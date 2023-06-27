@@ -29,7 +29,7 @@ struct CalendarGridView: View {
             
             daysView
                 .padding(.vertical, 17)
-                .background(Color.Custom.YellowShadow50)
+                .background(Color.white)
                 .padding(.top, 10)
                 .cornerRadius(4)
         }
@@ -37,7 +37,7 @@ struct CalendarGridView: View {
     }
     
     var daysView: some View {
-        VStack(spacing: 5) {
+        VStack(spacing: 6) {
             let currentMonthTotalDays = calendarManager.totalDaysInMonth()
             let indexOfFirstDayWeek = calendarManager.indexOfFirstDayWeek()
             let dayNums = Array(-indexOfFirstDayWeek+1...42)
@@ -47,7 +47,7 @@ struct CalendarGridView: View {
            
             ForEach(0..<6) { row in
                 if (isFiveLine && row != 5) || !isFiveLine {
-                    HStack(spacing: (width-40)*0.034) {
+                    HStack(spacing: 5) {
                         ForEach(0..<7) { column in
                             let dayNum = dayNums[(row*7)+column]
                             if dayNum > 0 && dayNum <= currentMonthTotalDays {
@@ -89,8 +89,9 @@ struct CalendarGridView: View {
     
 }
 
-//struct CalendarGridView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CalendarGridView(calendarDict: [:]).environmentObject(CalendarManager())
-//    }
-//}
+struct CalendarGridView_Previews: PreviewProvider {
+    static var previews: some View {
+        CalendarGridView(viewModel: CalendarViewModel(), calendarDict: .constant([:]))
+            .environmentObject(CalendarManager())
+    }
+}

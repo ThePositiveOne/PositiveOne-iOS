@@ -16,19 +16,20 @@ struct CalendarCell: View {
     let positiveOneType: PositiveOneType?
     let isContainMonth: Bool
     let boardId: Int?
+    let size = (UIScreen.main.bounds.width-40-6*7)/7
     
     var body: some View {
         if isContainMonth {
             VStack(spacing: 6) {
                 ZStack {
                     Circle()
-                        .frame(width: 33, height: 33)
+                        .frame(width: size, height: size)
                         .foregroundColor(.Custom.YellowShadow)
                     
                     if let positiveOneType {
                         Image(positiveOneType.rawValue)
                             .resizable()
-                            .frame(width: 37, height: 37)
+                            .frame(width: size, height: size)
                     }
                     
                 }
@@ -40,7 +41,7 @@ struct CalendarCell: View {
                     .background(calendarManager.verifySelectedDay(day) ? Color.Custom.PositiveYellow : .clear)
                     .cornerRadius(2)
             }
-            .frame(width: 37, height: 56)
+            .frame(width: size, height: size+18)
             .onTapGesture {
                 HapticManager.instance.impact(style: .light)
                 calendarManager.updateSelectedDate(day)
@@ -55,7 +56,7 @@ struct CalendarCell: View {
         
         else {
            Text("")
-            .frame(width: 37, height: 56)
+                .frame(width: size, height: size+18)
             .background(.clear)
         }
        
