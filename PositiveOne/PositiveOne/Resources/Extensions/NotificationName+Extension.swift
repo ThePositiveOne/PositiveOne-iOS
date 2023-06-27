@@ -9,4 +9,5 @@ import Foundation
 
 extension Notification.Name {
     static let reloadFeed = Notification.Name(rawValue: "reloadFeed")
+    static let reloadCalendar = Notification.Name(rawValue: "reloadCalendar")
 }

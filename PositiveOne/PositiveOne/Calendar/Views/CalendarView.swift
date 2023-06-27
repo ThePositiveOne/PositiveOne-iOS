@@ -70,6 +70,9 @@ struct CalendarView: View {
                     
                 }
             }
+            .onReceive(NotificationCenter.default.publisher(for: Notification.Name.reloadCalendar)) { _ in
+                viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
+            }
         }
     }
 }
