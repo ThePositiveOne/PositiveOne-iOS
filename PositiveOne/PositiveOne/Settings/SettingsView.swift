@@ -21,6 +21,8 @@ struct SettingsView: View {
             ForEach(isLogin ? loggedInSettingList : notloggedInSettingList, id: \.self) { item in
                 Button {
                     switch item {
+                    case "로그인":
+                        isPresentedLoginView.toggle()
                     case "로그아웃":
                         Keychain.deleteToken()
                         isPresentedLoginView.toggle()
