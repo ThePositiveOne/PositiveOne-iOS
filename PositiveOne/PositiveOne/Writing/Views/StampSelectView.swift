@@ -34,6 +34,7 @@ struct StampSelectView: View {
             
             StampViews(selectedType: $selectedType)
             .padding(.leading, 20)
+            .padding(.trailing, -20)
             .padding(.top, 10)
         }
         
@@ -52,7 +53,7 @@ struct StampViews: View {
     @Binding var selectedType: PositiveOneType?
     
     var body: some View {
-        HStack(spacing: 15) {
+        HStack(spacing: 0) {
             ForEach(0..<4) { i in
                 stampViews[i]
                     .onTapGesture {
@@ -68,6 +69,9 @@ struct StampViews: View {
                         RoundedRectangle(cornerRadius: 4)
                             .stroke(selectedType == stampViews[i].type ? Color.Custom.PositiveYellow : Color.clear)
                     )
+                if i != 3 {
+                    Spacer()
+                }
                     
             }
         }
