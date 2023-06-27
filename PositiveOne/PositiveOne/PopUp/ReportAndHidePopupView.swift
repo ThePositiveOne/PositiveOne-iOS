@@ -11,33 +11,68 @@ struct ReportAndHidePopupView: View {
     
     let reportLists = ["계정 신고", "피드 신고", "계정 가리기", "피드 가리기"]
     let boardId: Int
+    @Environment(\.presentationMode) var presentationMode
+    @State var isPresentedHidePopupView: Bool = false
+    @State var reportType: ReportType = .user
     
     var body: some View {
-        VStack {
-            Spacer()
+        
+        VStack(spacing: 0) {
+            Button(action: {
+                print("button tapped")
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Text("")
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-307)
+                    .background(Color.black.opacity(0.8))
+            })
+           
+            
             List {
                 ForEach(reportLists, id: \.self) { item in
                     Button {
-                        
+                        switch item {
+                        case "계정 가리기":
+                            isPresentedHidePopupView.toggle()
+                            reportType = .user
+                        case "피드 가리기":
+                            isPresentedHidePopupView.toggle()
+                            reportType = .feed
+                        default:
+                            break
+                        }
                     } label: {
                         Text(item)
+                            .padding(.leading, 17)
                             .foregroundColor(item=="계정 신고" || item=="피드 신고" ? .Custom.Red : .Custom.Black60)
                             .font(CustomFont.PretendardSemiBold(size: 16).font)
+                            .frame(height: 75)
                     }
                     .frame(height: 75)
                     .buttonStyle(PlainButtonStyle())
                     .scrollContentBackground(.hidden)
-                    .listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: -10))
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -10))
                     .listRowSeparatorTint(.Custom.Black40)
-
+                    .scrollDisabled(true)
+                    
                 }
             }
-            .frame(width: 390, height: 297)
+           // .disabled(true)
+            .frame(width: 390, height: 307)
+
             .listStyle(.plain)
             .cornerRadius(10)
-        } // VStack
-        .background(Color.black.opacity(1))
-        .edgesIgnoringSafeArea(.bottom)
+            .padding(.bottom, 10)
+        }
+        
+        
+        // ZStack
+        .edgesIgnoringSafeArea(.all)
+        .fullScreenCover(isPresented: $isPresentedHidePopupView) {
+            HidePopupView(reportType: reportType)
+                .clearModalBackground()
+        }
+        //.ignoresSafeArea()
         
     }
 }

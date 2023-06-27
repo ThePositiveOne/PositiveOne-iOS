@@ -37,6 +37,7 @@ struct HidePopupView: View {
                 HStack(spacing: 6) {
                     Button {
                         presentationMode.wrappedValue.dismiss()
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("취소")
                             .foregroundColor(Color.Custom.Black90)

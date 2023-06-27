@@ -12,6 +12,7 @@ struct FeedRowView: View {
     @State var feedContent: FeedContent
     @ObservedObject var viewModel: FeedViewModel
     @Binding var isPresentedLoginPopupView: Bool
+    @State var isPresentedReportHidePopupView: Bool = false
     let isLogin: Bool = Keychain.loadToken() != nil
     
     var body: some View {
@@ -26,6 +27,8 @@ struct FeedRowView: View {
                 Spacer()
                 
                 Button {
+                    isPresentedReportHidePopupView.toggle()
+                    print(isPresentedReportHidePopupView)
                     
                 } label: {
                     Image("moreVertical")
@@ -98,7 +101,12 @@ struct FeedRowView: View {
             RoundedRectangle(cornerRadius: 4)
                 .stroke(isMine ? Color.Custom.PositiveYellow : .clear, lineWidth: 1.7)
         )
-        //.background(.green)
+        .fullScreenCover(isPresented: $isPresentedReportHidePopupView) {
+            ReportAndHidePopupView(boardId: feedContent.boardId, isPresentedHidePopupView: isPresentedReportHidePopupView)
+                .clearModalBackground()
+                .edgesIgnoringSafeArea(.horizontal)
+        }
+       
     }
         
 }
