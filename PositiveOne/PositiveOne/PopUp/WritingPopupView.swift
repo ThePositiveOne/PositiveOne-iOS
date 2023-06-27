@@ -12,6 +12,7 @@ struct WritingPopupView: View {
     @ObservedObject var viewModel: WritingViewModel
     @Binding var isPresentedPopupView: Bool
     let request: CalendarRequest
+    @State var isPostSuccess = false
     
     var body: some View {
         ZStack {
@@ -55,8 +56,11 @@ struct WritingPopupView: View {
                     }
                     .padding(.bottom, 12)
                     Button {
-                        viewModel.postBoard(request: request)
-                        isPresentedPopupView = false
+                        if !isPostSuccess {
+                            isPostSuccess = true
+                            viewModel.postBoard(request: request)
+                            isPresentedPopupView = false
+                        }
                         
                     } label: {
                         Text("확인")
