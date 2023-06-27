@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct ReportBoardRequest: Codable {
+    let reportBoardId: Int
+    let reportReason: String
+}

@@ -17,6 +17,8 @@ enum PositiveOneAPI {
     case getFeed(type: String, page: String)
     case deleteHeart(boardId: Int)
     case postHeart(boardId: Int)
+    case postHideBoard(paramters: [String: Any])
+    case postHideUser(paramters: [String: Any])
 }
 
 extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
@@ -42,7 +44,13 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         case .deleteHeart(let bordId),
              .postHeart(let bordId):
             return "/board/heart/\(bordId)"
-        
+            
+        case .postHideUser:
+            return "/report/hide/member"
+            
+        case .postHideBoard:
+            return "/report/hide/board"
+            
         }
     }
     
@@ -50,14 +58,19 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         switch self {
         case .signInApple,
              .postBoard,
-             .postHeart:
+             .postHeart,
+             .postHideBoard,
+             .postHideUser:
             return .post
+            
         case .getCalendar,
              .getBoard,
              .getFeed:
             return .get
+            
         case .putBoard:
             return .put
+            
         case .deleteBoard,
              .deleteHeart:
             return .delete
@@ -68,7 +81,9 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         switch self {
         case .signInApple(let parameters),
                 .postBoard(let parameters),
-                .putBoard(_, let parameters):
+                .putBoard(_, let parameters),
+                .postHideBoard(let parameters),
+                .postHideUser(let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .getFeed(_, let page):
             return .requestParameters(parameters: ["page": page], encoding: URLEncoding.queryString)

@@ -62,6 +62,10 @@
 		FA8CA61F2A499959005A6709 /* ReportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA61E2A499959005A6709 /* ReportType.swift */; };
 		FA8CA6212A499B5F005A6709 /* ReportPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA6202A499B5F005A6709 /* ReportPopupView.swift */; };
 		FA8CA62B2A4A811F005A6709 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA62A2A4A811F005A6709 /* NotificationName+Extension.swift */; };
+		FA8CA62E2A4A8760005A6709 /* HideBoardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA62D2A4A8760005A6709 /* HideBoardRequest.swift */; };
+		FA8CA6302A4A8784005A6709 /* HideUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA62F2A4A8784005A6709 /* HideUserRequest.swift */; };
+		FA8CA6322A4A87AA005A6709 /* ReportBoardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA6312A4A87AA005A6709 /* ReportBoardRequest.swift */; };
+		FA8CA6342A4A87D6005A6709 /* ReportUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA6332A4A87D6005A6709 /* ReportUserRequest.swift */; };
 		FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B592A3702AB00940764 /* Encodable+Extension.swift */; };
 		FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */; };
 		FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B622A3741CB00940764 /* FeedRowView.swift */; };
@@ -129,6 +133,10 @@
 		FA8CA61E2A499959005A6709 /* ReportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportType.swift; sourceTree = "<group>"; };
 		FA8CA6202A499B5F005A6709 /* ReportPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPopupView.swift; sourceTree = "<group>"; };
 		FA8CA62A2A4A811F005A6709 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
+		FA8CA62D2A4A8760005A6709 /* HideBoardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideBoardRequest.swift; sourceTree = "<group>"; };
+		FA8CA62F2A4A8784005A6709 /* HideUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideUserRequest.swift; sourceTree = "<group>"; };
+		FA8CA6312A4A87AA005A6709 /* ReportBoardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBoardRequest.swift; sourceTree = "<group>"; };
+		FA8CA6332A4A87D6005A6709 /* ReportUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserRequest.swift; sourceTree = "<group>"; };
 		FAD29B592A3702AB00940764 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginResponse.swift; sourceTree = "<group>"; };
 		FAD29B622A3741CB00940764 /* FeedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRowView.swift; sourceTree = "<group>"; };
@@ -332,6 +340,7 @@
 		FA73FC342A3365A6007A3DCF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FA8CA62C2A4A8738005A6709 /* Report */,
 				FAF4C9742A41EB99004F6F1A /* Feed */,
 				FA57DE182A3EFEDC005EBEF8 /* Calendar */,
 				FA73FC352A3365BF007A3DCF /* PositiveOneAPI.swift */,
@@ -416,6 +425,17 @@
 				FA7F5B482A2CAF930045528D /* LoginCharacterView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FA8CA62C2A4A8738005A6709 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				FA8CA62D2A4A8760005A6709 /* HideBoardRequest.swift */,
+				FA8CA62F2A4A8784005A6709 /* HideUserRequest.swift */,
+				FA8CA6312A4A87AA005A6709 /* ReportBoardRequest.swift */,
+				FA8CA6332A4A87D6005A6709 /* ReportUserRequest.swift */,
+			);
+			path = Report;
 			sourceTree = "<group>";
 		};
 		FAF4C9712A41EB6F004F6F1A /* Model */ = {
@@ -545,7 +565,9 @@
 				FA418D4D2A38647B003A8D51 /* SettingsView.swift in Sources */,
 				FA8CA62B2A4A811F005A6709 /* NotificationName+Extension.swift in Sources */,
 				FA41D3FE2A3FF272009822EE /* BoardResponse.swift in Sources */,
+				FA8CA6342A4A87D6005A6709 /* ReportUserRequest.swift in Sources */,
 				FAD29B652A37570500940764 /* FeedResponse.swift in Sources */,
+				FA8CA6302A4A8784005A6709 /* HideUserRequest.swift in Sources */,
 				FA43BA642A3EF2BD00F8D5E2 /* LocalKey.swift in Sources */,
 				FA77D7092A31DB5A00D4AF13 /* FeedView.swift in Sources */,
 				FA41D4002A3FF7FD009822EE /* HapticManager.swift in Sources */,
@@ -560,8 +582,10 @@
 				FA4C722A2A3ADB83009D9E4F /* UIApplication+Extension.swift in Sources */,
 				FA6485FD2A3AA840009FD5AA /* StampSelectView.swift in Sources */,
 				FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */,
+				FA8CA62E2A4A8760005A6709 /* HideBoardRequest.swift in Sources */,
 				FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */,
 				FA8CA61F2A499959005A6709 /* ReportType.swift in Sources */,
+				FA8CA6322A4A87AA005A6709 /* ReportBoardRequest.swift in Sources */,
 				FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */,
 				FA57DE172A3EFE6A005EBEF8 /* CalendarViewModel.swift in Sources */,
 				FA6486002A3AA94F009FD5AA /* PositiveOneType.swift in Sources */,

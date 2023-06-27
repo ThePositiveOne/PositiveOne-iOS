@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct ReportUserRequest: Codable {
+    let reportMemberId: Int
+    let reportReason: String
+}

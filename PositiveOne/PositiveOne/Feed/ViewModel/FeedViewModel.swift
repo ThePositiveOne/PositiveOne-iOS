@@ -64,6 +64,20 @@ class FeedViewModel: ObservableObject {
         page = 0
         isLast = false
     }
+    
+    func hideBoard(parameters: HideBoardRequest) {
+        Task {
+            let response = try await hideBoard(parameters: parameters)
+            print(response)
+        }
+    }
+    
+    func hideUser(parameters: HideUserRequest) {
+        Task {
+            let response = try await hideUser(parameters: parameters)
+            print(response)
+        }
+    }
    
     private func getFeed(type: String, page: Int) async throws -> FeedResponse {
         return try await PositiveOneAPI.request(target: .getFeed(type: type, page: String(page)), dataType: FeedResponse.self)
@@ -77,5 +91,12 @@ class FeedViewModel: ObservableObject {
         return try await PositiveOneAPI.request(target: .deleteHeart(boardId: boardId), dataType: PositiveOneResponse.self)
     }
    
+    private func hideBoard(parameters: HideBoardRequest) async throws -> PositiveOneResponse {
+        return try await PositiveOneAPI.request(target: .postHideBoard(paramters: parameters.asDictionary()), dataType: PositiveOneResponse.self)
+    }
+    
+    private func hideUser(parameters: HideUserRequest) async throws -> PositiveOneResponse {
+        return try await PositiveOneAPI.request(target: .postHideUser(paramters: parameters.asDictionary()), dataType: PositiveOneResponse.self)
+    }
     
 }

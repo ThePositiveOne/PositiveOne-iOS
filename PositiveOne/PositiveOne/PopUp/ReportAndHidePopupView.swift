@@ -10,10 +10,7 @@ import SwiftUI
 struct ReportAndHidePopupView: View {
     
     let reportLists = ["계정 신고", "피드 신고", "계정 가리기", "피드 가리기"]
-    let boardId: Int
     @Environment(\.presentationMode) var presentationMode
-    // @State var isPresentedHidePopupView: Bool = false
-    @Binding var reportType: ReportType
     @Binding var isPresentedHideView: Bool
     
     var body: some View {
@@ -34,18 +31,19 @@ struct ReportAndHidePopupView: View {
                     Button {
                         switch item {
                         case "계정 가리기":
-                            presentationMode.wrappedValue.dismiss()
-                            reportType = .user
-                            isPresentedHideView.toggle()
-                            
+                            Report.shared.reportType = .user
                             
                         case "피드 가리기":
-                            presentationMode.wrappedValue.dismiss()
-                            reportType = .feed
-                            isPresentedHideView.toggle()
+                            Report.shared.reportType = .feed
+                       
                         default:
                             break
                         }
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+                            isPresentedHideView.toggle()
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        
                     } label: {
                         Text(item)
                             .padding(.leading, 17)
@@ -84,6 +82,6 @@ struct ReportAndHidePopupView: View {
 
 struct ReportAndHidePopupView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportAndHidePopupView(boardId: 4, reportType: .constant(.feed), isPresentedHideView: .constant(true))
+        ReportAndHidePopupView(isPresentedHideView: .constant(true))
     }
 }

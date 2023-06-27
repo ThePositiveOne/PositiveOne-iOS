@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct HideUserRequest: Codable {
+    let hideMemberId: Int
+}

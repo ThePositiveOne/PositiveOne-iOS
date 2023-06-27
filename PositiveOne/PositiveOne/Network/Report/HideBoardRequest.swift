@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct HideBoardRequest: Codable {
+    let hideBoardId: Int
+}

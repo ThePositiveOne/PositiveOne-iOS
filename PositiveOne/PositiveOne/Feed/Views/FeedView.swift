@@ -28,7 +28,7 @@ struct FeedView: View {
                             .cornerRadius(4)
                             .onAppear {
                                 let contents = viewModel.feedContents
-                                if content == contents[contents.count-1] {
+                                if contents.count != 0 && content == contents[contents.count-1] {
                                     viewModel.getFeed(type: sortingType.rawValue)
                                 }
                             }

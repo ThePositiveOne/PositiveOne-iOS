@@ -11,3 +11,11 @@ enum ReportType: String {
     case user = "계정"
     case feed = "피드"
 }
+
+class Report {
+    static let shared = Report()
+    var reportType: ReportType?
+    init(reportType: ReportType? = nil) {
+        self.reportType = reportType
+    }
+}

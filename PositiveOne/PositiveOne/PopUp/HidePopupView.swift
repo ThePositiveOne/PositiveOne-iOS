@@ -10,12 +10,13 @@ import SwiftUI
 struct HidePopupView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    let reportType: ReportType
+    @ObservedObject var viewModel: FeedViewModel
+    let boardId: Int
+    let memberId: Int
     
     var body: some View {
         ZStack {
             Button(action: {
-                print("button tapped")
                 presentationMode.wrappedValue.dismiss()
             }, label: {
                 Text("")
@@ -31,7 +32,7 @@ struct HidePopupView: View {
                             .font(CustomFont.PretendardBold(size: 16).font)
                             .foregroundColor(.Custom.TitleColor)
                         
-                        Text(reportType.rawValue)
+                        Text(Report.shared.reportType?.rawValue ?? "")
                             .font(CustomFont.PretendardBold(size: 16).font)
                             .foregroundColor(.Custom.PositiveYellow)
 
@@ -56,6 +57,14 @@ struct HidePopupView: View {
                         }
                         .padding(.bottom, 12)
                         Button {
+                            switch Report.shared.reportType {
+                            case .user:
+                               viewModel.hideUser(parameters: HideUserRequest(hideMemberId: memberId))
+                            case .feed:
+                              viewModel.hideBoard(parameters: HideBoardRequest(hideBoardId: boardId))
+                            default:
+                                break
+                            }
                             NotificationCenter.default.post(name: .reloadFeed, object: nil)
                             presentationMode.wrappedValue.dismiss()
                             
@@ -79,12 +88,15 @@ struct HidePopupView: View {
                 )
             }
         }
+        .onAppear {
+            print(boardId, memberId, Report.shared.reportType)
+        }
         
     }
 }
 
 struct HidePopupView_Previews: PreviewProvider {
     static var previews: some View {
-        HidePopupView(reportType: .user)
+        HidePopupView(viewModel: FeedViewModel(), boardId: 4, memberId: 4)
     }
 }
