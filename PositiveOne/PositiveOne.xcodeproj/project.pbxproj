@@ -40,6 +40,7 @@
 		FA44D3862A4AC0490037E328 /* WritingPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44D3852A4AC0480037E328 /* WritingPopupView.swift */; };
 		FA44D3882A4ACE530037E328 /* DeletePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44D3872A4ACE530037E328 /* DeletePopupView.swift */; };
 		FA44D38A2A4ADAD00037E328 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44D3892A4ADAD00037E328 /* SplashView.swift */; };
+		FA44D38C2A4AE2F50037E328 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44D38B2A4AE2F50037E328 /* WebView.swift */; };
 		FA4C72272A3ACD53009D9E4F /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72262A3ACD53009D9E4F /* LockView.swift */; };
 		FA4C722A2A3ADB83009D9E4F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */; };
 		FA4C722C2A3AE2E3009D9E4F /* BigStampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */; };
@@ -113,6 +114,7 @@
 		FA44D3852A4AC0480037E328 /* WritingPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingPopupView.swift; sourceTree = "<group>"; };
 		FA44D3872A4ACE530037E328 /* DeletePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopupView.swift; sourceTree = "<group>"; };
 		FA44D3892A4ADAD00037E328 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		FA44D38B2A4AE2F50037E328 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		FA4C72262A3ACD53009D9E4F /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigStampView.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				FA43BA612A3EF09600F8D5E2 /* KeyChain.swift */,
 				FA43BA632A3EF2BD00F8D5E2 /* LocalKey.swift */,
 				FA41D3FF2A3FF7FD009822EE /* HapticManager.swift */,
+				FA44D38B2A4AE2F50037E328 /* WebView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				FA77D6FF2A31B07A00D4AF13 /* CalendarManager.swift in Sources */,
 				FAF4C9772A41F128004F6F1A /* FeedViewModel.swift in Sources */,
 				FA73FC362A3365BF007A3DCF /* PositiveOneAPI.swift in Sources */,
+				FA44D38C2A4AE2F50037E328 /* WebView.swift in Sources */,
 				FA3977D82A2CA2250040741F /* PositiveOneApp.swift in Sources */,
 				FA77D7052A31D47300D4AF13 /* MonthTopView.swift in Sources */,
 				FA4C722C2A3AE2E3009D9E4F /* BigStampView.swift in Sources */,

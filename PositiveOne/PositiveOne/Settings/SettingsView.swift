@@ -13,6 +13,8 @@ struct SettingsView: View {
     let notloggedInSettingList = ["로그인", "이용약관", "개인정보 정책"]
     let loggedInSettingList = ["로그아웃", "회원탈퇴", "이용약관", "개인정보 정책"]
     @State var isPresentedLoginView = false
+    @State var isPresentedPrivacyView = false
+    @State var isPresentedNoticeView = false
     @Binding var isTabbarHidden: Bool
     
     var body: some View {
@@ -26,6 +28,10 @@ struct SettingsView: View {
                     case "로그아웃":
                         Keychain.deleteToken()
                         isPresentedLoginView.toggle()
+                    case "개인정보 정책":
+                        isPresentedPrivacyView.toggle()
+                    case "이용약관":
+                        isPresentedNoticeView.toggle()
                     default:
                         break
                     }
@@ -46,6 +52,12 @@ struct SettingsView: View {
         .fullScreenCover(isPresented: $isPresentedLoginView) {
             LoginView()
         }
+        .sheet(isPresented: $isPresentedNoticeView, content: {
+            MyWebView(urlToLoad: "https://github.com/dudtjs1021ej")
+        })
+        .sheet(isPresented: $isPresentedPrivacyView, content: {
+            MyWebView(urlToLoad: "https://www.naver.com/")
+        })
         
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
