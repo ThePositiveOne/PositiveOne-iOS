@@ -12,6 +12,7 @@ struct ReportAndHidePopupView: View {
     let reportLists = ["계정 신고", "피드 신고", "계정 가리기", "피드 가리기"]
     @Environment(\.presentationMode) var presentationMode
     @Binding var isPresentedHideView: Bool
+    @Binding var isPresentedReportView: Bool
     
     var body: some View {
         
@@ -30,19 +31,38 @@ struct ReportAndHidePopupView: View {
                 ForEach(reportLists, id: \.self) { item in
                     Button {
                         switch item {
+                        case "계정 신고":
+                            Report.shared.reportType = .user
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+                                isPresentedReportView.toggle()
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                            
+                        case "피드 신고":
+                            Report.shared.reportType = .feed
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+                                isPresentedReportView.toggle()
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                            
                         case "계정 가리기":
                             Report.shared.reportType = .user
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+                                isPresentedHideView.toggle()
+                                presentationMode.wrappedValue.dismiss()
+                            }
                             
                         case "피드 가리기":
                             Report.shared.reportType = .feed
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+                                isPresentedHideView.toggle()
+                                presentationMode.wrappedValue.dismiss()
+                            }
                        
                         default:
                             break
                         }
-                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
-                            isPresentedHideView.toggle()
-                            presentationMode.wrappedValue.dismiss()
-                        }
+                       
                         
                     } label: {
                         Text(item)
@@ -82,6 +102,6 @@ struct ReportAndHidePopupView: View {
 
 struct ReportAndHidePopupView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportAndHidePopupView(isPresentedHideView: .constant(true))
+        ReportAndHidePopupView(isPresentedHideView: .constant(true), isPresentedReportView: .constant(true))
     }
 }

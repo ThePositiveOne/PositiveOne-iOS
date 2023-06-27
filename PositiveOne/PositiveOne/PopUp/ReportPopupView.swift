@@ -11,10 +11,19 @@ struct ReportPopupView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var reportText: String = ""
-    let reportType: ReportType
+    @ObservedObject var viewModel: FeedViewModel
+    let boardId: Int
+    let memberId: Int
     
     var body: some View {
-        VStack {
+        ZStack {
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Text("")
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                    .background(Color.black.opacity(0.8))
+            })
             VStack(spacing: 0) {
                 
                 Text("어떤 이유로 신고하시나요?")
@@ -40,6 +49,14 @@ struct ReportPopupView: View {
                 
                 HStack(spacing: 6) {
                     Button {
+                        switch Report.shared.reportType {
+                        case .user:
+                           viewModel.reportUser(parameters: ReportUserRequest(reportMemberId: memberId, reportReason: reportText))
+                        case .feed:
+                          viewModel.reportBoard(parameters: ReportBoardRequest(reportBoardId: boardId, reportReason: reportText))
+                        default:
+                            break
+                        }
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("신고하기")
@@ -50,8 +67,7 @@ struct ReportPopupView: View {
                     }
                     .padding(.bottom, 12)
                     Button {
-                       
-                        
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("취소")
                             .foregroundColor(.white)
@@ -71,16 +87,11 @@ struct ReportPopupView: View {
                     .shadow(color: Color.black.opacity(0.05), radius: 3, x: 2, y: 2)
             )
         }
-       
-        .onTapGesture {
-            presentationMode.wrappedValue.dismiss()
-        }
-        
     }
 }
 
 struct ReportPopupView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportPopupView(reportType: .user)
+        ReportPopupView(viewModel: FeedViewModel(), boardId: 3, memberId: 4)
     }
 }

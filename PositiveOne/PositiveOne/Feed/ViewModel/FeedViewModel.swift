@@ -78,6 +78,20 @@ class FeedViewModel: ObservableObject {
             print(response)
         }
     }
+    
+    func reportUser(parameters: ReportUserRequest) {
+        Task {
+            let response = try await reportUser(parameters: parameters)
+            print(response)
+        }
+    }
+    
+    func reportBoard(parameters: ReportBoardRequest) {
+        Task {
+            let response = try await reportBoard(parameters: parameters)
+            print(response)
+        }
+    }
    
     private func getFeed(type: String, page: Int) async throws -> FeedResponse {
         return try await PositiveOneAPI.request(target: .getFeed(type: type, page: String(page)), dataType: FeedResponse.self)
@@ -97,6 +111,14 @@ class FeedViewModel: ObservableObject {
     
     private func hideUser(parameters: HideUserRequest) async throws -> PositiveOneResponse {
         return try await PositiveOneAPI.request(target: .postHideUser(paramters: parameters.asDictionary()), dataType: PositiveOneResponse.self)
+    }
+    
+    private func reportBoard(parameters: ReportBoardRequest) async throws -> PositiveOneResponse {
+        return try await PositiveOneAPI.request(target: .postReportBoard(paramters: parameters.asDictionary()), dataType: PositiveOneResponse.self)
+    }
+    
+    private func reportUser(parameters: ReportUserRequest) async throws -> PositiveOneResponse {
+        return try await PositiveOneAPI.request(target: .postReportUser(paramters: parameters.asDictionary()), dataType: PositiveOneResponse.self)
     }
     
 }

@@ -88,10 +88,6 @@ struct HidePopupView: View {
                 )
             }
         }
-        .onAppear {
-            print(boardId, memberId, Report.shared.reportType)
-        }
-        
     }
 }
 
