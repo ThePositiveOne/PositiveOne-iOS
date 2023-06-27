@@ -14,6 +14,7 @@ struct CalendarView: View {
     @Binding var isPresentedLoginPopupView: Bool
     @Binding var isTabbarHidden: Bool
     @ObservedObject var viewModel = CalendarViewModel()
+    @State var isRedraw = false
     let isLogin: Bool = Keychain.loadToken() != nil
     
     var body: some View {
@@ -39,7 +40,7 @@ struct CalendarView: View {
                         }
                         .padding(.trailing, 20)
                         .padding(.top, 12)
-                    } else {
+                    } else if calendarManager.selectedDate != nil {
                         if let boardData = viewModel.boardData {
                             MyPositiveOneView(boardData: Binding.constant(boardData))
                                 .padding(.top, 35)
@@ -71,7 +72,9 @@ struct CalendarView: View {
                 }
             }
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name.reloadCalendar)) { _ in
+                calendarManager.selectedDate = nil
                 viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
+                isRedraw.toggle()
             }
         }
     }

@@ -14,6 +14,7 @@ class WritingViewModel: ObservableObject {
             let response = try await postBoard(request: request)
             print(response)
             DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .successPost, object: nil)
                 NotificationCenter.default.post(name: .reloadCalendar, object: nil)
             }
         }
@@ -24,6 +25,7 @@ class WritingViewModel: ObservableObject {
             let response = try await postBoard(request: request)
             print(response)
             DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .successPost, object: nil)
                 NotificationCenter.default.post(name: .reloadCalendar, object: nil)
             }
         }

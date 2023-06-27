@@ -15,8 +15,10 @@ struct WritingView: View {
     @State var content: String = ""
     @State var isLocked: Bool = false
     @State var isWritingButtonDisabled = false
+    @State var isPresentedPopupView = false
     let boardId: Int?
     @ObservedObject var viewModel: WritingViewModel
+    @State var isSuccessPost: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -38,26 +40,9 @@ struct WritingView: View {
                 Spacer()
                 
                 Button {
-                    if selectedType != nil && !content.isEmpty && !isWritingButtonDisabled {
+                    if selectedType != nil && !content.isEmpty {
                         isWritingButtonDisabled = true
-                        guard let selectedType = selectedType,
-                              let date = calendarManager.selectedDayDDYYMM() else {
-                            return
-                        }
-                        let request = CalendarRequest(
-                            text: content,
-                            stamp: selectedType.rawValue,
-                            secret: isLocked,
-                            date: date
-                        )
-                        guard let boardId else {
-                            viewModel.postBoard(request: request)
-                            presentationMode.wrappedValue.dismiss()
-                            return
-                        }
-                        viewModel.putBoard(boardId: boardId, request: request)
-                        
-                        presentationMode.wrappedValue.dismiss()
+                        isPresentedPopupView = true
                     }
                 } label: {
                     Text("작성")
@@ -87,7 +72,30 @@ struct WritingView: View {
             Spacer()
         }
         .onAppear (perform : UIApplication.shared.hideKeyboard)
+        .onReceive(NotificationCenter.default.publisher(for: .successPost)) { _ in
+            presentationMode.wrappedValue.dismiss()
+        }
+        .fullScreenCover(isPresented: $isPresentedPopupView, content: {
+            if let request = getRequest() {
+                WritingPopupView(viewModel: viewModel, isPresentedPopupView: $isPresentedPopupView, request: request)
+                    .clearModalBackground()
+            }
+        })
         .edgesIgnoringSafeArea(.bottom)
+    }
+    
+    func getRequest() -> CalendarRequest? {
+        guard let selectedType = selectedType,
+              let date = calendarManager.selectedDayDDYYMM() else {
+            return nil
+        }
+        let request = CalendarRequest(
+            text: content,
+            stamp: selectedType.rawValue,
+            secret: isLocked,
+            date: date
+        )
+       return request
     }
     
 }
