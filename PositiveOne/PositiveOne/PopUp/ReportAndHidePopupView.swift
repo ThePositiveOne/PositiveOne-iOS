@@ -12,8 +12,9 @@ struct ReportAndHidePopupView: View {
     let reportLists = ["계정 신고", "피드 신고", "계정 가리기", "피드 가리기"]
     let boardId: Int
     @Environment(\.presentationMode) var presentationMode
-    @State var isPresentedHidePopupView: Bool = false
-    @State var reportType: ReportType = .user
+    // @State var isPresentedHidePopupView: Bool = false
+    @Binding var reportType: ReportType
+    @Binding var isPresentedHideView: Bool
     
     var body: some View {
         
@@ -26,18 +27,22 @@ struct ReportAndHidePopupView: View {
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-307)
                     .background(Color.black.opacity(0.8))
             })
-           
+            
             
             List {
                 ForEach(reportLists, id: \.self) { item in
                     Button {
                         switch item {
                         case "계정 가리기":
-                            isPresentedHidePopupView.toggle()
+                            presentationMode.wrappedValue.dismiss()
                             reportType = .user
+                            isPresentedHideView.toggle()
+                            
+                            
                         case "피드 가리기":
-                            isPresentedHidePopupView.toggle()
+                            presentationMode.wrappedValue.dismiss()
                             reportType = .feed
+                            isPresentedHideView.toggle()
                         default:
                             break
                         }
@@ -57,9 +62,9 @@ struct ReportAndHidePopupView: View {
                     
                 }
             }
-           // .disabled(true)
+            // .disabled(true)
             .frame(width: 390, height: 307)
-
+            
             .listStyle(.plain)
             .cornerRadius(10)
             .padding(.bottom, 10)
@@ -68,10 +73,10 @@ struct ReportAndHidePopupView: View {
         
         // ZStack
         .edgesIgnoringSafeArea(.all)
-        .fullScreenCover(isPresented: $isPresentedHidePopupView) {
-            HidePopupView(reportType: reportType)
-                .clearModalBackground()
-        }
+        //        .fullScreenCover(isPresented: $isPresentedHidePopupView) {
+        //            HidePopupView(reportType: reportType)
+        //                .clearModalBackground()
+        //        }
         //.ignoresSafeArea()
         
     }
@@ -79,6 +84,6 @@ struct ReportAndHidePopupView: View {
 
 struct ReportAndHidePopupView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportAndHidePopupView(boardId: 4)
+        ReportAndHidePopupView(boardId: 4, reportType: .constant(.feed), isPresentedHideView: .constant(true))
     }
 }

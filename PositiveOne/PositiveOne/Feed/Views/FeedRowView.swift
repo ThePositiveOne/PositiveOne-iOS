@@ -13,6 +13,8 @@ struct FeedRowView: View {
     @ObservedObject var viewModel: FeedViewModel
     @Binding var isPresentedLoginPopupView: Bool
     @State var isPresentedReportHidePopupView: Bool = false
+    @State var isPresentedHideView: Bool = false
+    @State var reportType: ReportType = .feed
     let isLogin: Bool = Keychain.loadToken() != nil
     
     var body: some View {
@@ -102,9 +104,13 @@ struct FeedRowView: View {
                 .stroke(isMine ? Color.Custom.PositiveYellow : .clear, lineWidth: 1.7)
         )
         .fullScreenCover(isPresented: $isPresentedReportHidePopupView) {
-            ReportAndHidePopupView(boardId: feedContent.boardId, isPresentedHidePopupView: isPresentedReportHidePopupView)
+            ReportAndHidePopupView(boardId: feedContent.boardId, reportType: $reportType, isPresentedHideView: $isPresentedHideView)
                 .clearModalBackground()
                 .edgesIgnoringSafeArea(.horizontal)
+        }
+        .fullScreenCover(isPresented: $isPresentedHideView) {
+            HidePopupView(reportType: reportType)
+                .clearModalBackground()
         }
        
     }

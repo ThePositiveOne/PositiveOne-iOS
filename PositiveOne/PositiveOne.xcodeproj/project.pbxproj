@@ -61,6 +61,7 @@
 		FA8CA61D2A499924005A6709 /* HidePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA61C2A499924005A6709 /* HidePopupView.swift */; };
 		FA8CA61F2A499959005A6709 /* ReportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA61E2A499959005A6709 /* ReportType.swift */; };
 		FA8CA6212A499B5F005A6709 /* ReportPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA6202A499B5F005A6709 /* ReportPopupView.swift */; };
+		FA8CA62B2A4A811F005A6709 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA62A2A4A811F005A6709 /* NotificationName+Extension.swift */; };
 		FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B592A3702AB00940764 /* Encodable+Extension.swift */; };
 		FAD29B5C2A37045D00940764 /* AppleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */; };
 		FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD29B622A3741CB00940764 /* FeedRowView.swift */; };
@@ -127,6 +128,7 @@
 		FA8CA61C2A499924005A6709 /* HidePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidePopupView.swift; sourceTree = "<group>"; };
 		FA8CA61E2A499959005A6709 /* ReportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportType.swift; sourceTree = "<group>"; };
 		FA8CA6202A499B5F005A6709 /* ReportPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPopupView.swift; sourceTree = "<group>"; };
+		FA8CA62A2A4A811F005A6709 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		FAD29B592A3702AB00940764 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		FAD29B5B2A37045D00940764 /* AppleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginResponse.swift; sourceTree = "<group>"; };
 		FAD29B622A3741CB00940764 /* FeedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRowView.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				FAD29B592A3702AB00940764 /* Encodable+Extension.swift */,
 				FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */,
 				FA43BA5E2A3EBA4900F8D5E2 /* View+Extension.swift */,
+				FA8CA62A2A4A811F005A6709 /* NotificationName+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				FA8CA61B2A496A81005A6709 /* ReportAndHidePopupView.swift in Sources */,
 				FA43BA5F2A3EBA4900F8D5E2 /* View+Extension.swift in Sources */,
 				FA418D4D2A38647B003A8D51 /* SettingsView.swift in Sources */,
+				FA8CA62B2A4A811F005A6709 /* NotificationName+Extension.swift in Sources */,
 				FA41D3FE2A3FF272009822EE /* BoardResponse.swift in Sources */,
 				FAD29B652A37570500940764 /* FeedResponse.swift in Sources */,
 				FA43BA642A3EF2BD00F8D5E2 /* LocalKey.swift in Sources */,

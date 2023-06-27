@@ -13,6 +13,7 @@ struct FeedView: View {
     @State var sortingType: SortingType = .new
     @ObservedObject var viewModel = FeedViewModel()
     @Binding var isPresentedLoginPopupView: Bool
+    @State var refreshFlag = false
     
     var body: some View {
         NavigationStack {
@@ -71,8 +72,13 @@ struct FeedView: View {
                     
                 }
             } // toolbar
+            
             .onAppear {
                 sortingType = .new
+            }
+            
+            .onReceive(NotificationCenter.default.publisher(for: Notification.Name.reloadFeed)) { _ in
+                reloadFeed()
             }
         }
         
@@ -113,6 +119,14 @@ struct FeedView: View {
             Spacer()
         }
         .background(Color.Custom.YellowShadow50)
+    }
+    
+    
+    func reloadFeed() {
+        DispatchQueue.main.async {
+            viewModel.resetFeedContent()
+            viewModel.getFeed(type: sortingType.rawValue)
+        }
     }
     
     
