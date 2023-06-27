@@ -39,6 +39,7 @@
 		FA43BA642A3EF2BD00F8D5E2 /* LocalKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43BA632A3EF2BD00F8D5E2 /* LocalKey.swift */; };
 		FA44D3862A4AC0490037E328 /* WritingPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44D3852A4AC0480037E328 /* WritingPopupView.swift */; };
 		FA44D3882A4ACE530037E328 /* DeletePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44D3872A4ACE530037E328 /* DeletePopupView.swift */; };
+		FA44D38A2A4ADAD00037E328 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44D3892A4ADAD00037E328 /* SplashView.swift */; };
 		FA4C72272A3ACD53009D9E4F /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72262A3ACD53009D9E4F /* LockView.swift */; };
 		FA4C722A2A3ADB83009D9E4F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */; };
 		FA4C722C2A3AE2E3009D9E4F /* BigStampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */; };
@@ -111,6 +112,7 @@
 		FA43BA632A3EF2BD00F8D5E2 /* LocalKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalKey.swift; sourceTree = "<group>"; };
 		FA44D3852A4AC0480037E328 /* WritingPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingPopupView.swift; sourceTree = "<group>"; };
 		FA44D3872A4ACE530037E328 /* DeletePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopupView.swift; sourceTree = "<group>"; };
+		FA44D3892A4ADAD00037E328 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		FA4C72262A3ACD53009D9E4F /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigStampView.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				FA7F5B462A2CAF6D0045528D /* Login */,
 				FA3977E52A2CA2C80040741F /* Resources */,
 				FA3977D72A2CA2250040741F /* PositiveOneApp.swift */,
+				FA44D3892A4ADAD00037E328 /* SplashView.swift */,
 				FA3977D92A2CA2250040741F /* ContentView.swift */,
 				FA3977DB2A2CA2270040741F /* Assets.xcassets */,
 				FA3977DD2A2CA2270040741F /* Preview Content */,
@@ -595,6 +598,7 @@
 				FA8CA61F2A499959005A6709 /* ReportType.swift in Sources */,
 				FA8CA6322A4A87AA005A6709 /* ReportBoardRequest.swift in Sources */,
 				FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */,
+				FA44D38A2A4ADAD00037E328 /* SplashView.swift in Sources */,
 				FA57DE172A3EFE6A005EBEF8 /* CalendarViewModel.swift in Sources */,
 				FA6486002A3AA94F009FD5AA /* PositiveOneType.swift in Sources */,
 				FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */,
