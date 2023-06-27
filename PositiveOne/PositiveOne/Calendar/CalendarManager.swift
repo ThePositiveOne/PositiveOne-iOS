@@ -50,6 +50,13 @@ final class CalendarManager: ObservableObject {
         return false
     }
     
+    func isPastOfSelectedDate() -> Bool {
+        guard let selectedDate else {
+            return false
+        }
+        return selectedDate <= Date()
+    }
+    
     func verifySelectedDay(_ today: Int) -> Bool {
         let currentYear = Calendar.current.dateComponents([.year], from: date).year!
         let currentMonth = Calendar.current.dateComponents([.month], from: date).month!

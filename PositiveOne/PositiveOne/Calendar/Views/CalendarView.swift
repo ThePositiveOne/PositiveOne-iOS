@@ -24,7 +24,7 @@ struct CalendarView: View {
                     CalendarGridView(viewModel: viewModel, calendarDict: $viewModel.calendarDict).environmentObject(calendarManager)
                         .padding(.top, 30)
                     
-                    if calendarManager.isTodayOfSelectedDay() && viewModel.boardData == nil {
+                    if calendarManager.isPastOfSelectedDate() && viewModel.boardData == nil {
                         HStack {
                             Spacer()
                             Button {
