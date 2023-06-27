@@ -10,7 +10,8 @@ import SwiftUI
 struct LoginCharacterView: View {
     var body: some View {
         VStack(spacing: 0) {
-            Image("LoginCharacters")
+            Image("Familyhor")
+                .resizable()
                 .frame(width: 133, height: 133)
                 .padding(.bottom, 25)
             
