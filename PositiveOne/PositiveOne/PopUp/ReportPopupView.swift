@@ -61,6 +61,7 @@ struct ReportPopupView: View {
                     } label: {
                         Text("신고하기")
                             .foregroundColor(Color.Custom.Black90)
+                            .font(CustomFont.PretendardMedium(size: 16).font)
                             .frame(width: 132, height: 44)
                             .background(Color.Custom.Black10)
                             .cornerRadius(4)
@@ -71,6 +72,7 @@ struct ReportPopupView: View {
                     } label: {
                         Text("취소")
                             .foregroundColor(.white)
+                            .font(CustomFont.PretendardMedium(size: 16).font)
                             .frame(width: 132, height: 44)
                             .background(Color.Custom.PositiveYellow)
                             .cornerRadius(4)

@@ -51,6 +51,7 @@ struct HidePopupView: View {
                         } label: {
                             Text("취소")
                                 .foregroundColor(Color.Custom.Black90)
+                                .font(CustomFont.PretendardMedium(size: 16).font)
                                 .frame(width: 132, height: 44)
                                 .background(Color.Custom.Black10)
                                 .cornerRadius(4)
@@ -71,6 +72,7 @@ struct HidePopupView: View {
                         } label: {
                             Text("확인")
                                 .foregroundColor(.white)
+                                .font(CustomFont.PretendardMedium(size: 16).font)
                                 .frame(width: 132, height: 44)
                                 .background(Color.Custom.PositiveYellow)
                                 .cornerRadius(4)

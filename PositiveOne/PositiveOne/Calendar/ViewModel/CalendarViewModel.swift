@@ -44,6 +44,9 @@ class CalendarViewModel: ObservableObject {
         Task {
             let response = try await deleteBoard(boardId: boardId)
             print(response)
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .reloadCalendar, object: nil)
+            }
         }
     }
     

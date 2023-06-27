@@ -42,10 +42,9 @@ struct CalendarView: View {
                         .padding(.top, 12)
                     } else if calendarManager.selectedDate != nil {
                         if let boardData = viewModel.boardData {
-                            MyPositiveOneView(boardData: Binding.constant(boardData))
+                            MyPositiveOneView(boardData: Binding.constant(boardData), viewModel: viewModel)
                                 .padding(.top, 35)
                         }
-                        
                     }
                     Spacer()
                 }
@@ -73,6 +72,7 @@ struct CalendarView: View {
             }
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name.reloadCalendar)) { _ in
                 calendarManager.selectedDate = nil
+                viewModel.removeAllData()
                 viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
                 isRedraw.toggle()
             }

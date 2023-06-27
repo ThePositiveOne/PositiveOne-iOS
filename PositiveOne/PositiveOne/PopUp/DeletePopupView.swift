@@ -1,51 +1,50 @@
 //
-//  SingleButtonPopupView.swift
+//  DeletePopupView.swift
 //  PositiveOne
 //
-//  Created by 임영선 on 2023/06/17.
+//  Created by 임영선 on 2023/06/27.
 //
 
 import SwiftUI
 
-struct LoginPopupView: View {
+struct DeletePopupView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @State var isPresentedLoginView = false
+    @ObservedObject var viewModel: CalendarViewModel
+    let boardId: Int
     
     var body: some View {
         ZStack {
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text("")
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    .background(Color.black.opacity(0.8))
-            })
+            
+            Text("")
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .background(Color.black.opacity(0.8))
+            
             
             VStack(spacing: 0) {
                 HStack(spacing: 0) {
-                    Text("로그인")
+                    Text("기록")
                         .font(CustomFont.PretendardBold(size: 16).font)
                         .foregroundColor(.Custom.PositiveYellow)
-
-                    Text("후 이용 가능합니다.")
+                    
+                    Text("을 삭제하시겠습니까?")
                         .font(CustomFont.PretendardBold(size: 16).font)
                         .foregroundColor(.Custom.TitleColor)
                 }
                 .padding(.top, 40)
                 
-                Text("로그인 페이지로 이동하시겠습니까?")
+                Text("한 번 삭제하시면 복구가 불가합니다. ")
                     .font(CustomFont.PretendardMedium(size: 14).font)
                     .foregroundColor(.Custom.Black60)
                     .multilineTextAlignment(.center)
-                    .padding(.top, 6)
+                    .padding(.top, 9)
                 
                 Spacer()
                 HStack(spacing: 6) {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Text("취소")
+                        Text("유지할래요")
                             .foregroundColor(Color.Custom.Black90)
                             .font(CustomFont.PretendardMedium(size: 16).font)
                             .frame(width: 132, height: 44)
@@ -54,11 +53,11 @@ struct LoginPopupView: View {
                     }
                     .padding(.bottom, 12)
                     Button {
-                       // presentationMode.wrappedValue.dismiss()
-                        isPresentedLoginView.toggle()
+                        viewModel.deleteBoard(boardId: boardId)
+                        presentationMode.wrappedValue.dismiss()
                         
                     } label: {
-                        Text("확인")
+                        Text("네, 삭제할래요")
                             .foregroundColor(.white)
                             .font(CustomFont.PretendardMedium(size: 16).font)
                             .frame(width: 132, height: 44)
@@ -76,20 +75,13 @@ struct LoginPopupView: View {
                     .foregroundColor(.white)
                     .shadow(color: Color.black.opacity(0.05), radius: 3, x: 2, y: 2)
             )
-            .fullScreenCover(isPresented: $isPresentedLoginView) {
-                LoginView()
-            }
+          
         }
-       
-        .onTapGesture {
-            presentationMode.wrappedValue.dismiss()
-        }
-        
     }
 }
 
-struct SingleButtonPopupView_Previews: PreviewProvider {
+struct DeletePopupView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginPopupView()
+        DeletePopupView(viewModel: CalendarViewModel(), boardId: 3)
     }
 }

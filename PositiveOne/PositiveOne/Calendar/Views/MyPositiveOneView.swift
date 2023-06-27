@@ -11,6 +11,8 @@ struct MyPositiveOneView: View {
     
     @State var isPresented = false
     @Binding var boardData: BoardData
+    @ObservedObject var viewModel: CalendarViewModel
+    @State var isPresentedDeletePopupView = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -33,7 +35,7 @@ struct MyPositiveOneView: View {
                 }
                 
                 Button {
-                    CalendarViewModel().deleteBoard(boardId: boardData.boardId)
+                    isPresentedDeletePopupView.toggle()
                 } label: {
                     Image("trash")
                 }
@@ -64,12 +66,17 @@ struct MyPositiveOneView: View {
                 .shadow(color: Color.black.opacity(0.05), radius: 5, x: 2, y: 2)
             )
             
+            .fullScreenCover(isPresented: $isPresentedDeletePopupView, content: {
+                DeletePopupView(viewModel: viewModel, boardId: boardData.boardId)
+                    .clearModalBackground()
+            })
+            
         }
     }
 }
 
 struct MyPositiveOneView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPositiveOneView(boardData: Binding.constant(BoardData(boardId: 3, stamp: "excitingOne", text: "gg", date: "23.05.03", secret: true)))
+        MyPositiveOneView(boardData: Binding.constant(BoardData(boardId: 3, stamp: "excitingOne", text: "gg", date: "23.05.03", secret: true)), viewModel: CalendarViewModel())
     }
 }

@@ -38,6 +38,7 @@
 		FA43BA622A3EF09600F8D5E2 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43BA612A3EF09600F8D5E2 /* KeyChain.swift */; };
 		FA43BA642A3EF2BD00F8D5E2 /* LocalKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43BA632A3EF2BD00F8D5E2 /* LocalKey.swift */; };
 		FA44D3862A4AC0490037E328 /* WritingPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44D3852A4AC0480037E328 /* WritingPopupView.swift */; };
+		FA44D3882A4ACE530037E328 /* DeletePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44D3872A4ACE530037E328 /* DeletePopupView.swift */; };
 		FA4C72272A3ACD53009D9E4F /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72262A3ACD53009D9E4F /* LockView.swift */; };
 		FA4C722A2A3ADB83009D9E4F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */; };
 		FA4C722C2A3AE2E3009D9E4F /* BigStampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */; };
@@ -109,6 +110,7 @@
 		FA43BA612A3EF09600F8D5E2 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		FA43BA632A3EF2BD00F8D5E2 /* LocalKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalKey.swift; sourceTree = "<group>"; };
 		FA44D3852A4AC0480037E328 /* WritingPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingPopupView.swift; sourceTree = "<group>"; };
+		FA44D3872A4ACE530037E328 /* DeletePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopupView.swift; sourceTree = "<group>"; };
 		FA4C72262A3ACD53009D9E4F /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigStampView.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				FA8CA61C2A499924005A6709 /* HidePopupView.swift */,
 				FA8CA6202A499B5F005A6709 /* ReportPopupView.swift */,
 				FA44D3852A4AC0480037E328 /* WritingPopupView.swift */,
+				FA44D3872A4ACE530037E328 /* DeletePopupView.swift */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				FA77D6F72A31772300D4AF13 /* TabbarView.swift in Sources */,
 				FA8CA62E2A4A8760005A6709 /* HideBoardRequest.swift in Sources */,
 				FAD29B632A3741CB00940764 /* FeedRowView.swift in Sources */,
+				FA44D3882A4ACE530037E328 /* DeletePopupView.swift in Sources */,
 				FA8CA61F2A499959005A6709 /* ReportType.swift in Sources */,
 				FA8CA6322A4A87AA005A6709 /* ReportBoardRequest.swift in Sources */,
 				FAD29B5A2A3702AB00940764 /* Encodable+Extension.swift in Sources */,
