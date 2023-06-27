@@ -16,6 +16,7 @@ struct CalendarCell: View {
     let positiveOneType: PositiveOneType?
     let isContainMonth: Bool
     let boardId: Int?
+    let isFuture: Bool
     let size = (UIScreen.main.bounds.width-40-6*7)/7
     
     var body: some View {
@@ -30,6 +31,10 @@ struct CalendarCell: View {
                         Image(positiveOneType.rawValue)
                             .resizable()
                             .frame(width: size, height: size)
+                    }
+                    
+                    if positiveOneType == nil && !isFuture {
+                        Image("smile")
                     }
                     
                 }
@@ -68,9 +73,10 @@ struct CalendarCell_Previews: PreviewProvider {
         CalendarCell(
             viewModel: CalendarViewModel(),
             day: 5,
-            positiveOneType: .excitingOne ,
+            positiveOneType: nil ,
             isContainMonth: true,
-            boardId: nil
+            boardId: nil,
+            isFuture: false
         )
         .environmentObject(CalendarManager())
     }

@@ -44,12 +44,12 @@ struct CalendarGridView: View {
             let isFiveLine  =
             (calendarManager.totalDaysInMonth() + calendarManager.indexOfFirstDayWeek()) <= 35
             ? true : false
-           
             ForEach(0..<6) { row in
                 if (isFiveLine && row != 5) || !isFiveLine {
                     HStack(spacing: 5) {
                         ForEach(0..<7) { column in
                             let dayNum = dayNums[(row*7)+column]
+                            let isFuture = calendarManager.verifyFutureDate(dayNum)
                             if dayNum > 0 && dayNum <= currentMonthTotalDays {
                                 if let data = calendarDict[dayNum] {
                                     CalendarCell(
@@ -57,7 +57,8 @@ struct CalendarGridView: View {
                                         day: dayNum,
                                         positiveOneType: data.type,
                                         isContainMonth: true,
-                                        boardId: data.boardId
+                                        boardId: data.boardId,
+                                        isFuture: isFuture
                                     )
                                 } else {
                                     CalendarCell(
@@ -65,7 +66,8 @@ struct CalendarGridView: View {
                                         day: dayNum,
                                         positiveOneType: nil,
                                         isContainMonth: true,
-                                        boardId: nil
+                                        boardId: nil,
+                                        isFuture: isFuture
                                     )
                                 }
                             
@@ -75,7 +77,8 @@ struct CalendarGridView: View {
                                     day: dayNum,
                                     positiveOneType: nil,
                                     isContainMonth: false,
-                                    boardId: nil
+                                    boardId: nil,
+                                    isFuture: isFuture
                                 )
                             }
                         }
