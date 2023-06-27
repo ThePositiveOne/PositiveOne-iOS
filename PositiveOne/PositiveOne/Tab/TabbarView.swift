@@ -33,20 +33,6 @@ struct TabbarView: View {
             }
             .edgesIgnoringSafeArea(.bottom)
             
-            VStack {
-//                if isPresentedLoginPopupView {
-//                    LoginPopupView()
-//                }
-            }
-            .frame(
-                  minWidth: 0,
-                  maxWidth: .infinity,
-                  minHeight: 0,
-                  maxHeight: .infinity,
-                  alignment: .center
-                )
-            .background(Color.black.opacity(isPresentedLoginPopupView ? 0.5 : 0))
-            
             .fullScreenCover(isPresented: $isPresentedLoginPopupView) {
                 LoginPopupView()
                     .clearModalBackground()

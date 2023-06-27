@@ -15,9 +15,16 @@ struct LoginPopupView: View {
     @State var isPresentedLoginView = false
     
     var body: some View {
-        VStack {
+        ZStack {
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Text("")
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                    .background(Color.black.opacity(0.8))
+            })
+            
             VStack(spacing: 0) {
-                
                 HStack(spacing: 0) {
                     Text("로그인")
                         .font(CustomFont.PretendardBold(size: 16).font)

@@ -31,7 +31,11 @@ struct FeedRowView: View {
                 
                 Button {
                     print("moreVertical tapped")
-                    isPresentedReportHidePopupView.toggle()
+                    if isLogin {
+                        isPresentedReportHidePopupView.toggle()
+                    } else {
+                        isPresentedLoginPopupView.toggle()
+                    }
                     
                 } label: {
                     Image("moreVertical")
