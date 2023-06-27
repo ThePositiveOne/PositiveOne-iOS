@@ -30,7 +30,7 @@ struct FeedRowView: View {
                 Spacer()
                 
                 Button {
-                    print("moreVertical tapped")
+                    HapticManager.instance.impact(style: .light)
                     if isLogin {
                         isPresentedReportHidePopupView.toggle()
                     } else {
@@ -67,6 +67,7 @@ struct FeedRowView: View {
             HStack {
                 Spacer()
                 Button(action: {
+                    HapticManager.instance.notification(type: .success)
                     if isLogin {
                         if feedContent.likeCheck {
                             viewModel.deleteHeart(boardId: feedContent.boardId)
