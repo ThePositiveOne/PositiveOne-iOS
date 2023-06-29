@@ -9,4 +9,5 @@ import Foundation
 
 struct AppleLoginRequest: Encodable {
     let identityToken: String
+    let authorization_code: String
 }

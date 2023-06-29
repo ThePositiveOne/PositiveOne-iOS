@@ -29,6 +29,7 @@ struct MyPositiveOneView: View {
                     WritingView(
                         selectedType: PositiveOneType(rawValue: boardData.stamp) ?? .excitingOne,
                         content: boardData.text,
+                        isLocked: boardData.secret,
                         boardId: boardData.boardId,
                         viewModel: WritingViewModel()
                     )

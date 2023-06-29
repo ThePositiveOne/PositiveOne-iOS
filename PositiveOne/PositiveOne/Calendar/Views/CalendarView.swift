@@ -71,10 +71,12 @@ struct CalendarView: View {
                 }
             }
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name.reloadCalendar)) { _ in
-                calendarManager.selectedDate = nil
-                viewModel.removeAllData()
-                viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
-                isRedraw.toggle()
+                withAnimation {
+                    calendarManager.selectedDate = nil
+                    viewModel.removeAllData()
+                    viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
+                    isRedraw.toggle()
+                }
             }
         }
     }

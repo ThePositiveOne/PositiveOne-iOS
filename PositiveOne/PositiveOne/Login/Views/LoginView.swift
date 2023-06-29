@@ -59,9 +59,8 @@ struct AppleSigninButton: View {
                 switch authResult.credential {
                 case let appleIDCrednetial as ASAuthorizationAppleIDCredential:
                     let identityToken = String(data: appleIDCrednetial.identityToken!, encoding: .utf8) ?? ""
-                    print(identityToken)
-                    viewModel.postAppleLogin(AppleLoginRequest(identityToken: identityToken))
-                   
+                    let code = String(data: appleIDCrednetial.authorizationCode ?? Data(), encoding: .utf8) ?? ""
+                    viewModel.postAppleLogin(AppleLoginRequest(identityToken: identityToken, authorization_code: code))
                 default:
                     break
                 }
