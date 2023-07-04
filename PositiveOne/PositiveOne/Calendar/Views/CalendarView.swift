@@ -26,14 +26,15 @@ struct CalendarView: View {
                         .padding(.top, 30)
                     
                     
-                    if calendarManager.selectedDate != nil && viewModel.boardData != nil {
+                    if let selectedDay = calendarManager.selectedDay(),
+                       viewModel.calendarDict[selectedDay] != nil {
                         if let boardData = viewModel.boardData {
                             MyPositiveOneView(boardData: Binding.constant(boardData), viewModel: viewModel)
                                 .padding(.top, 10)
                         }
                     }
                     
-                    else if calendarManager.isPastOfSelectedDate() && viewModel.boardData == nil && calendarManager.selectedDate != nil {
+                    else if calendarManager.isPastOfSelectedDate() {
                         HStack {
                             Spacer()
                             Button {

@@ -147,4 +147,13 @@ extension CalendarManager {
         return dateFormatter.string(from: selectedDate)
     }
     
+    func selectedDay() -> Int? {
+        guard let selectedDate else {
+            return nil
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+        return Int(dateFormatter.string(from: selectedDate))
+    }
+    
 }
