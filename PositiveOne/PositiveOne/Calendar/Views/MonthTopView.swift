@@ -38,7 +38,7 @@ struct MonthTopView: View {
             
             Text(currentYearAndMonth)
                 .font(CustomFont.gangwon(size: 20).font)
-               // .padding(.horizontal, 20)
+                .frame(width: 100)
            
             
             Button {
