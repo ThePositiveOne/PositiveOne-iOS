@@ -27,6 +27,8 @@ struct WritingView: View {
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     Image(systemName: "xmark")
+                        .resizable()
+                        .frame(width: 12, height: 12)
                 }
                 .foregroundColor(Color.Custom.Black70)
                 .frame(width: 12, height: 12)
