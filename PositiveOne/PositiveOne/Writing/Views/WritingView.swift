@@ -70,6 +70,9 @@ struct WritingView: View {
             
             LockView(isLocked: $isLocked)
                 .padding(.top, 60)
+                .onChange(of: isLocked) { newValue in
+                    print("$isLocked \(newValue)")
+                }
             
             Spacer()
         }

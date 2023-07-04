@@ -20,40 +20,43 @@ struct CalendarView: View {
     var body: some View {
         
         NavigationStack {
-            ZStack {
-                VStack(spacing: 0) {
-                    CalendarGridView(viewModel: viewModel, calendarDict: $viewModel.calendarDict).environmentObject(calendarManager)
-                        .padding(.top, 30)
-                    
-                    
-                    if let selectedDay = calendarManager.selectedDay(),
-                       viewModel.calendarDict[selectedDay] != nil {
-                        if let boardData = viewModel.boardData {
-                            MyPositiveOneView(boardData: Binding.constant(boardData), viewModel: viewModel)
-                                .padding(.top, 10)
-                        }
-                    }
-                    
-                    else if calendarManager.isPastOfSelectedDate() {
-                        HStack {
-                            Spacer()
-                            Button {
-                                isLogin ? isPresentedWritingView.toggle() : isPresentedLoginPopupView.toggle()
-                            } label: {
-                                Image("writing")
-                            }
-                            .frame(width: 44, height: 44)
-                            .fullScreenCover(isPresented: $isPresentedWritingView) {
-                                WritingView(boardId: nil, viewModel: WritingViewModel()).environmentObject(calendarManager)
+            ScrollView {
+                ZStack {
+                    VStack(spacing: 0) {
+                        CalendarGridView(viewModel: viewModel, calendarDict: $viewModel.calendarDict).environmentObject(calendarManager)
+                            .padding(.top, 30)
+                        
+                        
+                        if let selectedDay = calendarManager.selectedDay(),
+                           viewModel.calendarDict[selectedDay] != nil {
+                            if let boardData = viewModel.boardData {
+                                MyPositiveOneView(boardData: Binding.constant(boardData), viewModel: viewModel)
+                                    .padding(.top, 10)
                             }
                         }
-                        .padding(.trailing, 20)
-                        .padding(.top, 12)
+                        
+                        else if calendarManager.isPastOfSelectedDate() {
+                            HStack {
+                                Spacer()
+                                Button {
+                                    isLogin ? isPresentedWritingView.toggle() : isPresentedLoginPopupView.toggle()
+                                } label: {
+                                    Image("writing")
+                                }
+                                .frame(width: 44, height: 44)
+                                .fullScreenCover(isPresented: $isPresentedWritingView) {
+                                    WritingView(boardId: nil, viewModel: WritingViewModel()).environmentObject(calendarManager)
+                                }
+                            }
+                            .padding(.trailing, 20)
+                            .padding(.top, 12)
+                        }
+                        Spacer()
                     }
-                    Spacer()
-                }
-                
-            } // ZStack
+                    
+                } // ZStack
+            }
+            
             
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
