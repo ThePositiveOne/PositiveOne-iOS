@@ -45,6 +45,8 @@
 		FA4C722A2A3ADB83009D9E4F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */; };
 		FA4C722C2A3AE2E3009D9E4F /* BigStampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */; };
 		FA4C722E2A3B05BA009D9E4F /* CalendarGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C722D2A3B05BA009D9E4F /* CalendarGridView.swift */; };
+		FA56F97F2A53BD120099EC6F /* WithdrawalPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56F97E2A53BD120099EC6F /* WithdrawalPopupView.swift */; };
+		FA56F9822A53BE8F0099EC6F /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56F9812A53BE8F0099EC6F /* SettingViewModel.swift */; };
 		FA57DE172A3EFE6A005EBEF8 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57DE162A3EFE6A005EBEF8 /* CalendarViewModel.swift */; };
 		FA57DE1A2A3EFEFD005EBEF8 /* CalendarListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57DE192A3EFEFD005EBEF8 /* CalendarListResponse.swift */; };
 		FA6282662A32FEA900DC7BCB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6282652A32FEA900DC7BCB /* LoginViewModel.swift */; };
@@ -119,6 +121,8 @@
 		FA4C72292A3ADB83009D9E4F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigStampView.swift; sourceTree = "<group>"; };
 		FA4C722D2A3B05BA009D9E4F /* CalendarGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridView.swift; sourceTree = "<group>"; };
+		FA56F97E2A53BD120099EC6F /* WithdrawalPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalPopupView.swift; sourceTree = "<group>"; };
+		FA56F9812A53BE8F0099EC6F /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		FA57DE162A3EFE6A005EBEF8 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		FA57DE192A3EFEFD005EBEF8 /* CalendarListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListResponse.swift; sourceTree = "<group>"; };
 		FA6282632A32E7CC00DC7BCB /* PositiveOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PositiveOne.entitlements; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 		FA418D4A2A386463003A8D51 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				FA56F9802A53BE810099EC6F /* ViewModel */,
 				FA418D4C2A38647B003A8D51 /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -285,6 +290,7 @@
 				FA8CA6202A499B5F005A6709 /* ReportPopupView.swift */,
 				FA44D3852A4AC0480037E328 /* WritingPopupView.swift */,
 				FA44D3872A4ACE530037E328 /* DeletePopupView.swift */,
+				FA56F97E2A53BD120099EC6F /* WithdrawalPopupView.swift */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -311,6 +317,14 @@
 				FA4C722B2A3AE2E3009D9E4F /* BigStampView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FA56F9802A53BE810099EC6F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA56F9812A53BE8F0099EC6F /* SettingViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FA57DE152A3EFE51005EBEF8 /* ViewModel */ = {
@@ -570,6 +584,8 @@
 				FA3977DA2A2CA2250040741F /* ContentView.swift in Sources */,
 				FA3977FA2A2CA3060040741F /* CustomFont.swift in Sources */,
 				FA57DE1A2A3EFEFD005EBEF8 /* CalendarListResponse.swift in Sources */,
+				FA56F97F2A53BD120099EC6F /* WithdrawalPopupView.swift in Sources */,
+				FA56F9822A53BE8F0099EC6F /* SettingViewModel.swift in Sources */,
 				FA43BA622A3EF09600F8D5E2 /* KeyChain.swift in Sources */,
 				FA8CA6212A499B5F005A6709 /* ReportPopupView.swift in Sources */,
 				FA8CA61B2A496A81005A6709 /* ReportAndHidePopupView.swift in Sources */,

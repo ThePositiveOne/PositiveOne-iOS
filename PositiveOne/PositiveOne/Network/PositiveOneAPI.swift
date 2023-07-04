@@ -21,6 +21,7 @@ enum PositiveOneAPI {
     case postHideUser(paramters: [String: Any])
     case postReportBoard(paramters: [String: Any])
     case postReportUser(paramters: [String: Any])
+    case deleteUser
 }
 
 extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
@@ -59,6 +60,9 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
         case .postReportBoard:
             return "/report/board"
             
+        case .deleteUser:
+            return "/member"
+            
         }
     }
     
@@ -82,7 +86,8 @@ extension PositiveOneAPI: TargetType, AccessTokenAuthorizable {
             return .put
             
         case .deleteBoard,
-             .deleteHeart:
+             .deleteHeart,
+             .deleteUser:
             return .delete
         }
     }

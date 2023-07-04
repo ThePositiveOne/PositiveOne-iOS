@@ -15,6 +15,7 @@ struct SettingsView: View {
     @State var isPresentedLoginView = false
     @State var isPresentedPrivacyView = false
     @State var isPresentedNoticeView = false
+    @State var isPresentedWithdrawalView = false
     @Binding var isTabbarHidden: Bool
     
     var body: some View {
@@ -28,6 +29,8 @@ struct SettingsView: View {
                     case "로그아웃":
                         Keychain.deleteToken()
                         isPresentedLoginView.toggle()
+                    case "회원탈퇴":
+                        isPresentedWithdrawalView.toggle()
                     case "개인정보 정책":
                         isPresentedPrivacyView.toggle()
                     case "이용약관":
@@ -52,6 +55,10 @@ struct SettingsView: View {
         .fullScreenCover(isPresented: $isPresentedLoginView) {
             LoginView()
         }
+        .fullScreenCover(isPresented: $isPresentedWithdrawalView, content: {
+            WithdrawalPopupView()
+                .clearModalBackground()
+        })
         .sheet(isPresented: $isPresentedNoticeView, content: {
             MyWebView(urlToLoad: "https://github.com/dudtjs1021ej")
         })
