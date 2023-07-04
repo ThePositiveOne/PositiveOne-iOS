@@ -21,7 +21,7 @@ struct LoginCharacterView: View {
             
             Text("Positive one")
                 .font(CustomFont.PretendardMedium(size: 14).font)
-                .foregroundColor(.Custom.Black40)
+                .foregroundColor(.Custom.Black60)
                 .padding(.top, 3)
         }
     }
