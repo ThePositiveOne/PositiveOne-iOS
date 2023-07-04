@@ -48,14 +48,14 @@ struct TextEditorView: View {
                     ZStack {
                         if content.isEmpty {
                             TextEditor(text: $placeHolder)
-                                .font(CustomFont.PretendardMedium(size: 14).font)
+                                .font(CustomFont.PretendardMedium(size: 16).font)
                                 .foregroundColor(.Custom.Black60)
                                 .disabled(true)
                                 .padding(18)
                         }
                         
                         TextEditor(text: limitContent)
-                            .font(CustomFont.PretendardMedium(size: 14).font)
+                            .font(CustomFont.PretendardMedium(size: 16).font)
                             .lineSpacing(3)
                             .lineLimit(nil)
                             .foregroundColor(.Custom.TitleColor)
