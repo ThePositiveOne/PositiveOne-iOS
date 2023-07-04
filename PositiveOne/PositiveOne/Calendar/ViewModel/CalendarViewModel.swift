@@ -16,7 +16,6 @@ class CalendarViewModel: ObservableObject {
     
     init(boardData: BoardData? = nil) {
         self.boardData = boardData
-        getCalendar(date: CalendarManager().monthAndYear() ?? "")
     }
  
     func getCalendar(date: String) {

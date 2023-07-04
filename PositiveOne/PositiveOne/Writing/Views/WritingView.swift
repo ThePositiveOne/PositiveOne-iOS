@@ -79,7 +79,7 @@ struct WritingView: View {
         }
         .fullScreenCover(isPresented: $isPresentedPopupView, content: {
             if let request = getRequest() {
-                WritingPopupView(viewModel: viewModel, isPresentedPopupView: $isPresentedPopupView, request: request)
+                WritingPopupView(viewModel: viewModel, isPresentedPopupView: $isPresentedPopupView, request: request, boardId: boardId)
                     .clearModalBackground()
             }
         })

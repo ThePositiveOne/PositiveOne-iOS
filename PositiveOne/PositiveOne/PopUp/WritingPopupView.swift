@@ -13,6 +13,7 @@ struct WritingPopupView: View {
     @Binding var isPresentedPopupView: Bool
     let request: CalendarRequest
     @State var isPostSuccess = false
+    let boardId: Int?
     
     var body: some View {
         ZStack {
@@ -59,7 +60,12 @@ struct WritingPopupView: View {
                     Button {
                         if !isPostSuccess {
                             isPostSuccess = true
-                            viewModel.postBoard(request: request)
+                            if let boardId {
+                                viewModel.putBoard(boardId: boardId, request: request)
+                            } else {
+                                viewModel.postBoard(request: request)
+                            }
+                            
                             isPresentedPopupView = false
                         }
                         
@@ -88,6 +94,6 @@ struct WritingPopupView: View {
 
 struct WritingPopupView_Previews: PreviewProvider {
     static var previews: some View {
-        WritingPopupView(viewModel: WritingViewModel(), isPresentedPopupView: .constant(true), request: CalendarRequest(text: "dd", stamp: "a", secret: true, date: "Dsa"))
+        WritingPopupView(viewModel: WritingViewModel(), isPresentedPopupView: .constant(true), request: CalendarRequest(text: "dd", stamp: "a", secret: true, date: "Dsa"), boardId: 8)
     }
 }

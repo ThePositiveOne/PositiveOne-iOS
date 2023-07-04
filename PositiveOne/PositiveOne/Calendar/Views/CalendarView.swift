@@ -25,7 +25,7 @@ struct CalendarView: View {
                     CalendarGridView(viewModel: viewModel, calendarDict: $viewModel.calendarDict).environmentObject(calendarManager)
                         .padding(.top, 30)
                     
-                    if calendarManager.isPastOfSelectedDate() && viewModel.boardData == nil {
+                    if calendarManager.isPastOfSelectedDate() && viewModel.boardData == nil && calendarManager.selectedDate != nil {
                         HStack {
                             Spacer()
                             Button {
@@ -77,6 +77,11 @@ struct CalendarView: View {
                     viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
                     isRedraw.toggle()
                 }
+            }
+            
+            .onAppear {
+                calendarManager.selectedDate = nil
+                viewModel.getCalendar(date: CalendarManager().monthAndYear() ?? "")
             }
         }
     }

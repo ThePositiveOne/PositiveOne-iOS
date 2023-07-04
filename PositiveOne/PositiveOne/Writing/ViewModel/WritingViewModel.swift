@@ -22,7 +22,7 @@ class WritingViewModel: ObservableObject {
     
     func putBoard(boardId: Int, request: CalendarRequest) {
         Task {
-            let response = try await postBoard(request: request)
+            let response = try await putBoard(boardId: boardId, request: request)
             print(response)
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: .successPost, object: nil)
