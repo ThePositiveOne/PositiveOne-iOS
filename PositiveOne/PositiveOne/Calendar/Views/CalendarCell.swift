@@ -48,13 +48,15 @@ struct CalendarCell: View {
             }
             .frame(width: size, height: size+18)
             .onTapGesture {
-                HapticManager.instance.impact(style: .light)
-                calendarManager.updateSelectedDate(day)
-                guard let boardId else {
-                    viewModel.boardData = nil
-                    return
+                if !isFuture {
+                    HapticManager.instance.impact(style: .light)
+                    calendarManager.updateSelectedDate(day)
+                    guard let boardId else {
+                        viewModel.boardData = nil
+                        return
+                    }
+                    viewModel.getBoard(boardId: boardId)
                 }
-                viewModel.getBoard(boardId: boardId)
             }
 
         }
