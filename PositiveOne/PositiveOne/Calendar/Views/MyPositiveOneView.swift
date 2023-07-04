@@ -52,9 +52,9 @@ struct MyPositiveOneView: View {
                     .padding(.leading, 24)
                 
                 Text(boardData.text)
-                    .font(CustomFont.PretendardMedium(size: 12).font)
+                    .font(CustomFont.PretendardMedium(size: 13).font)
                     .foregroundColor(.Custom.Black90)
-                    .lineSpacing(4)
+                    .lineSpacing(3)
                     .padding(.vertical, 15)
                 Spacer()
             }
@@ -79,6 +79,6 @@ struct MyPositiveOneView: View {
 
 struct MyPositiveOneView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPositiveOneView(boardData: Binding.constant(BoardData(boardId: 3, stamp: "excitingOne", text: "gg", date: "23.05.03", secret: true)), viewModel: CalendarViewModel())
+        MyPositiveOneView(boardData: Binding.constant(BoardData(boardId: 3, stamp: "excitingOne", text: "오늘 계속 테스트해보고\n 어쩌고 저쩌고", date: "23.05.03", secret: true)), viewModel: CalendarViewModel())
     }
 }

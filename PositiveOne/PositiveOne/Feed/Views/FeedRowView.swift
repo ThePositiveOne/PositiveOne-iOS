@@ -62,6 +62,7 @@ struct FeedRowView: View {
             .frame(height: 57)
             .padding(.top, 10)
             .padding(.horizontal, 16)
+            .lineSpacing(3)
             
             
             HStack {
@@ -133,7 +134,7 @@ struct FeedRowView: View {
 
 struct FeedRowView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedRowView(feedContent: FeedContent(boardId: 3, stamp: "pleasureOne", text: "haha", date: "23.03.06", name: "내가 쓴 글", memberId: 2, likeCnt: 3, likeCheck: false), viewModel: FeedViewModel(), isPresentedLoginPopupView: .constant(false))
+        FeedRowView(feedContent: FeedContent(boardId: 3, stamp: "pleasureOne", text: "오늘 계속 테스트해보고\n 어쩌고 저쩌고", date: "23.03.06", name: "내가 쓴 글", memberId: 2, likeCnt: 3, likeCheck: false), viewModel: FeedViewModel(), isPresentedLoginPopupView: .constant(false))
 
     }
 }
