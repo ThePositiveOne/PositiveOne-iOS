@@ -35,8 +35,7 @@ struct BigStampView: View, Identifiable {
             }
             .padding(.top, 6)
         }
-        .frame(width: (UIScreen.main.bounds.width-40-(15*4))/4,
-               height: 96)
+        .frame(width: 76, height: 96)
         .background(
             RoundedRectangle(cornerRadius: 4)
                 .foregroundColor(.white)
