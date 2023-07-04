@@ -78,7 +78,9 @@ struct FeedView: View {
             }
             
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name.reloadFeed)) { _ in
-                reloadFeed()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+                    reloadFeed()
+                }
             }
         }
         
