@@ -25,30 +25,29 @@ struct MonthTopView: View {
                 HapticManager.instance.impact(style: .rigid)
                 calendarManager.selectedDate = nil
                 calendarManager.fetchPreviousMonth()
-                withAnimation {
-                    viewModel.removeAllData()
-                    viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
-                }
+                viewModel.removeAllData()
+                viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
+                
                 
             } label: {
                 Image("left").foregroundColor(Color.Custom.Black70)
             }
             .padding(.trailing, 18)
-           
+            
             
             Text(currentYearAndMonth)
                 .font(CustomFont.gangwon(size: 20).font)
                 .frame(width: 100)
-           
+            
             
             Button {
                 HapticManager.instance.impact(style: .rigid)
                 calendarManager.selectedDate = nil
                 calendarManager.fetchNextMonth()
-                withAnimation {
-                    viewModel.removeAllData()
-                    viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
-                }
+                
+                viewModel.removeAllData()
+                viewModel.getCalendar(date: calendarManager.monthAndYear() ?? "")
+                
             } label: {
                 Image("right").foregroundColor(Color.Custom.Black70)
             }
