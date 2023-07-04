@@ -60,10 +60,10 @@ struct SettingsView: View {
                 .clearModalBackground()
         })
         .sheet(isPresented: $isPresentedNoticeView, content: {
-            MyWebView(urlToLoad: "https://github.com/dudtjs1021ej")
+            MyWebView(urlToLoad: "https://luxuriant-penalty-09b.notion.site/f0524707a2c74666888523b603cb26eb")
         })
         .sheet(isPresented: $isPresentedPrivacyView, content: {
-            MyWebView(urlToLoad: "https://www.naver.com/")
+            MyWebView(urlToLoad: "https://luxuriant-penalty-09b.notion.site/8e62e7abb85d46ddbd25029fc440c023")
         })
         
         .toolbar {
