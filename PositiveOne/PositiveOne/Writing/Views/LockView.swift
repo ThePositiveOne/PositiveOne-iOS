@@ -34,9 +34,7 @@ struct LockView: View {
             
             HStack(spacing: 6) {
                 Button {
-                    if isLocked {
-                        isLocked.toggle()
-                    }
+                    isLocked = false
                 } label: {
                     Text("공개")
                         .font(CustomFont.PretendardMedium(size: 14).font)
@@ -47,9 +45,7 @@ struct LockView: View {
                     
                 }
                 Button {
-                    if !isLocked {
-                        isLocked.toggle()
-                    }
+                    isLocked = true
                 } label: {
                     Text("비공개")
                         .font(CustomFont.PretendardMedium(size: 14).font)

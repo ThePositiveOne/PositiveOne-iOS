@@ -26,6 +26,7 @@ struct MyPositiveOneView: View {
                 }
                 
                 .fullScreenCover(isPresented: $isPresented) {
+                    let _ = print(boardData)
                     WritingView(
                         selectedType: PositiveOneType(rawValue: boardData.stamp) ?? .excitingOne,
                         content: boardData.text,

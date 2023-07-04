@@ -97,6 +97,7 @@ struct WritingView: View {
             secret: isLocked,
             date: date
         )
+        let _ = print(request)
        return request
     }
     

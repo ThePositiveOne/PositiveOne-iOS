@@ -43,7 +43,7 @@ struct CalendarView: View {
                     } else if calendarManager.selectedDate != nil {
                         if let boardData = viewModel.boardData {
                             MyPositiveOneView(boardData: Binding.constant(boardData), viewModel: viewModel)
-                                .padding(.top, 35)
+                                .padding(.top, 10)
                         }
                     }
                     Spacer()
@@ -81,7 +81,10 @@ struct CalendarView: View {
             
             .onAppear {
                 calendarManager.selectedDate = nil
-                viewModel.getCalendar(date: CalendarManager().monthAndYear() ?? "")
+                withAnimation {
+                    viewModel.getCalendar(date: CalendarManager().monthAndYear() ?? "")
+
+                }
             }
         }
     }
