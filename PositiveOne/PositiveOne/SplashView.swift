@@ -13,7 +13,7 @@ struct SplashView: View {
             VStack {
                 Image("Familyver")
                     .resizable()
-                    .frame(width: 235, height: 75)
+                    .frame(width: 235, height: 70)
             }
             VStack {
                 Spacer()
