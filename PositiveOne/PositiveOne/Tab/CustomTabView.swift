@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 enum Tab {
     case calendar
@@ -37,6 +38,7 @@ struct CustomTabView: View {
             
             Button {
                 selectedTab = .feed
+                Analytics.logEvent("feed_tab", parameters: nil)
             } label: {
                 VStack(spacing: 8) {
                     Image(selectedTab == .feed ? "feedSelected" : "feedUnSelected")
